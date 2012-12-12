@@ -21,7 +21,7 @@
 # core KB
 #scn:> "/seb/planimetry" "/etc/com_keynodes" "seb/planimetry_src" "http://ostisgeometry.sourceforge.net" "Служебная категория"
 scg:> "seb/planimetry_src" -> "seb/planimetry"
-
+scg:> "seb/logic_src" -> "seb/logic"
 scs:> "seb/lingv_src" -> "seb/lingv"
 
 #scn:> "/seb/sets" "/etc/com_keynodes" "seb/sets_src" "http://ostissets.sourceforge.net/wiki" "Общие понятия теории множеств"

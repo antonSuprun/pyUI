@@ -19,7 +19,7 @@
         <node type="node/const/relation" idtf="конъюнкция*" shapeColor="0" id="63554712" parent="0" left="0" top="0" right="87" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-152" y="-75" haveBus="false">
             <content type="0" mime_type="" file_name=""/>
         </node>
-        <node type="node/const/relation" idtf="имплицикация*" shapeColor="0" id="63554568" parent="0" left="0" top="0" right="101" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-153" y="-13" haveBus="false">
+        <node type="node/const/relation" idtf="импликация*" shapeColor="0" id="63554568" parent="0" left="0" top="0" right="101" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-153" y="-13" haveBus="false">
             <content type="0" mime_type="" file_name=""/>
         </node>
         <node type="node/const/relation" idtf="эквиваленция*" shapeColor="0" id="63554136" parent="0" left="0" top="0" right="94" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-152" y="-45" haveBus="false">
