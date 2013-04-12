@@ -71,7 +71,7 @@ genEl([1_: assign_: node_: resstat])
 genEl([1_: assign_: node_: tempstat])
 genEl([1_: assign_: node_: const_: copyrel])
 //#sys_get_location([1_: copyrel,2_: assign_: seg])
-//#printEl([1_: seg])
+//#//#printEl([1_: seg])
 ///////////////////////////////////////////////////////////////////////////////
 // Перебираем все константные узлы исходного множества
 searchSetStr3([	
@@ -118,6 +118,9 @@ callReturn([
 		]}
 ],next_const_node,next_const_node)
 label(const_nodes_done)
+ifVarAssign([1_: set],,no_erase_set1)
+eraseEl([1_: fixed_: set])
+label(no_erase_set1)
 ///////////////////////////////////////////////////////////////////////////////
 // Перебираем все переменные узлы исходного множества
 searchSetStr3([	
@@ -169,6 +172,9 @@ callReturn([
 		]}
 ],next_var_node,next_var_node)
 label(var_nodes_done)
+ifVarAssign([1_: set],,no_erase_set2)
+eraseEl([1_: fixed_: set])
+label(no_erase_set2)
 ///////////////////////////////////////////////////////////////////////////////
 // Перебираем все переменные дуги исходного множества
 searchSetStr3([	
@@ -203,6 +209,9 @@ callReturn([
 		]}
 ],next_var_undf,next_var_undf)
 label(var_undfs_done)
+ifVarAssign([1_: set],,no_erase_set3)
+eraseEl([1_: fixed_: set])
+label(no_erase_set3)
 ///////////////////////////////////////////////////////////////////////////////
 // Перебираем все неопределенные узлы исходного множества
 searchSetStr3([	
@@ -247,6 +256,9 @@ callReturn([
 		]}
 ],next_var_undf1,next_var_undf1)
 label(var_undfs_done1)
+ifVarAssign([1_: set],,no_erase_set4)
+eraseEl([1_: fixed_: set])
+label(no_erase_set4)
 ///////////////////////////////////////////////////////////////////////////////
 // Устанавливаем начала и концы всех переменных дуг конечного множества
 searchSetStr3([	
@@ -341,5 +353,8 @@ eraseEl([1_: tempstat])
 //#])
 
 label(exit)
+ifVarAssign([1_: set],,no_erase_set5)
+eraseEl([1_: fixed_: set])
+label(no_erase_set5)
 return()
 end

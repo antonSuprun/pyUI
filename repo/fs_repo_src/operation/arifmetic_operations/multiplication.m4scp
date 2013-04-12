@@ -1,6 +1,5 @@
 
-/*
------------------------------------------------------------------------------
+/* -----------------------------------------------------------------------------
 This source file is part of OSTIS (Open Semantic Technology for Intelligent Systems)
 For the latest info, see http://www.ostis.net
 
@@ -27,6 +26,7 @@ along with OSTIS.  first_el not, see <http://www.gnu.org/licenses/>.
 /////////////////////////////////////////////////////
 // 		Author: Sergei Zalivako
 //        Date: 24.01.2011 
+//       Modified: 28.03.2011
 
 
 #include "scp_keynodes.scsy"
@@ -46,8 +46,10 @@ program(init_op,
 	q_initiated;
 	// —обытие, на которое реагирует обработчик(проведение выход€щей дуги из узла)
 	catch_output_arc;
+	group_arifmetic_descr;
 ]],
 [{
+	descr,arc
 }],
 {[
 ]}
@@ -56,7 +58,14 @@ program(init_op,
 sys_set_event_handler([
 	1_: fixed_: catch_output_arc,
 	2_: fixed_: multiplication,
-	3_: fixed_: {1_: q_initiated}
+	3_: fixed_: {1_: q_initiated},
+	4_: assign_: descr
+])
+
+genElStr3([
+	1_: fixed_: group_arifmetic_descr,
+	2_: assign_: const_: pos_: arc,
+	3_: fixed_: descr
 ])
 
 return()	
@@ -66,7 +75,7 @@ end
 procedure(multiplication,
 [[
 	//  лючевой узел, обозначающий запрос
-	q_multiplication;
+	q_arifmetic_routine;
 
 	// јтрибут присутстви€ ответа
 	rrel_answer_is_present;
@@ -106,7 +115,7 @@ procedure(multiplication,
 	handler, element,
 	arcFromRequest, arcFromQuestion,
 	location, segments,
-	multiplicationLink,
+	multiplicationLink, questionNode, 
 	arcForChecking, arcVar, attributeArc, nodeVar, checkingNode,
 	multiplicationResult, multipliersLink, multipliersLinkCopy, 
 	multiplicationValue, currentValue,
@@ -119,12 +128,12 @@ procedure(multiplication,
 	1_: in_: handler, 
 	2_: in_: element, 
 	3_: in_: arcFromQuestion,
-	4_: in_: multiplicationLink
+	4_: in_: questionNode
 ]}
 )
-// ѕолучение сегмента, в котором находитс€ узел св€зки запроса умножени€
+// ѕолучение сегмента, в котором находитс€ узел св€зки запроса арифметического действи€
 sys_get_location([
-	1_: fixed_: multiplicationLink,
+	1_: fixed_: questionNode,
 	2_: assign_: location
 ])
 
@@ -139,11 +148,18 @@ sys_spin_segment([
 	2_: assign_: segments
 ])
 
-// ѕровер€ем, что в узел запроса проведена дуга из узла "запрос умножени€ величин"
+// ѕровер€ем, что в узел запроса проведена дуга из узла "запрос арифметического действи€"
 searchElStr3([
-	1_: fixed_: q_multiplication,
+	1_: fixed_: q_arifmetic_routine,
 	2_: assign_: const_: pos_: arc_: arcFromRequest,
-	3_: fixed_: multiplicationLink
+	3_: fixed_: questionNode
+], , finishOperation)
+
+// Ќаходим св€зку отношени€ умножени€ из вопроса
+searchElStr3([
+	1_: fixed_: questionNode,
+	2_: assign_: const_: pos_: arc_: arcForChecking,
+	3_: assign_: const_: node_: multiplicationLink
 ], , finishOperation)
 
 // ѕровер€ем, что св€зка, в которую была проведена дуга из запроса €влетс€ именно св€зкой отношени€ умножени€
@@ -151,14 +167,14 @@ searchElStr3([
 	1_: fixed_: nrel_multiplication,
 	2_: assign_: const_: pos_: actual_: arc_: arcForChecking,
 	3_: fixed_: multiplicationLink
-])
+], , finishOperation)
 
-// ѕоиск св€зки отношени€ "произведение*" с атрибутом "присутствует ответ_"
+// ѕоиск св€зки запроса произведени€ с атрибутом "присутствует ответ_"
 // ≈сли такой атрибут есть, то работа программы прекращаетс€
 searchElStr5([
-	1_: fixed_: q_multiplication,
+	1_: fixed_: q_arifmetic_routine,
 	2_: fixed_: arcFromRequest,
-	3_: fixed_: multiplicationLink,
+	3_: fixed_: questionNode,
 	4_: assign_: arc_: const_: pos_: actual_: arcVar,
 	5_: fixed_: rrel_answer_is_present
 ], exit)
@@ -171,6 +187,9 @@ searchElStr5([
 	4_: assign_: arc_: const_: pos_: actual_: attributeArc,
 	5_: fixed_: 1_
 ], , exit)
+
+printNl([1_: /"MULT_LINK"/])
+printEl([1_: multipliersLink])
 
 // »щем узел, который должен содержать значение произведени€
 searchElStr5([
@@ -309,6 +328,14 @@ label(multiplicationOperation)
 
 	// ќпераци€ умножени€ завершилась успешно
 	label(multiplicationOperationSuccess)
+	
+		printNl([
+			1_: fixed_: /"Multiplication result is"/
+		])
+
+		printNl([
+			1_: fixed_: multiplicationAccumulationNode
+		])
 
 		// ƒобавл€ем содержимое, накопленного произведени€ в узел, где хранитс€ произведение
 		add([
@@ -316,16 +343,12 @@ label(multiplicationOperation)
 			2_: fixed_: zero,
 			3_: fixed_: multiplicationAccumulationNode
 		])
-		
-		//#printNl([
-		//	1_: fixed_: multiplicationResult
-		//])
-		
+				
 		// √енерируем факт присутстви€ ответа
 		genElStr5([
-			1_: fixed_: q_multiplication,
+			1_: fixed_: q_arifmetic_routine,
 			2_: fixed_: arcFromRequest,
-			3_: fixed_: multiplicationLink,
+			3_: fixed_: questionNode,
 			4_: assign_: arc_: const_: pos_: actual_: arcVar,
 			5_: fixed_: rrel_answer_is_present
 		])
@@ -540,16 +563,20 @@ label(divisionOperation)
 		], divisorsView)
 
 	label(divisionOperationSuccess)
-		
-		//#printNl([
-		//	1_: fixed_: divisionAccumulationNode
-		//])
-		
+	
+		printNl([
+			1_: fixed_: /"Multiplication result is"/
+		])
+
+		printNl([
+			1_: fixed_: divisionAccumulationNode
+		])
+				
 		// √енерируем факт присутстви€ ответа
 		genElStr5([
-			1_: fixed_: q_multiplication,
+			1_: fixed_: q_arifmetic_routine,
 			2_: fixed_: arcFromRequest,
-			3_: fixed_: multiplicationLink,
+			3_: fixed_: questionNode,
 			4_: assign_: arc_: const_: pos_: actual_: arcVar,
 			5_: fixed_: rrel_answer_is_present
 		])
@@ -580,7 +607,7 @@ label(makingAnswer)
 	genElStr3([
 		1_: fixed_: answer,
 		2_: assign_: const_: pos_: arc_: arcVar,
-		3_: fixed_: q_multiplication
+		3_: fixed_: q_arifmetic_routine
 	])
 	
 	// ƒобавл€ем в ответ дугу из узла запроса умножени€
@@ -594,7 +621,7 @@ label(makingAnswer)
 	genElStr3([
 		1_: fixed_: answer,
 		2_: assign_: const_: pos_: arc_: arcVar,
-		3_: fixed_: multiplicationLink
+		3_: fixed_: questionNode
 	])
 	
 	// ≈сли дуга из узла "присутствует ответ_" не проводилась
@@ -623,24 +650,16 @@ label(withoutAnswerIsPresent)
 	callReturn([
 		1_:	fixed_: answer_make,
 		2_:	fixed_: {[
-			1_: multiplicationLink,
+			1_: questionNode,
 			2_: answer
 		]}
 	])
-	
-	printNl([
-		1_: fixed_: /"Multiplication answer is"/
-	])
-	
-	//#printEl([
-	//#	1_: answer
-	//#])
 
 	// √енерируем факт выполнени€ операции
 	genElStr5([
-		1_: fixed_: q_multiplication,
+		1_: fixed_: q_arifmetic_routine,
 		2_: fixed_: arcFromRequest,
-		3_: fixed_: multiplicationLink,
+		3_: fixed_: questionNode,
 		4_: assign_: arc_: const_: pos_: actual_: arcVar,
 		5_: fixed_: rrel_operation_is_over
 	])

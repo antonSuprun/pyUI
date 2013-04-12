@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/group" idtf="закон склеивания" shapeColor="0" id="90798520" parent="0" left="0" top="0" right="111" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-45" y="45" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="упрощение формул" shapeColor="0" id="90794632" parent="0" left="0" top="0" right="119" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="120" y="450" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="эквивалентные преобразования" shapeColor="0" id="90794920" parent="0" left="0" top="0" right="194" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="120" y="360" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/asymmetry" idtf="" shapeColor="0" id="90791752" parent="0" x="-45" y="180" haveBus="true">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="законы логики" shapeColor="0" id="90797512" parent="0" left="0" top="0" right="93" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="120" y="285" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/relation" idtf="надмножество понятия*" shapeColor="0" id="90792760" parent="0" left="0" top="0" right="160" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="45" y="120" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="логика высказываний" shapeColor="0" id="90796936" parent="0" left="0" top="0" right="134" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="120" y="225" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="113157696" parent="0" id_b="92868568" id_e="90794632" b_x="88.561" b_y="40.5" e_x="120" e_y="450" dotBBalance="0.708738" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="110247152" parent="0" id_b="92868568" id_e="90794920" b_x="88.561" b_y="40.5" e_x="120" e_y="360" dotBBalance="0.459085" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="110246480" parent="0" id_b="92868568" id_e="90797512" b_x="88.561" b_y="40.5" e_x="120" e_y="285" dotBBalance="0.25104" dotEBalance="0">
+            <points/>
+        </arc>
+        <pair type="pair/const/orient" idtf="" shapeColor="0" id="113157864" parent="0" id_b="90791752" id_e="90798520" b_x="-45" b_y="180" e_x="-45" e_y="45" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="113157528" parent="0" id_b="90792760" id_e="113157864" b_x="45" b_y="120" e_x="88.561" e_y="40.5" dotBBalance="0" dotEBalance="0.429245">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="110245640" parent="0" id_b="92868568" id_e="90796936" b_x="88.561" b_y="40.5" e_x="120" e_y="225" dotBBalance="0.0846047" dotEBalance="0">
+            <points/>
+        </arc>
+        <bus type="" idtf="" shapeColor="0" id="92868568" parent="0" owner="90791752" b_x="-45" b_y="194.5" e_x="-45" e_y="555">
+            <points/>
+        </bus>
+    </staticSector>
+</GWF>

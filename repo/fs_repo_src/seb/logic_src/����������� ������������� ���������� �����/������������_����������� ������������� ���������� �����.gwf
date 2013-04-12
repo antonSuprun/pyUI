@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/group" idtf="совершенная конъюнктивная нормальная форма" shapeColor="193" id="90792904" parent="0" left="0" top="0" right="297" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-52.5" y="77.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/asymmetry" idtf="" shapeColor="0" id="90792184" parent="0" x="-52.5" y="212.5" haveBus="true">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="логика высказываний" shapeColor="0" id="90796072" parent="0" left="0" top="0" right="134" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="67.5" y="257.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="разложение функций по переменным" shapeColor="0" id="90796648" parent="0" left="0" top="0" right="225" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="67.5" y="362.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/relation" idtf="надмножество понятия*" shapeColor="0" id="90797224" parent="0" left="0" top="0" right="160" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="37.5" y="152.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <pair type="pair/const/orient" idtf="" shapeColor="0" id="113088936" parent="0" id_b="90792184" id_e="90792904" b_x="-52.5" b_y="212.5" e_x="-52.5" e_y="77.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="59461880" parent="0" id_b="90797224" id_e="113088936" b_x="37.5" b_y="152.5" e_x="-17" e_y="-20" dotBBalance="0" dotEBalance="0.429245">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="113090112" parent="0" id_b="91915464" id_e="90796072" b_x="-17" b_y="-20" e_x="67.5" e_y="257.5" dotBBalance="0.18429" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="113089608" parent="0" id_b="91915464" id_e="90796648" b_x="-17" b_y="-20" e_x="67.5" e_y="362.5" dotBBalance="0.818731" dotEBalance="0">
+            <points/>
+        </arc>
+        <bus type="" idtf="" shapeColor="0" id="91915464" parent="0" owner="90792184" b_x="-52.5" b_y="227" e_x="-52.5" e_y="392.5">
+            <points/>
+        </bus>
+    </staticSector>
+</GWF>

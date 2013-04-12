@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<GWF version="1.6">
+    <staticSector>
+        <node type="node/const/asymmetry" idtf="" shapeColor="193" id="22636712" parent="0" x="201.5" y="175.5" haveBus="false">
+            <content type="0" mime_type="content/base" file_name=""/>
+        </node>
+        <node type="node/const/relation" idtf="основные утверждения*" shapeColor="0" id="22636856" parent="0" left="0" top="0" right="153" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="127.5" y="239.5" haveBus="false">
+            <content type="0" mime_type="content/base" file_name=""/>
+        </node>
+        <node type="node/const/general_node" idtf="Утв.(вторая фигура силлогизма, меньшая посылка, большая посылка)" shapeColor="0" id="22637144" parent="0" left="0" top="0" right="424" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="297.5" y="192.5" haveBus="false">
+            <content type="0" mime_type="content/base" file_name=""/>
+        </node>
+        <node type="node/const/general_node" idtf="Утв.(вторая фигура силлогизма, большая посылка)" shapeColor="0" id="22637000" parent="0" left="0" top="0" right="312" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="294.5" y="122.5" haveBus="false">
+            <content type="0" mime_type="content/base" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="вторая фигура силлогизма" shapeColor="0" id="22634264" parent="0" left="0" top="0" right="166" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="79.5" y="66.408" haveBus="true">
+            <content type="0" mime_type="content/base" file_name=""/>
+        </node>
+        <pair type="pair/const/orient" idtf="" shapeColor="0" id="60282648" parent="0" id_b="22636712" id_e="60316408" b_x="201.5" b_y="175.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.466238">
+            <points/>
+        </pair>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="60282488" parent="0" id_b="22636712" id_e="22637144" b_x="201.5" b_y="175.5" e_x="297.5" e_y="192.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="60282328" parent="0" id_b="22636712" id_e="22637000" b_x="201.5" b_y="175.5" e_x="294.5" e_y="122.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="60282168" parent="0" id_b="22636856" id_e="60282648" b_x="127.5" b_y="239.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.565383">
+            <points/>
+        </arc>
+        <bus type="" idtf="" shapeColor="0" id="60316408" parent="0" owner="22634264" b_x="79.4332" b_y="80.9078" e_x="78.5" e_y="283.5">
+            <points/>
+        </bus>
+    </staticSector>
+</GWF>

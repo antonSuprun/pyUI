@@ -1,5 +1,4 @@
-/*
------------------------------------------------------------------------------
+/*-----------------------------------------------------------------------------
 This source file is part of OSTIS (Open Semantic Technology for Intelligent Systems)
 For the latest info, see http://www.ostis.net
 
@@ -20,7 +19,10 @@ along with OSTIS.  If not, see <http://www.gnu.org/licenses/>.
 -----------------------------------------------------------------------------
 */
 
-verify_all = "/lib/other/verify_all/verify_wrong_conjunction_of_atoms";
-construct = "/lib/other/construct/construct";
-erase_elements = "/lib/other/erase_elements/erase_elements";
-element_content_subroutine = "/lib/other/element_content_subroutine/element_content_subroutine";
+//#verify_all = "/lib/other/verify_all/verify_wrong_conjunction_of_atoms";
+//#construct = "/lib/other/construct/construct";
+//#erase_elements = "/lib/other/erase_elements/erase_elements";
+//#element_content_subroutine = "/lib/other/element_content_subroutine/element_content_subroutine";
+mergeValuesForFormula = "/lib/other/mergeValuesForFormula/run";
+callArifmeticOperation = "/lib/other/callArifmeticOperation/run";
+print_sys_search="/lib/other/print_sys_search/print_sys_search";

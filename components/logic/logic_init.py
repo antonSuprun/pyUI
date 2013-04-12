@@ -66,8 +66,8 @@ def shutdown():
 
     # unregister components
     kernel.unregisterTranslatorFactory(logic2sc_factory)
-    kernel.unregisterViewerFactory(view_factory)
-    kernel.unregisterEditorFactory(edit_factory)
+    kernel.unregisterTranslatorFactory(view_factory)
+    kernel.unregisterTranslatorFactory(edit_factory)
 
 def logic2sc_creator():
     return logic2sc.TranslatorLogic2Sc()

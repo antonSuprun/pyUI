@@ -1,6 +1,5 @@
 
-/*
------------------------------------------------------------------------------
+/* -----------------------------------------------------------------------------
 This source file is part of OSTIS (Open Semantic Technology for Intelligent Systems)
 For the latest info, see http://www.ostis.net
 
@@ -27,6 +26,7 @@ along with OSTIS.  first_el not, see <http://www.gnu.org/licenses/>.
 /////////////////////////////////////////////////////
 // 		Author: Sergei Zalivako
 //        Date: 24.01.2011 
+//       Modified: 28.03.2011
 
 #include "scp_keynodes.scsy"
 #include "etc_questions.scsy"
@@ -45,8 +45,10 @@ program(init_op,
 	q_initiated;
 	// Событие, на которое реагирует обработчик(проведение выходящей дуги из узла)
 	catch_output_arc;
+	group_arifmetic_descr;
 ]],
 [{
+	descr,arc
 }],
 {[
 ]}
@@ -55,7 +57,14 @@ program(init_op,
 sys_set_event_handler([
 	1_: fixed_: catch_output_arc,
 	2_: fixed_: exponention,
-	3_: fixed_: {1_: q_initiated}
+	3_: fixed_: {1_: q_initiated},
+	4_: assign_: descr
+])
+
+genElStr3([
+	1_: fixed_: group_arifmetic_descr,
+	2_: assign_: const_: pos_: arc,
+	3_: fixed_: descr
 ])
 
 return()	
@@ -65,7 +74,7 @@ end
 procedure(exponention,
 [[
 	// Ключевой узел, обозначающий запрос
-	q_exponention;
+	q_arifmetic_routine;
 
 	// Атрибут присутствия ответа
 	rrel_answer_is_present;
@@ -111,7 +120,7 @@ procedure(exponention,
 	
 ]],
 [{
-	handler, element,
+	handler, element, questionNode,
 	arcFromRequest, arcFromQuestion,
 	location, segments, checkingNode,
 	exponentionLink, exponentionLinkCopy,
@@ -125,12 +134,12 @@ procedure(exponention,
 	1_: in_: handler, 
 	2_: in_: element, 
 	3_: in_: arcFromQuestion, 
-	4_: in_: exponentionLink 
+	4_: in_: questionNode 
 ]}
 )
-// Получение сегмента, в котором узел связки умножения
+// Получение сегмента, в кототором находится узел связки запроса арифметического действия
 sys_get_location([
-	1_: fixed_: exponentionLink,
+	1_: fixed_: questionNode,
 	2_: assign_: location
 ])
 
@@ -145,11 +154,18 @@ sys_spin_segment([
 	2_: assign_: segments
 ])
 
-// Проверяем, что в узел запроса проведена дуга из узла "запрос степени"
+// Проверяем, что в узел запроса проведена дуга из узла "запрос арифметического действия"
 searchElStr3([
-	1_: fixed_: q_exponention,
+	1_: fixed_: q_arifmetic_routine,
 	2_: assign_: const_: pos_: arc_: arcFromRequest,
-	3_: fixed_: exponentionLink
+	3_: fixed_: questionNode
+], , finishOperation)
+
+// Находим связку отношения возведения в степень из вопроса
+searchElStr3([
+	1_: fixed_: questionNode,
+	2_: assign_: const_: pos_: arc_: arcForChecking,
+	3_: assign_: const_: node_: exponentionLink
 ], , finishOperation)
 
 // Проверяем, что связка, в которую была проведена дуга из запроса явлется именно связкой отношения возведения в степень
@@ -157,14 +173,14 @@ searchElStr3([
 	1_: fixed_: nrel_exponention,
 	2_: assign_: const_: pos_: actual_: arc_: arcForChecking,
 	3_: fixed_: exponentionLink
-])
+], , finishOperation)
 
 // Поиск связки отношения "возведение в степень*" с атрибутом "присутствует ответ_"
 // Если такой атрибут есть, то работа программы прекращается
 searchElStr5([
-	1_: fixed_: q_exponention,
+	1_: fixed_: q_arifmetic_routine,
 	2_: fixed_: arcFromRequest,
-	3_: fixed_: exponentionLink,
+	3_: fixed_: questionNode,
 	4_: assign_: arc_: const_: pos_: actual_: arcVar,
 	5_: fixed_: rrel_answer_is_present
 ], exit)
@@ -181,7 +197,7 @@ searchSetStr3([
 callReturn([
 	1_: fixed_: check_unit_of_measure,
 	2_: fixed_: {[
-		1_: exponentionCopy,
+		1_: exponentionLinkCopy,
 		2_: checkingNode
 	]}
 ])
@@ -343,12 +359,16 @@ label(baseCalculation)
 		1_: fixed_: base,
 		2_: fixed_: degree,
 		3_: fixed_: degreeForRoot
+	])
+	
+	printNl([
+		1_: fixed_: /"Exponention result is"/
+	])
+
+	printNl([
+		1_: fixed_: base
 	], calculationSuccess)
 	
-	//#printNl([
-	//	1_: fixed_: base
-	//], calculationSuccess)
-
 // Вычисляем логарифм значения степени по основанию
 label(exponentCalculation)
 
@@ -383,20 +403,24 @@ label(degreeCalculation)
 		1_: fixed_: degree,
 		2_: fixed_: base,
 		3_: fixed_: exponent
+	])
+	
+	printNl([
+		1_: fixed_: /"Exponention result is"/
+	])
+
+	printNl([
+		1_: fixed_: degree
 	], calculationSuccess)
 	
-	//#printNl([
-	//	1_: fixed_: degree
-	//], calculationSuccess)
-
 // Вычисление осуществлено успешно
 label(calculationSuccess)
 	
 	// Генерируем факт присутствия ответа
 	genElStr5([
-		1_: fixed_: q_exponention,
+		1_: fixed_: q_arifmetic_routine,
 		2_: fixed_: arcFromRequest,
-		3_: fixed_: exponentionLink,
+		3_: fixed_: questionNode,
 		4_: assign_: arc_: const_: pos_: actual_: arcVar,
 		5_: fixed_: rrel_answer_is_present
 	])
@@ -415,7 +439,7 @@ label(makingAnswer)
 	genElStr3([
 		1_: fixed_: answer,
 		2_: assign_: const_: pos_: arc_: arcVar,
-		3_: fixed_: q_exponention
+		3_: fixed_: q_arifmetic_routine
 	])
 	
 	// Добавляем в ответ дугу из узла запроса степени
@@ -429,7 +453,7 @@ label(makingAnswer)
 	genElStr3([
 		1_: fixed_: answer,
 		2_: assign_: const_: pos_: arc_: arcVar,
-		3_: fixed_: exponentionLink
+		3_: fixed_: questionNode
 	])
 	
 	// Если дуга из узла "присутствует ответ_" не проводилась
@@ -458,31 +482,21 @@ label(withoutAnswerIsPresent)
 	callReturn([
 		1_:	fixed_: answer_make,
 		2_:	fixed_: {[
-			1_: exponentionLink,
+			1_: questionNode,
 			2_: answer
 		]}
 	])
 	
-	//#printNl([
-		//#1_: fixed_: /"Exponention answer is"/
-	//#])
-	
-	//#printEl([
-	//#	1_: answer
-	//#])
-
 	// Генерируем факт выполнения операции
 	genElStr5([
-		1_: fixed_: q_exponention,
+		1_: fixed_: q_arifmetic_routine,
 		2_: fixed_: arcFromRequest,
-		3_: fixed_: exponentionLink,
+		3_: fixed_: questionNode,
 		4_: assign_: arc_: const_: pos_: actual_: arcVar,
 		5_: fixed_: rrel_operation_is_over
 	])
 	
 label(finishOperation)
-
-	
 
 return()
 	

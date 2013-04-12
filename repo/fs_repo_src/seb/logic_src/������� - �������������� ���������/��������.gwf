@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/group" idtf="условно - разделительный силлогизм" shapeColor="0" id="56752360" parent="0" left="0" top="0" right="224" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="198.557" y="75.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/general_node" idtf="" shapeColor="0" id="56550056" parent="0" x="513.557" y="240.5" haveBus="false">
+            <content type="1" mime_type="content/term" file_name=""><![CDATA[conditional - the separation syllogism]]></content>
+        </node>
+        <node type="node/const/general_node" idtf="" shapeColor="0" id="76033296" parent="0" x="541.557" y="327.5" haveBus="false">
+            <content type="1" mime_type="content/term" file_name=""><![CDATA[понятие условно - разделительного силлогизма
+
+]]></content>
+        </node>
+        <node type="node/const/asymmetry" idtf="" shapeColor="0" id="56638816" parent="0" x="198.557" y="165.5" haveBus="true">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="Английский язык" shapeColor="0" id="56630768" parent="0" left="0" top="0" right="108" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="648.557" y="240.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/relation" idtf="синонимы*" shapeColor="0" id="56619568" parent="0" left="0" top="0" right="74" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="288.557" y="165.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="внешнее обозначение" shapeColor="0" id="56608264" parent="0" left="0" top="0" right="132" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="393.557" y="165.5" haveBus="true">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/relation" idtf="идентификация*" shapeColor="0" id="76055128" parent="0" left="0" top="0" right="109" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="303.557" y="120.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/attribute" idtf="основной_" shapeColor="0" id="76047920" parent="0" left="0" top="0" right="69" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="275.557" y="391.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="Русский язык" shapeColor="0" id="76038152" parent="0" left="0" top="0" right="86" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="683.557" y="326.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <pair type="pair/const/orient" idtf="" shapeColor="0" id="56771760" parent="0" id_b="56638816" id_e="56752360" b_x="198.557" b_y="165.5" e_x="198.557" e_y="75.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="56770784" parent="0" id_b="76047920" id_e="55372464" b_x="275.557" b_y="391.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.301178">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="56770072" parent="0" id_b="76038152" id_e="76033296" b_x="683.557" b_y="326.5" e_x="541.557" e_y="327.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="56769296" parent="0" id_b="56619568" id_e="56638816" b_x="288.557" b_y="165.5" e_x="198.557" e_y="165.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="56768632" parent="0" id_b="56630768" id_e="56550056" b_x="648.557" b_y="240.5" e_x="513.557" e_y="240.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="12124344" parent="0" id_b="76055128" id_e="56771760" b_x="303.557" b_y="120.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.5">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="76195456" parent="0" id_b="55371392" id_e="56550056" b_x="0" b_y="0" e_x="513.557" e_y="240.5" dotBBalance="0.194415" dotEBalance="0">
+            <points>
+                <point x="453.557" y="270.5"/>
+            </points>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="55692040" parent="0" id_b="55371392" id_e="76033296" b_x="0" b_y="0" e_x="541.557" e_y="327.5" dotBBalance="0.419979" dotEBalance="0">
+            <points>
+                <point x="453.557" y="375.5"/>
+            </points>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="55372464" parent="0" id_b="55365080" id_e="76033296" b_x="0" b_y="0" e_x="541.557" e_y="327.5" dotBBalance="0.427155" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="76201752" parent="0" id_b="55365080" id_e="56550056" b_x="0" b_y="0" e_x="513.557" e_y="240.5" dotBBalance="0.136412" dotEBalance="0">
+            <points/>
+        </arc>
+        <bus type="" idtf="" shapeColor="0" id="55371392" parent="0" owner="56608264" b_x="393.674" b_y="180" e_x="396.557" e_y="537.5">
+            <points/>
+        </bus>
+        <bus type="" idtf="" shapeColor="0" id="55365080" parent="0" owner="56638816" b_x="198.671" b_y="180" e_x="201.557" e_y="547.5">
+            <points/>
+        </bus>
+    </staticSector>
+</GWF>

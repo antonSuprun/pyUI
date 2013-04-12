@@ -1,0 +1,489 @@
+/*
+-----------------------------------------------------------------------------
+This source file is part of OSTIS (Open Semantic Technology for Intelligent Systems)
+For the latest info, see http://www.ostis.net
+
+Copyright (c) 2010 OSTIS
+
+OSTIS is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+OSTIS is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with OSTIS.  If not, see <http://www.gnu.org/licenses/>.
+-----------------------------------------------------------------------------
+*/
+
+//------------------------------------------------------------------------------
+//         File: search_concepts_defined_by_indicated_concepts.m4scp
+//  Description: File contains operation for concept search defined by indicated
+//               concepts.
+//------------------------------------------------------------------------------
+//       Author: Ivan Kosik
+//         Date: 07.02.12
+
+
+//~
+#include "scp_keynodes.scsy"
+#include "etc_questions.scsy"
+#include "com_keynodes.scsy"
+#include "_keynodes.scsy"
+#include "lib_search.scsy"
+#include "lib_set.scsy"
+#include "lib_answer.scsy"
+
+
+///////////////////////////////////////////////////////////////Program Beginning
+// Program that initialize operation:
+program(init_op,
+[[
+	q_initiated;
+	run_op;
+	catch_output_arc;
+]],
+[{
+}]
+)
+
+
+//~
+//# printNl([ 1_: fixed_: /"\nTest: search_concepts_defined_by_indicated_concepts: program: init_op: point 1.1\n"/ ])
+
+// Subscribe to handle output arcs from "initiated question" node:
+sys_set_event_handler([
+	1_: fixed_: catch_output_arc,
+	2_: fixed_: run_op,
+	3_: fixed_: { 1_: q_initiated }
+])
+
+//~
+//# printNl([ 1_: fixed_: /"\nTest: search_concepts_defined_by_indicated_concepts: program: init_op: point 1.2\n"/ ])
+
+return()
+end
+/////////////////////////////////////////////////////////////////////Program End
+/////////////////////////////////////////////////////////////Procedure Beginning
+// Procedure that process question and make answer:
+procedure(run_op,
+[[
+	q_search_concepts_defined_by_indicated_concepts;
+	search_concepts_defined_by_indicated_concepts;
+]],
+[{
+	// Input parameters:
+	descr, element, arc, question_node, //~ descr, element, arc ?
+	// Other variables:
+	segment, arc2, result, descr2 //~
+}],
+{[
+	1_: in_: descr,
+	2_: in_: element,
+	3_: in_: arc,
+	4_: in_: question_node
+]}
+)
+
+
+//~
+//# printNl([ 1_: fixed_: /"\nTest: search_concepts_defined_by_indicated_concepts: procedure: run_op: point 2.1\n"/ ])
+
+// Need to set segment that contains question node as default to generate answer
+// in it:
+sys_get_location([ 1_: fixed_: question_node, 2_: assign_: segment ])
+sys_open_segment([ 1_: fixed_: segment ])
+sys_set_default_segment([ 1_: fixed_: segment ])
+
+searchElStr3([
+	1_:  fixed_: q_search_concepts_defined_by_indicated_concepts,
+	2_: assign_: const_: pos_: arc_: arc2,
+	3_:  fixed_: question_node
+], , goto_end)
+
+// Call cycle to find full semantic neighbourhood for all elements in a
+// question:
+callReturn([
+	1_: fixed_: search_base_cycle,
+	2_: fixed_: {[
+		1_: question_node,
+		2_: search_concepts_defined_by_indicated_concepts,
+		3_: result
+	]}
+], , , , goto_error) //~ descr2
+
+// Remove question node from result:
+callReturn([
+	1_: fixed_: set_rm_el,
+	2_: fixed_: {[
+		1_: result,
+		2_: question_node
+	]}
+], , , , goto_error) //~ descr2
+
+// Make answer:
+callReturn([
+	1_: fixed_: answer_make,
+	2_: fixed_: {[
+		1_: question_node,
+		2_: result
+	]}
+], , , , goto_error) //~ descr2
+
+//~
+//# printNl([ 1_: fixed_: /"\nTest: search_concepts_defined_by_indicated_concepts: procedure: run_op: point 2.2: result\n"/ ])
+//# printEl([ 1_: fixed_: result ])
+
+return()
+
+label(goto_error)
+
+//~
+//# printNl([ 1_: fixed_: /"\nTest: search_concepts_defined_by_indicated_concepts: procedure: run_op: point 2.3: RUNTIME ERROR\n"/ ])
+
+label(goto_end)
+return()
+end
+///////////////////////////////////////////////////////////////////Procedure End
+/////////////////////////////////////////////////////////////Procedure Beginning
+// Procedure that search for concepts defined by target concept:
+procedure(search_concepts_defined_by_indicated_concepts,
+[[
+	used_constants_rel = "/etc/com_keynodes/используемые константы*";
+	definition_rel = "/etc/com_keynodes/определение*";
+]],
+[{
+	// Parameters:
+	target_concept,
+	result_set,
+	// Other variables:
+	constant_set_set, constant_set, possible_con_set, possible_con,
+	possible_definition, possible_definition_rel_con_set,
+	possible_definition_rel_con, concept_defined_by_indicated_concept,
+	temp_set, element, node1, arc, arc2, arc4
+}],
+{[
+	1_: in_: target_concept,
+	2_: in_: out_: result_set
+]}
+)
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Алгоритм работы процедуры:
+// 1. Найдём все узлы, от которых идёт дуга принадлежности к узлу target_concept
+// (целевое понятие). Запишем их в переменную constant_set_set (множество
+// множеств констант).
+////////////////////////////////////////////////////////////////////////////////
+// 2. Организуем цикл по constant_set_set:
+	// 2.1. Получим узел из множества. Присвоим его переменной constant_set.
+	// 2.2. Найдём множество узлов, от которых идёт дуга принадлежности к узлу
+	// constant_set с атрибутом 2_. Запишем их в переменную possible_con_set
+	// (множество возможных связок).
+	////////////////////////////////////////////////////////////////////////////
+	// 2.3. Организуем цикл по possible_con_set:
+		// 2.3.1. Получим узел из множества. Присвоим его переменной
+		// possible_con.
+		// 2.3.2. Проверим, есть ли дуга принадлежности от отношения
+		// используемые константы* к узлу possible_con.
+		// 2.3.3. Если есть, то это нужная связка отношения. Найдём узел
+		// отношения под атрибутом 1_. Присвоим его переменной
+		// possible_definition (возможное определение). Если её нет, то перейдём
+		// к проверке следующей возможной связки.
+		// 2.3.4. Найдём множество узлов, от которых идёт дуга принадлежности к
+		// узлу possible_definition с атрибутом 2_. Запишем их в переменную
+		// possible_definition_rel_con_set (множество возможных связок отношения
+		// определение*).
+		////////////////////////////////////////////////////////////////////////
+		// 2.3.5. Организуем цикл по possible_definition_rel_con_set:
+			// 2.3.5.1. Получим узел из множества. Присвоим его переменной
+			// possible_definition_rel_con.
+			// 2.3.5.2. Проверим, есть ли дуга принадлежности от отношения
+			// определение* к узлу possible_definition_rel_con.
+			// 2.3.5.3. Если есть, то это нужная связка отношения. Найдём узел
+			// отношения под атрибутом 1_. Этот узел и будет одним из понятий,
+			// определяемых через целевое понятие. Если её нет, то перейдём к
+			// проверке следующей возможной связки отношения определение*.
+////////////////////////////////////////////////////////////////////////////////
+
+
+// 1. Найдём все узлы, от которых идёт дуга принадлежности к узлу target_concept
+// (целевое понятие). Запишем их в переменную constant_set_set (множество
+// множеств констант).
+searchSetStr3([
+	1_: assign_: node_: const_: node1,
+	2_: assign_: arc_: pos_: const_: arc2,
+	3_:  fixed_: target_concept,
+	set1_: assign_: constant_set_set
+])
+
+
+////////////////////////////////////////////////////////////////////////////////
+// 2. Организуем цикл по constant_set_set:
+label(constant_set_set_beg)
+	// 2.1. Получим узел из множества. Присвоим его переменной constant_set.
+	searchElStr3([
+		1_:  fixed_: constant_set_set,
+		2_: assign_: arc_: pos_: const_: arc2,
+		3_: assign_: node_: const_: constant_set
+	], , constant_set_set_end)
+	// Удалим его из множества.
+	eraseEl([ 1_: fixed_: arc2 ])
+		
+	// 2.2. Найдём множество узлов, от которых идёт дуга принадлежности к узлу
+	// constant_set с атрибутом 2_. Запишем их в переменную possible_con_set
+	// (множество возможных связок).
+	searchSetStr5([
+		1_: assign_: node_: const_: node1,
+		2_: assign_: arc_: pos_: const_: arc2,
+		3_:  fixed_: constant_set,
+		4_: assign_: arc_: pos_: const_: arc4,
+		5_:  fixed_: 2_,
+		set1_: assign_: possible_con_set
+	])
+
+	
+	////////////////////////////////////////////////////////////////////////////
+	// 2.3. Организуем цикл по possible_con_set:
+	label(possible_con_set_beg)
+		// 2.3.1. Получим узел из множества. Присвоим его переменной
+		// possible_con.
+		searchElStr3([
+			1_:  fixed_: possible_con_set,
+			2_: assign_: arc_: pos_: const_: arc2,
+			3_: assign_: node_: const_: possible_con
+		], , possible_con_set_end)
+		// Удалим его из множества.
+		eraseEl([ 1_: fixed_: arc2 ])
+		
+		// 2.3.2. Проверим, есть ли дуга принадлежности от отношения
+		// используемые константы* к узлу possible_con. Если её нет, то перейдём
+		// к проверке следующей возможной связки.
+		searchElStr3([
+			1_:  fixed_: used_constants_rel,
+			2_: assign_: arc_: pos_: const_: arc2,
+			3_:  fixed_: possible_con
+		], , possible_con_set_beg)
+		
+		// Добавим найденные элементы во временное множество:
+		genElStr3([
+			1_: assign_: temp_set,
+			2_: assign_: arc_: pos_: const_: arc,
+			3_:  fixed_: arc2
+		])
+		genElStr3([
+			1_:  fixed_: temp_set,
+			2_: assign_: arc_: pos_: const_: arc2,
+			3_:  fixed_: used_constants_rel
+		])
+		searchElStr3([
+			1_:  fixed_: constant_set,
+			2_: assign_: arc_: pos_: const_: arc2,
+			3_:  fixed_: target_concept
+		])
+		genElStr3([
+			1_:  fixed_: temp_set,
+			2_: assign_: arc_: pos_: const_: arc,
+			3_:  fixed_: arc2
+		])
+		genElStr3([
+			1_:  fixed_: temp_set,
+			2_: assign_: arc_: pos_: const_: arc2,
+			3_:  fixed_: target_concept
+		])
+		searchElStr5([
+			1_:  fixed_: possible_con,
+			2_: assign_: arc_: pos_: const_: arc2,
+			3_:  fixed_: constant_set,
+			4_: assign_: arc_: pos_: const_: arc4,
+			5_:  fixed_: 2_
+		])
+		genElStr3([
+			1_:  fixed_: temp_set,
+			2_: assign_: arc_: pos_: const_: arc,
+			3_:  fixed_: arc2
+		])
+		genElStr3([
+			1_:  fixed_: temp_set,
+			2_: assign_: arc_: pos_: const_: arc2,
+			3_:  fixed_: arc4
+		])
+		genElStr3([
+			1_:  fixed_: temp_set,
+			2_: assign_: arc_: pos_: const_: arc2,
+			3_:  fixed_: possible_con
+		])
+		genElStr3([
+			1_:  fixed_: temp_set,
+			2_: assign_: arc_: pos_: const_: arc2,
+			3_:  fixed_: constant_set
+		])
+		genElStr3([
+			1_:  fixed_: temp_set,
+			2_: assign_: arc_: pos_: const_: arc2,
+			3_:  fixed_: 2_
+		])
+		
+		// 2.3.3. Если есть, то это нужная связка отношения. Найдём узел
+		// отношения под атрибутом 1_. Присвоим его переменной
+		// possible_definition (возможное определение). 
+		searchElStr5([
+			1_:  fixed_: possible_con,
+			2_: assign_: arc_: pos_: const_: arc2,
+			3_: assign_: const_: possible_definition,
+			4_: assign_: arc_: pos_: const_: arc4,
+			5_:  fixed_: 1_
+		])
+		
+		// Добавим найденные элементы во временное множество:
+		genElStr3([
+			1_:  fixed_: temp_set,
+			2_: assign_: arc_: pos_: const_: arc,
+			3_:  fixed_: arc2
+		])
+		genElStr3([
+			1_:  fixed_: temp_set,
+			2_: assign_: arc_: pos_: const_: arc2,
+			3_:  fixed_: arc4
+		])
+		genElStr3([
+			1_:  fixed_: temp_set,
+			2_: assign_: arc_: pos_: const_: arc2,
+			3_:  fixed_: possible_definition
+		])
+		genElStr3([
+			1_:  fixed_: temp_set,
+			2_: assign_: arc_: pos_: const_: arc2,
+			3_:  fixed_: 1_
+		])
+		
+		// 2.3.4. Найдём множество узлов, от которых идёт дуга принадлежности к
+		// узлу possible_definition с атрибутом 2_. Запишем их в переменную
+		// possible_definition_rel_con_set (множество возможных связок отношения
+		// определение*).
+		searchSetStr5([
+			1_: assign_: node_: const_: node1,
+			2_: assign_: arc_: pos_: const_: arc2,
+			3_:  fixed_: possible_definition,
+			4_: assign_: arc_: pos_: const_: arc4,
+			5_:  fixed_: 2_,
+			set1_: assign_: possible_definition_rel_con_set
+		])
+		
+		
+		////////////////////////////////////////////////////////////////////////
+		// 2.3.5. Организуем цикл по possible_definition_rel_con_set:
+		label(possible_definition_rel_con_set_beg)
+			// 2.3.5.1. Получим узел из множества. Присвоим его переменной
+			// possible_definition_rel_con.
+			searchElStr3([
+				1_:  fixed_: possible_definition_rel_con_set,
+				2_: assign_: arc_: pos_: const_: arc2,
+				3_: assign_: node_: const_: possible_definition_rel_con
+			], , possible_definition_rel_con_set_end)
+			// Удалим его из множества.
+			eraseEl([ 1_: fixed_: arc2 ])
+			
+			// 2.3.5.2. Проверим, есть ли дуга принадлежности от отношения
+			// определение* к узлу possible_definition_rel_con. Если её нет, то
+			// перейдём к проверке следующей возможной связки отношения
+			// определение*.
+			searchElStr3([
+				1_:  fixed_: definition_rel,
+				2_: assign_: arc_: pos_: const_: arc2,
+				3_:  fixed_: possible_definition_rel_con
+			], , possible_definition_rel_con_set_beg)
+			
+			//~
+			//# printNl([ 1_: fixed_: /"\nTest: search_concepts_defined_by_indicated_concepts: procedure: search_concepts_defined_by_indicated_concepts: point 3.5: temp_set\n"/ ])
+			//# printEl([ 1_: fixed_: temp_set ])
+
+			// Добавим элементы временного множества в результирующее
+			// множество.
+			searchSetStr3([
+				1_:  fixed_: temp_set,
+				2_: assign_: arc_: pos_: const_: arc,
+				3_: assign_: const_: element,
+				set3_: fixed_: result_set
+			])
+			// Добавим найденные элементы в результирующее множество:
+			genElStr3([
+				1_:  fixed_: result_set,
+				2_: assign_: arc_: pos_: const_: arc,
+				3_:  fixed_: arc2
+			])
+			genElStr3([
+				1_:  fixed_: result_set,
+				2_: assign_: arc_: pos_: const_: arc2,
+				3_:  fixed_: definition_rel
+			])
+			searchElStr5([
+				1_:  fixed_: possible_definition_rel_con,
+				2_: assign_: arc_: pos_: const_: arc2,
+				3_:  fixed_: possible_definition,
+				4_: assign_: arc_: pos_: const_: arc4,
+				5_:  fixed_: 2_
+			])
+			genElStr3([
+				1_:  fixed_: result_set,
+				2_: assign_: arc_: pos_: const_: arc,
+				3_:  fixed_: arc2
+			])
+			genElStr3([
+				1_:  fixed_: result_set,
+				2_: assign_: arc_: pos_: const_: arc2,
+				3_:  fixed_: arc4
+			])
+			genElStr3([
+				1_:  fixed_: result_set,
+				2_: assign_: arc_: pos_: const_: arc2,
+				3_:  fixed_: possible_definition_rel_con
+			])
+			
+			// 2.3.5.3. Если есть, то это нужная связка отношения. Найдём узел
+			// отношения под атрибутом 1_. Этот узел и будет одним из понятий,
+			// определяемых через целевое понятие.
+			searchElStr5([
+				1_:  fixed_: possible_definition_rel_con,
+				2_: assign_: arc_: pos_: const_: arc2,
+				3_: assign_: const_: concept_defined_by_indicated_concept,
+				4_: assign_: arc_: pos_: const_: arc4,
+				5_:  fixed_: 1_
+			])
+	
+			// Добавим найденные элементы в результирующее множество:
+			genElStr3([
+				1_:  fixed_: result_set,
+				2_: assign_: arc_: pos_: const_: arc,
+				3_:  fixed_: arc2
+			])
+			genElStr3([
+				1_:  fixed_: result_set,
+				2_: assign_: arc_: pos_: const_: arc2,
+				3_:  fixed_: arc4
+			])
+			genElStr3([
+				1_:  fixed_: result_set,
+				2_: assign_: arc_: pos_: const_: arc2,
+				3_:  fixed_: concept_defined_by_indicated_concept
+			])
+			
+			nop(possible_definition_rel_con_set_beg)
+		label(possible_definition_rel_con_set_end)
+	
+	
+		nop(possible_con_set_beg)
+	label(possible_con_set_end)
+	
+	
+	nop(constant_set_set_beg)
+label(constant_set_set_end)
+
+
+return()
+end
+///////////////////////////////////////////////////////////////////Procedure End

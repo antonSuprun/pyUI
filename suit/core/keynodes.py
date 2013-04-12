@@ -135,6 +135,7 @@ class ui:
     nrel_template_user_cmd  =   session.find_keynode_full_uri(u"/ui/core/обобщенная формулировка команды*")
     
     cmd_mouse_move_obj      =   session.find_keynode_full_uri(u"/ui/core/ui_cmd_mouse_move_obj")
+    cmd_mouse_move_to_empty_place = session.find_keynode_full_uri(u"/ui/core/ui_cmd_mouse_move_to_empty_place")
     cmd_mouse_button_press  =   session.find_keynode_full_uri(u"/ui/core/ui_cmd_mouse_button_press")
     cmd_mouse_button_release=   session.find_keynode_full_uri(u"/ui/core/ui_cmd_mouse_button_release")
 
@@ -275,15 +276,15 @@ class ui:
     format_graph            =   session.find_keynode_full_uri(u"/ui/core/GRAPH")
     
     format_space            =   session.find_keynode_full_uri(u"/ui/core/SPACEx")
-
-    format_logic            =   session.find_keynode_full_uri(u"/ui/core/LOGICx")
     
     # command keynodes
     atom_command            =   session.find_keynode_full_uri(u"/ui/core/атомарная команда")
     noatom_command          =   session.find_keynode_full_uri(u"/ui/core/неатомарная команда")
     question_command        =   session.find_keynode_full_uri(u"/ui/core/команда вопрос")
     user                    =   session.find_keynode_full_uri(u"/ui/core/пользователь")
-    
+    rrel_active_user             =   session.find_keynode_full_uri(u"/ui/core/активный пользователь_")
+    user_name               =   session.find_keynode_full_uri(u"/ui/core/имя пользователя")
+    user_password           =   session.find_keynode_full_uri(u"/ui/core/пароль")
     
 class common:
     nrel_decomposition      =   session.find_keynode_full_uri(u"/etc/com_keynodes/декомпозиция*");

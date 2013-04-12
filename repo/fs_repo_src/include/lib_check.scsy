@@ -23,3 +23,7 @@ along with OSTIS.  If not, see <http://www.gnu.org/licenses/>.
 check_unit_of_measure = "/lib/check/check_unit_of_measure/check";
 check_linked_vars = "/lib/check/check_linked_vars/check_linked_vars";
 check_impl_with_conj = "/lib/check/check_impl_with_conj/check_impl_with_conj";
+check_fragment = "/lib/check/check_fragment/check_fragment";
+check_fragments_set = "/lib/check/check_fragments_set/check_fragments_set";
+check_relation_by_group = "/lib/check/check_relation_by_group/check";
+check_successful_production = "/lib/check/check_successful_production/check_successful_production";

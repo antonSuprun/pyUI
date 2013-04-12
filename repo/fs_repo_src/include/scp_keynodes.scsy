@@ -84,6 +84,7 @@ along with OSTIS.  If not, see <http://www.gnu.org/licenses/>.
 
 "call"                 = "/proc/keynode/call";
 "callReturn"           = "/proc/keynode/callReturn";
+"callExtReturn"		   = "/proc/keynode/callExtReturn";
 "contAssign"           = "/proc/keynode/contAssign";
 "contErase"            = "/proc/keynode/contErase";
 "eraseEl"              = "/proc/keynode/eraseEl";
@@ -161,6 +162,7 @@ sys_breakpoint		= "/proc/keynode/sys_breakpoint";
 sys_wait                = "/proc/keynode/sys_wait";
 
 sys_set_event_handler   = "/proc/keynode/sys_set_event_handler";
+sys_delete_event_handler   = "/proc/keynode/sys_delete_event_handler";
 
 // types of message box
 ui_confirm	= "/proc/keynode/ui_confirm";

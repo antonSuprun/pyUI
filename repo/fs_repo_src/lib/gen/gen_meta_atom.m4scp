@@ -46,8 +46,8 @@ procedure(gen_meta_atom,
 	//#search_bin_pair_end_proc;
 	node_copy=gen_meta_node;
 	check_linked_vars;
-	here=/"\n\nI have entered GMA!\n\n"/;
-	last=/"\n\nLAST:"/;
+	here=/""/;//#/"\n\nI have entered GMA!\n\n"/;
+	last=/""/;//#/"\n\nLAST:"/;
 	rel=nrel_copy;
 	//#oper="/operation/find_formula";
 ]],
@@ -62,7 +62,7 @@ procedure(gen_meta_atom,
 sys_get_location([1_: stat,2_: assign_: seg])
 sys_set_default_segment([1_: fixed_: seg])
 sys_spin_segment([1_: fixed_: seg,	2_: assign_: segments])
-//#printEl([1_: oper])
+//#//#printEl([1_: oper])
 printNl([1_: here])
 
 genEl([1_: assign_: node_: var_: resstat])
@@ -102,7 +102,10 @@ callReturn([
 ],next_const_node,next_const_node)
 label(const_nodes_done)
 
-//#printEl([1_: resstat])
+//#//#printEl([1_: resstat])
+ifVarAssign([1_: set],,no_erase_set1)
+eraseEl([1_: fixed_: set])
+label(no_erase_set1)
 //-------------------------------------------------------------------------------------------------------------------
 //////////////////////////////////////
 // Перебираем все переменные узлы исходного множества
@@ -155,7 +158,10 @@ callReturn([
 		]}
 ],next_var_node,next_var_node)
 label(var_nodes_done)
-//#printEl([1_: resstat])
+//#//#printEl([1_: resstat])
+ifVarAssign([1_: set],,no_erase_set2)
+eraseEl([1_: fixed_: set])
+label(no_erase_set2)
 //-------------------------------------------------------------------------------------------------------------------
 //////////////////////////////////////
 // Перебираем все переменные дуги исходного множества
@@ -179,7 +185,7 @@ searchElStr3([
 	2_: assign_: arc,
 	3_: assign_: node
 ],,var_undfs_done)
-//#printEl([1_: node])
+//#//#printEl([1_: node])
 genEl([1_: undf_: meta_: assign_: newnode])
 callReturn([
 	1_: fixed_: create_link,
@@ -192,7 +198,11 @@ callReturn([
 		]}
 ],next_var_undf,next_var_undf)
 label(var_undfs_done)
-//#printEl([1_: resstat])
+//#//#printEl([1_: resstat])
+ifVarAssign([1_: set],,no_erase_set3)
+eraseEl([1_: fixed_: set])
+label(no_erase_set3)
+
 //-------------------------------------------------------------------------------------------------------------------
 //////////////////////////////////////
 // Перебираем все неопределенные узлы исходного множества
@@ -238,7 +248,11 @@ callReturn([
 		]}
 ],next_var_undf1,next_var_undf1)
 label(var_undfs_done1)
-//#printEl([1_: resstat])
+//#//#printEl([1_: resstat])
+ifVarAssign([1_: set],,no_erase_set4)
+eraseEl([1_: fixed_: set])
+label(no_erase_set4)
+
 //-------------------------------------------------------------------------------------------------------------------
 //////////////////////////////////////
 // Устанавливаем начала и концы всех переменных дуг конечного множества
@@ -271,8 +285,8 @@ callReturn([
 			3_: assign_: arc
 		]}
 ])
-//#printEl([1_: node])
-//#printEl([1_: arc])
+//#//#printEl([1_: node])
+//#//#printEl([1_: arc])
 searchElStr3([
 	1_: assign_: fromnode,
 	2_: fixed_: arc,
@@ -300,8 +314,8 @@ callReturn([
 		]}
 ])
 
-//#printEl([1_: copyrel])
-//#printEl([1_: tonode])
+//#//#printEl([1_: copyrel])
+//#//#printEl([1_: tonode])
 
 ifType([1_: pos_: arc_: arc],,no_pos)
 genElStr3([
@@ -341,9 +355,11 @@ eraseEl([1_: tempstat])
 //#])
 
 //#printNl([1_: last])
-//#printEl([1_: resstat])
+//#//#printEl([1_: resstat])
 
 label(exit)
-
+ifVarAssign([1_: set],,no_erase_set5)
+eraseEl([1_: fixed_: set])
+label(no_erase_set5)
 return()
 end

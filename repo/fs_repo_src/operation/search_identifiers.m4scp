@@ -91,7 +91,7 @@ searchElStr3([
 	1_: fixed_: q_search_identifiers,
 	2_: assign_: const_: pos_: arc_: a,
 	3_: fixed_: question_node], ,finish_op)
-	
+
 /* call cycle to identifiers pairs for all elements in a question */
 callReturn([
 	1_: fixed_: search_base_cycle,

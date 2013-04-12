@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/general_node" idtf="" shapeColor="193" id="75699280" parent="0" x="255" y="300" haveBus="false">
+            <content type="1" mime_type="content/term" file_name=""><![CDATA[понятие прогрессивного полисиллогизма
+]]></content>
+        </node>
+        <node type="node/const/attribute" idtf="основной_" shapeColor="0" id="75698128" parent="0" left="0" top="0" right="69" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="17" y="361" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="Русский язык" shapeColor="0" id="75699712" parent="0" left="0" top="0" right="86" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="375" y="300" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/relation" idtf="идентификация*" shapeColor="0" id="75700000" parent="0" left="0" top="0" right="109" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="45" y="90" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="внешнее обозначение" shapeColor="0" id="75700288" parent="0" left="0" top="0" right="132" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="135" y="135" haveBus="true">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="Английский язык" shapeColor="0" id="75698560" parent="0" left="0" top="0" right="108" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="390" y="210" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/asymmetry" idtf="" shapeColor="0" id="75700432" parent="0" x="-60" y="135" haveBus="true">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/relation" idtf="синонимы*" shapeColor="0" id="75699568" parent="0" left="0" top="0" right="74" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="30" y="135" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="прогрессивный полисиллогизм" shapeColor="0" id="75697984" parent="0" left="0" top="0" right="186" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-60" y="45" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/general_node" idtf="" shapeColor="0" id="75699136" parent="0" x="255" y="210" haveBus="false">
+            <content type="1" mime_type="content/term" file_name=""><![CDATA[The progressive polisyllogism
+
+
+
+]]></content>
+        </node>
+        <pair type="pair/const/orient" idtf="" shapeColor="0" id="77776296" parent="0" id_b="75700432" id_e="75697984" b_x="-60" b_y="135" e_x="-60" e_y="45" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="77776128" parent="0" id_b="77352600" id_e="75699136" b_x="0" b_y="0" e_x="255" e_y="210" dotBBalance="0.136412" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="77775960" parent="0" id_b="77352600" id_e="75699280" b_x="0" b_y="0" e_x="255" e_y="300" dotBBalance="0.331901" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="77775792" parent="0" id_b="77352480" id_e="75699280" b_x="0" b_y="0" e_x="255" e_y="300" dotBBalance="0.419979" dotEBalance="0">
+            <points>
+                <point x="195" y="345"/>
+            </points>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="77775624" parent="0" id_b="77352480" id_e="75699136" b_x="0" b_y="0" e_x="255" e_y="210" dotBBalance="0.194415" dotEBalance="0">
+            <points>
+                <point x="195" y="240"/>
+            </points>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="77774280" parent="0" id_b="75698128" id_e="77775960" b_x="17" b_y="361" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.301178">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="77774448" parent="0" id_b="75700000" id_e="77776296" b_x="45" b_y="90" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.5">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="77773776" parent="0" id_b="75699712" id_e="75699280" b_x="375" b_y="300" e_x="255" e_y="300" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="77773944" parent="0" id_b="75698560" id_e="75699136" b_x="390" b_y="210" e_x="255" e_y="210" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="77774112" parent="0" id_b="75699568" id_e="75700432" b_x="30" b_y="135" e_x="-60" e_y="135" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <bus type="" idtf="" shapeColor="0" id="77352600" parent="0" owner="75700432" b_x="-60" b_y="149.5" e_x="-60" e_y="615">
+            <points/>
+        </bus>
+        <bus type="" idtf="" shapeColor="0" id="77352480" parent="0" owner="75700288" b_x="135" b_y="149.5" e_x="135" e_y="615">
+            <points/>
+        </bus>
+    </staticSector>
+</GWF>

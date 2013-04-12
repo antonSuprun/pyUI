@@ -57,8 +57,8 @@ procedure(gen_bad_result_of_find_value_production,
 	
 	stype_sheaf;
 	
-	here=/"\n\nI have entered gen_bad_result_of_find_value_production!!!\n\n"/;
-	exited=/"\n\nI have exited gen_bad_result_of_find_value_production!!!\n\n"/;
+	here=/""/;//#/"\n\nI have entered gen_bad_result_of_find_value_production!!!\n\n"/;
+	exited=/""/;//#/"\n\nI have exited gen_bad_result_of_find_value_production!!!\n\n"/;
 	
 	first=1_;
 	second=2_;

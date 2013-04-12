@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<GWF version="1.6">
+    <staticSector>
+        <node type="node/const/asymmetry" idtf="" shapeColor="193" id="29006952" parent="0" x="175.082" y="155.5" haveBus="false">
+            <content type="0" mime_type="content/base" file_name=""/>
+        </node>
+        <node type="node/const/relation" idtf="пояснение*" shapeColor="0" id="29007528" parent="0" left="0" top="0" right="75" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="132.082" y="211.5" haveBus="false">
+            <content type="0" mime_type="content/base" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="Русский язык" shapeColor="0" id="29008968" parent="0" left="0" top="0" right="86" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="536.082" y="126.5" haveBus="false">
+            <content type="0" mime_type="content/base" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="текст" shapeColor="0" id="29008824" parent="0" left="0" top="0" right="47" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="410.082" y="84.5" haveBus="false">
+            <content type="0" mime_type="content/base" file_name=""/>
+        </node>
+        <node type="node/const/general_node" idtf="" shapeColor="0" id="29007096" parent="0" x="380.082" y="207.5" haveBus="false">
+            <content type="1" mime_type="content/binary" file_name=""><![CDATA[Высказывание - повествовательное предложение (утверждение, суждение), 
+о котором имеет смысл  говорить,  что оно  истинно  или  ложно. ]]></content>
+        </node>
+        <node type="node/const/group" idtf="высказывание" shapeColor="0" id="29005656" parent="0" left="0" top="0" right="90" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="71.0582" y="93.9666" haveBus="true">
+            <content type="0" mime_type="content/base" file_name=""/>
+        </node>
+        <pair type="pair/const/orient" idtf="" shapeColor="0" id="62966992" parent="0" id_b="29006952" id_e="62645336" b_x="175.082" b_y="155.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.49517">
+            <points/>
+        </pair>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="62966832" parent="0" id_b="29008968" id_e="29007096" b_x="536.082" b_y="126.5" e_x="380.082" e_y="207.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="62966672" parent="0" id_b="29008824" id_e="29007096" b_x="410.082" b_y="84.5" e_x="380.082" e_y="207.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="62966512" parent="0" id_b="29007528" id_e="62966992" b_x="132.082" b_y="211.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.305109">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="62792584" parent="0" id_b="29006952" id_e="29007096" b_x="175.082" b_y="155.5" e_x="380.082" e_y="207.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <bus type="" idtf="" shapeColor="0" id="62645336" parent="0" owner="29005656" b_x="70.9201" b_y="108.466" e_x="70.0817" e_y="196.5">
+            <points/>
+        </bus>
+    </staticSector>
+</GWF>

@@ -35,10 +35,8 @@ along with OSTIS.  If not, see <http://www.gnu.org/licenses/>.
 
 program(init_op,
 [[	
-	//#req = "/seb/planimetry/запрос истинности высказыания";
 	q_gen_all_accessory_links;
 	catch_output_arc;
-	//#here=/"I am here"/;
 ]],
 [{
 	nodeVar
@@ -279,6 +277,14 @@ genElStr5([
 
 //вывод выходного множества элементов
 //#ui_output([1_:fixed_: sheet, 2_:fixed_:u])
-
+ifVarAssign([1_: elsels],,no_erase_set1)
+eraseEl([1_: fixed_: elsels])
+label(no_erase_set1)
+ifVarAssign([1_: n],,no_erase_set2)
+eraseEl([1_: fixed_: n])
+label(no_erase_set2)
+ifVarAssign([1_: vse_ontoshenia],,no_erase_set3)
+eraseEl([1_: fixed_: vse_ontoshenia])
+label(no_erase_set3)
 return()
 end

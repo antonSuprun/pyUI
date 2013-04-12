@@ -27,16 +27,38 @@ q_atom = "/etc/questions/атомарный вопрос";
 q_noatom = "/etc/questions/неатомарный вопрос";
 q_active = "/etc/questions/активный вопрос";
 q_finished = "/etc/questions/отработанный вопрос";
-q_successful = "/etc/questions/успешный вопрос";
+q_succesful = "/etc/questions/успешный вопрос";
 
 q_search_subsets = "/etc/questions/поиск подмножеств";
-q_search_supersets = "/etc/questions/поиск надмножеств";
+//#q_search_supersets = "/etc/questions/поиск надмножеств";
 q_search_all_pos_in_arcs = "/etc/questions/поиск позитивных входящих дуг";
 q_search_all_pos_out_arcs = "/etc/questions/поиск позитивных выходящих дуг";
+q_search_all_pos_in_arcs_with_attr = "/etc/questions/поиск позитивных входящих дуг с атрибутами";
+q_search_all_pos_out_arcs_with_attr = "/etc/questions/поиск позитивных выходящих дуг с атрибутами";
 q_search_authors = "/etc/questions/поиск авторов";
+q_search_examples = "/etc/questions/поиск примеров";
 q_search_identifiers = "/etc/questions/поиск внешних идентификаторов";
 q_search_decomposition = "/etc/questions/поиск декомпозиции объекта";
 q_search_illustration = "/etc/questions/поиск иллюстрации объекта";
+q_atomic_statement_validity = "/etc/questions/запрос истинности атомарного высказывания";
+q_validity = "/etc/questions/запрос истинности";
+q_atomic_statement_validity_prov = "/etc/questions/запрос доказательства истинности атомарного высказывания";
+q_impl_statement_validity_prov = "/etc/questions/запрос доказательства истинности импликативного высказывания";
+
+q_search_antipode = "/etc/questions/поиск антипода объекта";
+q_search_definition = "/etc/questions/поиск определения";
+q_search_rel_connect_same_concepts = "/etc/questions/поиск отношения, области определения которых являются надмножеством описываемого множества и каждая связка которых связывает элементы описываемого множества между собой";
+q_search_rel_connect_diff_concepts = "/etc/questions/поиск отношения, области определения которых являются надмножеством описываемого множества и связки которых, в общем случае, связывают элементы описываемого множества с другими объектами";
+q_search_rel_intersect_with_concept = "/etc/questions/поиск отношения, области определения которых строго пересекаются с описываемым множеством";
+q_search_rel_schema = "/etc/questions/поиск схемы отношения";
+q_search_rel_domain = "/etc/questions/поиск домена";
+q_search_partition = "/etc/questions/поиск разбиения";
+q_search_explanation = "/etc/questions/поиск пояснения";
+q_search_prototype = "/etc/questions/поиск аналогов объекта";
+q_search_bibliography = "/etc/questions/поиск библиографии";
+q_search_proof = "/etc/questions/поиск доказательства";
+q_search_statement = "/etc/questions/поиск утверждений";
+q_search_all_supersets = "/etc/questions/поиск всех надмножеств";
 
 q_verification = "/etc/questions/запрос верификации";
 q_add_child_command = "/etc/questions/запрос добавления дочерней команды";
@@ -47,20 +69,41 @@ q_erase_set_elements = "/etc/questions/запрос удаления элементов множества";
 q_el_content = "/etc/questions/запрос содержимого элемента";
 
 q_square = "/etc/questions/запрос площади";
+q_perimeter = "/etc/questions/запрос периметра";
+q_length = "/etc/questions/запрос длины";
 
-q_addition = "/etc/questions/запрос суммы";
-q_multiplication = "/etc/questions/запрос произведения";
-q_exponention = "/etc/questions/запрос степени";
+q_arifmetic_routine = "/etc/questions/запрос арифметического действия";
 q_calculation = "/etc/questions/запрос вычисления";
 
 q_statement_validity = "/etc/questions/запрос истинности высказывания";
 q_var_value = "/etc/questions/запрос значения величины";
 q_postorder_tree_search = "/etc/questions/запрос поиска в глубину";
 q_production = "/etc/questions/запрос продукции";
+q_gen_private_impl = "/etc/questions/запрос генерации частной импликации";
 q_gen_all_accessory_links = "/etc/questions/запрос генерации всех связок принадлежности";
 q_gen_all_trans_relation_links = "/etc/questions/запрос генерации всех связок отношения";
+q_conclusion_fragmentation = "/etc/questions/запрос разбиения заключения";
+q_orient_binary_relation_link = "/etc/questions/запрос связки ориентированного бинарного отношения";
+q_noorient_relation_link = "/etc/questions/запрос связки неориентированного отношения";
 
 nrel_action_area = "/etc/questions/область действия вопроса*";
 nrel_key_fragment = "/etc/questions/ключевой фрагмент вопроса*";
 nrel_answer = "/etc/questions/ответ*";
 nrel_general_formulation = "/etc/questions/обобщенная формулировка вопроса*";
+
+q_search_bin_rel = "/etc/questions/поиск бинарных отношений";
+q_search_definition_range = "/etc/questions/поиск области определения";
+q_search_id_rules = "/etc/questions/поиск правил идентификации элементов";
+q_search_translation = "/etc/questions/поиск трансляции";
+q_search_statements = "/etc/questions/поиск утверждений";
+q_search_example_concepts = "/etc/questions/поиск понятий примера";
+q_search_similarities = "/etc/questions/поиск сходств";
+q_search_axioms = "/etc/questions/поиск аксиом";
+q_search_full_semantic_neighbourhood = "/etc/questions/поиск полной семантической окрестности";
+q_search_concepts_defined_by_indicated_concepts = "/etc/questions/поиск понятий, определяемых через указанные понятия";
+q_search_translation = "/etc/questions/поиск трансляции";
+
+q_statement_appliance = "/etc/questions/запрос применения высказывания";
+
+q_simple_production_generation = "/etc/questions/запрос генерации простой продукции";
+q_simple_eq_generation = "/etc/questions/запрос генерации простой эквиваленции";

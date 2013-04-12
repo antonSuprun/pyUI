@@ -24,8 +24,9 @@ along with OSTIS.  If not, see <http://www.gnu.org/licenses/>.
 /////////////////////////////////////////////////////
 //        File: erase_sys_gen_unpresented_params.m4scp
 // Description:
-// Файл содержит процедуру удаления параметров системнойго оператора sys_search
-// 1-й аргумент - исходный параметр
+// Файл содержит процедуру удаления параметров системнойго оператора sys_gen
+// 1-й аргумент - исходный шаблон
+// 2-й аргумент - исходные параметры
 /////////////////////////////////////////////////////
 // 		Author: Daniil Shunkevich
 //        Date: 11.01.11
@@ -43,9 +44,9 @@ procedure(erase_sys_gen_unpresented_params,
 	2_: in_: params
 ]}
 )
-sys_get_location([1_: template,2_: assign_: seg])
+sys_get_location([1_: template, 2_: assign_: seg])
 sys_set_default_segment([1_: fixed_: seg])
-sys_spin_segment([1_: fixed_: seg,	2_: assign_: segments])
+sys_spin_segment([1_: fixed_: seg, 2_: assign_: segments])
 
 searchSetStr3([
 	1_: fixed_: params,
@@ -74,8 +75,6 @@ searchElStr5([
 	4_: assign_: const_: pos_: arc1,
 	5_: fixed_: 1_
 ],,next_node)
-//#printNl([1_: /"ELEM"/])
-//#printEl([1_: elem])
 searchElStr3([
 	1_: fixed_: template,
 	2_: assign_: const_: pos_: arc,
@@ -84,5 +83,8 @@ searchElStr3([
 eraseEl([1_: fixed_: node],next_node,next_node)
 
 label(exit)
+ifVarAssign([1_: set],,no_erase_set)
+eraseEl([1_: fixed_: set])
+label(no_erase_set)
 return()
 end

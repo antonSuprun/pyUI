@@ -10,7 +10,7 @@ procedure(print_sys_search,
 	
 ]],
 [{	
-	val,value,values,result,abc,t,template,arc,arc1,seg,segments,node
+	val,value,values,result,abc,t,template,arc,arc1,seg,segments,node,node1,values1,temp
 }],
 {[		
 	1_: in_: template
@@ -22,21 +22,20 @@ sys_spin_segment([1_: fixed_: seg,	2_: assign_: segments])
 printNl([1_: /"Print template:"/])
 printEl([1_: template])
 
-//#searchElStr3([
-//#	1_: fixed_: template,
-//#	2_: assign_: arc,
-//#	3_: assign_: value
-//#])
+searchElStr3([
+	1_: fixed_: template,
+	2_: assign_: arc,
+	3_: assign_: value
+])
 
 //#printEl([1_: value])
 
 searchSetStr3([
 	1_: fixed_: template,
-	2_: assign_: arc,
-	3_: assign_: abc,
+	2_: assign_: pos_: arc,
+	3_: assign_: node_: abc,
 	set3_: assign_: values
 ])
-
 
 label(next_value)
 ifVarAssign([1_: node],,noerase)
@@ -46,13 +45,42 @@ eraseElStr3([
 	3_: fixed_: node
 ])
 label(noerase)
+
 searchElStr3([
 	1_: fixed_: values,
 	2_: assign_: arc,
 	3_: assign_: node
 ],,exit)
+printNl([1_: /"ARC"/])
+printEl([1_: arc])
+
 printNl([1_: /"CHILD"/])
-printEl([1_: node],next_value,next_value)
+printEl([1_: node])
+//#nop(next_value)
+
+searchSetStr3([
+	1_: fixed_: node,
+	2_: assign_: arc,
+	3_: assign_: abc,
+	set3_: assign_: values1
+])
+
+label(next_value1)
+ifVarAssign([1_: node1],,noerase1)
+eraseElStr3([
+	1_: fixed_: values1,
+	2_: assign_: f_: arc,
+	3_: fixed_: node1
+])
+label(noerase1)
+searchElStr3([
+	1_: fixed_: values1,
+	2_: assign_: arc,
+	3_: assign_: node1
+],,next_value)
+printNl([1_: /"CHILD OF CHILD"/])
+printEl([1_: node1],next_value1,next_value1)
+
 
 label(exit)
 return()

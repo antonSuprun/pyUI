@@ -1,8 +1,8 @@
 #include "ordinal.scsy"
 #include "meta_info.scsy"
 #include "ui_keynodes.scsy"
-com_keynodes_src\bel_lang.gwf
 com_keynodes_src\com_keynodes.gwf
-com_keynodes_src\eng_lang.gwf
-com_keynodes_src\rus_lang.gwf
+com_keynodes_src\solver_logic\simple_eq_generation.gwf
+com_keynodes_src\solver_logic\simple_impl_production.gwf
+com_keynodes_src\solver_strategy\postorder_tree_search.gwf
 

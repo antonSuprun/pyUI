@@ -46,12 +46,12 @@ procedure(search_first_and_second,
 	second=2_;
 	
 	//#отладочная информация, закомментировать или убрать
-	find_first=/"\n\nI find first!\n\n"/;
-	not_find_first=/"\n\nI don't find first!\n\n"/;
-	find_second=/"\n\nI find second!\n\n"/;
-	not_find_second=/"\n\nI don't find second!\n\n"/;
-	here=/"\n\nI have entered search_first_and_second!!!\n\n"/;
-	exited=/"\n\nI have exited search_first_and_second!!!\n\n"/;
+	find_first=/""/;//#/"\n\nI find first!\n\n"/;
+	not_find_first=/""/;//#/"\n\nI don't find first!\n\n"/;
+	find_second=/""/;//#/"\n\nI find second!\n\n"/;
+	not_find_second=/""/;//#/"\n\nI don't find second!\n\n"/;
+	here=/""/;//#/"\n\nI have entered search_first_and_second!!!\n\n"/;
+	exited=/""/;//#/"\n\nI have exited search_first_and_second!!!\n\n"/;
 	
 ]],
 [{	

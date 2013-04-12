@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/general_node" idtf="" shapeColor="0" id="100153824" parent="0" x="361.53" y="377.5" haveBus="false">
+            <content type="1" mime_type="content/term" file_name=""><![CDATA[повторенное дважды отрицание ведет к утверждению]]></content>
+        </node>
+        <node type="node/const/group" idtf="текст" shapeColor="0" id="100478672" parent="0" left="0" top="0" right="47" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="361.53" y="302.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/asymmetry" idtf="" shapeColor="0" id="100479968" parent="0" x="106.53" y="377.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/nopredmet" idtf="Логика" shapeColor="0" id="100479248" parent="0" left="0" top="0" right="50" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="301.53" y="227.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="Русский язык" shapeColor="0" id="100478960" parent="0" left="0" top="0" right="86" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="436.53" y="302.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/relation" idtf="определение*" shapeColor="0" id="100479824" parent="0" left="0" top="0" right="87" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="31.5299" y="227.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/nopredmet" idtf="Логика" shapeColor="0" id="100480112" parent="0" left="0" top="0" right="50" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="166.53" y="122.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/nopredmet" idtf="высказывание" shapeColor="0" id="100480256" parent="0" left="0" top="0" right="90" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="181.53" y="197.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/attribute" idtf="определение_" shapeColor="0" id="100478816" parent="0" left="0" top="0" right="87" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="241.53" y="287.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/relation" idtf="трансляция*" shapeColor="0" id="100152960" parent="0" left="0" top="0" right="87" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="166.53" y="332.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="теория" shapeColor="0" id="100153104" parent="0" left="0" top="0" right="52" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="106.53" y="167.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/attribute" idtf="определяемое понятие_" shapeColor="0" id="100153248" parent="0" left="0" top="0" right="150" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="46.5299" y="77.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="закон двойного отрицания" shapeColor="0" id="100153392" parent="0" left="0" top="0" right="165" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-43.4701" y="47.5" haveBus="true">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/nopredmet" idtf="Опр.(закон двойного отрицания)" shapeColor="0" id="100153680" parent="0" left="0" top="0" right="199" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="107.53" y="303.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <pair type="pair/const/orient" idtf="" shapeColor="0" id="105233792" parent="0" id_b="100479968" id_e="100153680" b_x="106.53" b_y="377.5" e_x="107.53" e_y="303.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/orient" idtf="" shapeColor="0" id="105233288" parent="0" id_b="99072128" id_e="100153680" b_x="0" b_y="0" e_x="107.53" e_y="303.5" dotBBalance="0.696093" dotEBalance="0">
+            <points/>
+        </pair>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="105234800" parent="0" id_b="100478960" id_e="100153824" b_x="436.53" b_y="302.5" e_x="361.53" e_y="377.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="105230600" parent="0" id_b="100478816" id_e="105236984" b_x="241.53" b_y="287.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.446131">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="105232616" parent="0" id_b="100478672" id_e="100153824" b_x="361.53" b_y="302.5" e_x="361.53" e_y="377.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="105237824" parent="0" id_b="100153104" id_e="100480112" b_x="106.53" b_y="167.5" e_x="166.53" e_y="122.5" dotBBalance="0" dotEBalance="0">
+            <points>
+                <point x="166.53" y="167.5"/>
+            </points>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="105237320" parent="0" id_b="100479968" id_e="100153824" b_x="106.53" b_y="377.5" e_x="361.53" e_y="377.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="105236312" parent="0" id_b="100480256" id_e="100153680" b_x="181.53" b_y="197.5" e_x="107.53" e_y="303.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="105231608" parent="0" id_b="100152960" id_e="105233792" b_x="166.53" b_y="332.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.663043">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="105236984" parent="0" id_b="100479248" id_e="100153680" b_x="301.53" b_y="227.5" e_x="107.53" e_y="303.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="105237656" parent="0" id_b="100480112" id_e="99072128" b_x="166.53" b_y="122.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.175109">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="105236816" parent="0" id_b="100153248" id_e="105237656" b_x="46.5299" b_y="77.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.539642">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="105237152" parent="0" id_b="100479824" id_e="105233288" b_x="31.5299" b_y="227.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.553506">
+            <points/>
+        </arc>
+        <bus type="" idtf="" shapeColor="0" id="99072128" parent="0" owner="100153392" b_x="-43.4701" b_y="62" e_x="-43.4701" e_y="407.5">
+            <points/>
+        </bus>
+    </staticSector>
+</GWF>

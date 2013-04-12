@@ -22,12 +22,12 @@ procedure(search_if_and_then,
 	second=2_;
 	
 	//#отладочная информация, закомментировать или убрать
-	find_if=/"\n\nI find if!\n\n"/;
-	not_find_if=/"\n\nI don't find if!\n\n"/;
-	find_then=/"\n\nI find then!\n\n"/;
-	not_find_then=/"\n\nI don't find then!\n\n"/;
-	here=/"\n\nI have entered get_if_then!!!\n\n"/;
-	exited=/"\n\nI have exited get_if_then!!!\n\n"/;
+	find_if=/""/;//#/"\n\nI find if!\n\n"/;
+	not_find_if=/""/;//#/"\n\nI don't find if!\n\n"/;
+	find_then=/""/;//#/"\n\nI find then!\n\n"/;
+	not_find_then=/""/;//#/"\n\nI don't find then!\n\n"/;
+	here=/""/;//#/"\n\nI have entered get_if_then!!!\n\n"/;
+	exited=/""/;//#/"\n\nI have exited get_if_then!!!\n\n"/;
 	
 ]],
 [{	

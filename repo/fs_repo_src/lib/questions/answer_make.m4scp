@@ -33,7 +33,6 @@ along with OSTIS.  If not, see <http://www.gnu.org/licenses/>.
 #include "etc_questions.scsy"
 #include "lib_segment.scsy"
 #include "meta_info.scsy"
-#include "lib_questions.scsy"
 
 /*!
 	Generate answer relation for a question.
@@ -49,7 +48,6 @@ procedure(answer_make,
 	open_segment;	// procedure for segment opening
 	// meta-info
 	stype_sheaf;
-	mark_as_succesful;
 ]],
 [{	// variables
 
@@ -66,13 +64,6 @@ procedure(answer_make,
 	2_:	in_: answer_node	// node that designate answer
 ]}
 )
-/* mark question as successful */
-callReturn([
-	1_: fixed_: mark_as_successful,
-	2_: fixed_: {[
-		1_: question_node
-		]}
-	])
 
 /* need to set segment that contains question node as default to generate answer in it */
 sys_get_location([1_: fixed_: question_node, 2_: assign_: segment])	

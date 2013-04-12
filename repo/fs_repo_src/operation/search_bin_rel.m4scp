@@ -1,0 +1,443 @@
+/*
+-----------------------------------------------------------------------------
+This source file is part of OSTIS (Open Semantic Technology for Intelligent Systems)
+For the latest info, see http://www.ostis.net
+
+Copyright (c) 2010 OSTIS
+
+OSTIS is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+OSTIS is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with OSTIS.  If not, see <http://www.gnu.org/licenses/>.
+-----------------------------------------------------------------------------
+*/
+
+//------------------------------------------------------------------------------
+//         File: search_bin_rel.m4scp
+//  Description: File contains operation for search of binary relation.
+//------------------------------------------------------------------------------
+//       Author: Ivan Kosik	
+//         Date: 25.02.12
+
+
+//~
+#include "scp_keynodes.scsy"
+#include "etc_questions.scsy"
+#include "com_keynodes.scsy"
+#include "_keynodes.scsy"
+#include "lib_search.scsy"
+#include "lib_set.scsy"
+#include "lib_answer.scsy"
+
+
+///////////////////////////////////////////////////////////////Program Beginning
+// Program that initialize operation:
+program(init_op,
+[[
+	q_initiated;
+	run_op;
+	catch_output_arc;
+]],
+[{
+}]
+)
+
+
+//~
+//# printNl([ 1_: fixed_: /"\nTest: search_bin_rel: program: init_op: point 1.1\n"/ ])
+
+// Subscribe to handle output arcs from "initiated question" node:
+sys_set_event_handler([
+	1_: fixed_: catch_output_arc,
+	2_: fixed_: run_op,
+	3_: fixed_: { 1_: q_initiated }
+])
+
+//~
+//# printNl([ 1_: fixed_: /"\nTest: search_bin_rel: program: init_op: point 1.2\n"/ ])
+
+return()
+end
+/////////////////////////////////////////////////////////////////////Program End
+/////////////////////////////////////////////////////////////Procedure Beginning
+// Procedure that process question and make answer:
+procedure(run_op,
+[[
+	q_search_bin_rel;
+	search_bin_rel;
+	rel_attr = "/etc/com_keynodes/отношение_";
+]],
+[{
+	// Input parameters:
+	descr, element, arc, question_node, //~ descr, element, arc ?
+	// Other variables:
+	segment, arc2, result, descr2, //~
+	node3, arc2, arc4, question_node_set, t_seg, rel, element
+}],
+{[
+	1_: in_: descr,
+	2_: in_: element,
+	3_: in_: arc,
+	4_: in_: question_node
+]}
+)
+
+
+//~
+//# printNl([ 1_: fixed_: /"\nTest: search_bin_rel: procedure: run_op: point 2.1: q_search_bin_rel:\n"/ ])
+//# printEl([ 1_: fixed_: q_search_bin_rel ])
+
+// Need to set segment that contains question node as default to generate answer
+// in it:
+sys_get_location([ 1_: fixed_: question_node, 2_: assign_: segment ])
+//# sys_open_segment([ 1_: fixed_: segment ])
+sys_spin_segment([ 1_: fixed_: segment, 2_: assign_: t_seg ])
+sys_set_default_segment([ 1_: fixed_: segment ])
+
+searchElStr3([
+	1_:  fixed_: q_search_bin_rel,
+	2_: assign_: const_: pos_: arc_: arc2,
+	3_:  fixed_: question_node
+], , goto_end)
+
+//# //~
+//# printNl([ 1_: fixed_: /"\nTest: search_bin_rel: procedure: run_op: point 2.15: question_node:\n"/ ])
+//# printEl([ 1_: fixed_: question_node ])
+
+// Найдём узел бинарного отношения, которое нужно найти для указанных объектов:
+searchElStr5([
+	1_:  fixed_: question_node,
+	2_: assign_: const_: pos_: arc_: arc2,
+	3_: assign_: const_: rel,
+	4_: assign_: const_: pos_: arc_: arc4,
+	5_:  fixed_: rel_attr
+], , goto_end)
+
+// Удалим узел отношения из множества узлов вопроса:
+eraseEl([ 1_: fixed_: arc2 ])
+
+//~
+//# printNl([ 1_: fixed_: /"\nTest: search_bin_rel: procedure: run_op: point 2.22: rel:\n"/ ])
+//# printEl([ 1_: fixed_: rel ])
+
+// Найдём все объекты, для которых нужно найти бинарное отношение:
+searchSetStr3([
+	1_:  fixed_: question_node,
+	2_: assign_: const_: pos_: arc_: arc2,
+	3_: assign_: const_: node3,
+	set3_: assign_: question_node_set
+], , goto_end)
+
+//~
+//# printNl([ 1_: fixed_: /"\nTest: search_bin_rel: procedure: run_op: point 2.2: question_node_set:\n"/ ])
+//# printEl([ 1_: fixed_: question_node_set ])
+
+// Создадим результирующее множество:
+genEl([ 1_: assign_: node_: const_: result ])
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Цикл по узлам вопроса. Определим, какой это тип бинарного отношения (целевой
+// узел под атрибутом 1_ или под атрибутом 2_:
+label(question_node_set_beg)
+	// Получим узел из множества. Если во множестве нет узлов, то перейдём к
+	// формированию ответа:
+	searchElStr3([
+		1_:  fixed_: question_node_set,
+		2_: assign_: const_: pos_: arc_: arc,
+		3_: assign_: const_: node3
+	], , question_node_set_end)
+	// Удалим узел из множества:
+	eraseEl([ 1_: fixed_: arc ])
+	
+	// Вызовем процедуру поиска бинарного отношения для текущего узла, которая
+	// проверяет его под атрибутом 1:
+	//    O
+	//    |
+	//    V
+    // O=====>O
+	callReturn([
+		1_: fixed_: search_base_rel,
+		2_: fixed_: {[
+			1_: node3,
+			2_: rel,
+			3_: result
+		]}
+	]) //~ descr2
+	
+	// Проверяем, нашли ли мы что-нибудь. Если да, то у данного отношения
+	// целевой узел находится под атрибутом 1_. Поэтому для остальных узлов
+	// (если они есть) сразу вызываем процедуру search_base_rel:
+	searchElStr3([
+		1_:  fixed_: result,
+		2_: assign_: const_: pos_: arc_: arc,
+		3_: assign_: const_: element
+	], goto_search_base_rel)
+	
+	// Вызовем процедуру поиска бинарного отношения для текущего узла, которая
+	// проверяет его под атрибутом 2:
+	//     O
+	//     |
+	//     V
+    // O<=====O--->O
+	callReturn([
+		1_: fixed_: search_bin_rel,
+		2_: fixed_: {[
+			1_: node3,
+			2_: rel,
+			3_: result
+		]}
+	]) //~ descr
+	
+	// Проверяем, нашли ли мы что-нибудь. Если да, то у данного отношения
+	// целевой узел находится под атрибутом 2_. Поэтому для остальных узлов
+	// сразу вызываем процедуру search_bin_rel:
+	searchElStr3([
+		1_:  fixed_: result,
+		2_: assign_: const_: pos_: arc_: arc,
+		3_: assign_: const_: element
+	], goto_search_bin_rel)
+
+	nop(question_node_set_beg)
+////////////////////////////////////////////////////////////////////////////////
+
+
+label(goto_search_base_rel)
+////////////////////////////////////////////////////////////////////////////////
+// Цикл по узлам вопроса. Для каждого узла вызовем процедуру search_base_rel:
+label(question_node_set_beg_1)
+	// Получим узел из множества. Если во множестве нет узлов, то перейдём к
+	// формированию ответа:
+	searchElStr3([
+		1_:  fixed_: question_node_set,
+		2_: assign_: const_: pos_: arc_: arc,
+		3_: assign_: const_: node3
+	], , question_node_set_end)
+	// Удалим узел из множества:
+	eraseEl([ 1_: fixed_: arc ])
+	
+	// Вызовем процедуру поиска бинарного отношения для текущего узла, которая
+	// проверяет его под атрибутом 1:
+	//    O
+	//    |
+	//    V
+    // O=====>O
+	callReturn([
+		1_: fixed_: search_base_rel,
+		2_: fixed_: {[
+			1_: node3,
+			2_: rel,
+			3_: result
+		]}
+	]) //~ descr2
+	
+	nop(question_node_set_beg_1)
+////////////////////////////////////////////////////////////////////////////////
+
+
+label(goto_search_bin_rel)
+////////////////////////////////////////////////////////////////////////////////
+// Цикл по узлам вопроса. Для каждого узла вызовем процедуру search_bin_rel:
+label(question_node_set_beg_2)
+	// Получим узел из множества. Если во множестве нет узлов, то перейдём к
+	// формированию ответа:
+	searchElStr3([
+		1_:  fixed_: question_node_set,
+		2_: assign_: const_: pos_: arc_: arc,
+		3_: assign_: const_: node3
+	], , question_node_set_end)
+	// Удалим узел из множества:
+	eraseEl([ 1_: fixed_: arc ])
+		
+	// Вызовем процедуру поиска бинарного отношения для текущего узла, которая
+	// проверяет его под атрибутом 2:
+	//     O
+	//     |
+	//     V
+    // O<=====O--->O
+	callReturn([
+		1_: fixed_: search_bin_rel,
+		2_: fixed_: {[
+			1_: node3,
+			2_: rel,
+			3_: result
+		]}
+	]) //~ descr
+	
+	nop(question_node_set_beg_2)
+////////////////////////////////////////////////////////////////////////////////
+
+
+label(question_node_set_end)
+
+// Make answer:
+callReturn([
+	1_: fixed_: answer_make,
+	2_: fixed_: {[
+		1_: question_node,
+		2_: result
+	]}
+], , , , goto_error) //~ descr2
+
+//~
+//# printNl([ 1_: fixed_: /"\nTest: search_bin_rel: procedure: run_op: point 2.3: result\n"/ ])
+//# printEl([ 1_: fixed_: result ])
+
+return()
+
+label(goto_error)
+
+//~
+//# printNl([ 1_: fixed_: /"\nTest: search_bin_rel: procedure: run_op: point 2.3: RUNTIME ERROR\n"/ ])
+
+label(goto_end)
+return()
+end
+///////////////////////////////////////////////////////////////////Procedure End
+/////////////////////////////////////////////////////////////Procedure Beginning
+// Procedure that search for binary relation of target node:
+procedure(search_bin_rel,
+[[
+]],
+[{
+	// Parameters:
+	target,
+	rel,
+	result_set,
+	// Other variables:
+	possible_con_set, possible_con, attr_1, temp_set, element,
+	node1, node3, arc, arc2, arc4
+}],
+{[
+	1_: in_: target,
+	2_: in_: rel,
+	3_: in_: out_: result_set
+]}
+)
+
+
+// Найдём множество возможных связок отношений:
+searchSetStr5([
+	1_: assign_: node_: const_: node3,
+	2_: assign_: arc_: pos_: const_: arc2,
+	3_:  fixed_: target,
+	4_: assign_: arc_: pos_: const_: arc4,
+	5_:  fixed_: 2_,
+	set1_: assign_: possible_con_set
+])
+
+////////////////////////////////////////////////////////////////////////////////
+// Цикл по всем элементам множества предполагаемых связок отношений:
+label(possible_con_set_beg)
+	// Получим связку из множества предполагаемых связок отношений и удалим её
+	// из этого множества:
+	searchElStr3([
+		1_:  fixed_: possible_con_set,
+		2_: assign_: arc_: pos_: const_: arc2,
+		3_: assign_: node_: const_: possible_con
+	], , possible_con_set_end)
+	eraseEl([ 1_: fixed_: arc2 ])
+
+	// Проверим, есть ли дуга от отношения rel к этой связке:
+	searchElStr3([
+		1_:  fixed_: rel,
+		2_: assign_: arc_: pos_: const_: arc,
+		3_:  fixed_: possible_con
+	], , possible_con_set_beg)
+	
+	// Добавим найденные элементы в результирующее множество:
+	genElStr3([
+		1_:  fixed_: result_set,
+		2_: assign_: arc_: pos_: const_: arc2,
+		3_:  fixed_: arc
+	])
+	genElStr3([
+		1_:  fixed_: result_set,
+		2_: assign_: arc_: pos_: const_: arc2,
+		3_:  fixed_: rel
+	])
+	searchElStr5([
+		1_:  fixed_: possible_con,
+		2_: assign_: arc_: pos_: const_: arc2,
+		3_:  fixed_: target,
+		4_: assign_: arc_: pos_: const_: arc4,
+		5_:  fixed_: 2_
+	])
+	genElStr3([
+		1_:  fixed_: result_set,
+		2_: assign_: arc_: pos_: const_: arc,
+		3_:  fixed_: arc2
+	])
+	genElStr3([
+		1_:  fixed_: result_set,
+		2_: assign_: arc_: pos_: const_: arc2,
+		3_:  fixed_: possible_con
+	])
+	genElStr3([
+		1_:  fixed_: result_set,
+		2_: assign_: arc_: pos_: const_: arc2,
+		3_:  fixed_: arc4
+	])
+	genElStr3([
+		1_:  fixed_: result_set,
+		2_: assign_: arc_: pos_: const_: arc2,
+		3_:  fixed_: 2_
+	])
+	
+	// Найдём узел под атрибутом 1_:
+	searchElStr5([
+		1_:  fixed_: possible_con,
+		2_: assign_: arc_: pos_: const_: arc2,
+		3_: assign_: const_: attr_1, //~
+		4_: assign_: arc_: pos_: const_: arc4,
+		5_:  fixed_: 1_
+	])
+	
+	// Добавим найденные элементы в результирующее множество:
+	genElStr3([
+		1_:  fixed_: result_set,
+		2_: assign_: arc_: pos_: const_: arc,
+		3_:  fixed_: arc2
+	])
+	genElStr3([
+		1_:  fixed_: result_set,
+		2_: assign_: arc_: pos_: const_: arc2,
+		3_:  fixed_: attr_1
+	])
+	genElStr3([
+		1_:  fixed_: result_set,
+		2_: assign_: arc_: pos_: const_: arc2,
+		3_:  fixed_: arc4
+	])
+	genElStr3([
+		1_:  fixed_: result_set,
+		2_: assign_: arc_: pos_: const_: arc2,
+		3_:  fixed_: 1_
+	])
+	
+	// Добавим узлы, связанные связкой принадлежности с узлом под атрибутом 1_
+	// в отношении rel:
+	searchSetStr3([
+		1_:  fixed_: attr_1,
+		2_: assign_: arc_: pos_: const_: arc2,
+		3_: assign_: const_: node3,
+		set2_: set3_: fixed_: result_set
+	])
+	
+	nop(possible_con_set_beg)
+////////////////////////////////////////////////////////////////////////////////
+
+
+label(possible_con_set_end)
+
+return()
+end
+///////////////////////////////////////////////////////////////////Procedure End

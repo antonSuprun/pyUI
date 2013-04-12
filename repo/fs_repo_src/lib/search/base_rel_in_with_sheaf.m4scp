@@ -27,7 +27,7 @@ along with OSTIS.  If not, see <http://www.gnu.org/licenses/>.
 /////////////////////////////////////////////////////
 // 		Author: Denis Koronchik
 //        Date: 22.12.10
-
+//	Modificatinon: 19.11.11, Kharkunov Eugene - rewritten search with using NSM pattern
 
 #include "_keynodes.scsy"
 #include "scp_keynodes.scsy"
@@ -50,159 +50,63 @@ along with OSTIS.  If not, see <http://www.gnu.org/licenses/>.
 	@result	Result contains whole construction (excluding O) set and binary pair (author relation)
 */
 procedure(base_rel_in_with_sheaf,
-[[	
+[[
+	pattern = [
+		_rel_arc = (_relation ->> _tmp_rel);
+		_con_a2 = (_tmp_rel ->> _elem);
+		_con_a1 = (_tmp_rel ->> _node);
+		_attr_a1 = (1_ ->> _con_a1);
+		_attr_a2 = (2_ ->> _con_a2);
+		_arc = (_node ->> _elem_node)
+	];
 ]],
 [{
-	// input params
-	element, relation, result,
-	// other variables
-	segment, t_seg, n1, n2, n3, a1, a2, a3, a4, a5, a6, tmp_res
+	element, relation, result, segment, t_seg, _a
 }],
 {[
-	1_: in_: element,	// element to search relation
-	2_: in_: relation,	// relation node
-	3_: in_: result		// all founded elements will be append into this set (set must be existing)
-]}
-)
+	1_: in_: element,
+	2_: in_: relation,
+	3_: in_: result
+]})
 
-// trying to get segment, where element locate
 sys_get_location([1_: fixed_: element, 2_: assign_: segment])
 sys_spin_segment([1_: fixed_: segment, 2_: assign_: t_seg])
 
 /* need to set segment that contains result node as default to generate answer in it */
-sys_get_location([1_: fixed_: result, 2_: assign_: segment])	
+sys_get_location([1_: fixed_: result, 2_: assign_: segment])
 sys_open_segment([1_: fixed_: segment])
 sys_set_default_segment([1_: fixed_: segment])
 
-//# trying to find authors sheaf
-searchSetStr5([
-	1_: assign_: node_: const_: n1,
-	2_: assign_: arc_: pos_: const_: a1,
-	3_: fixed_: element,
-	4_: assign_: arc_: pos_: const_: a2,
-	5_: fixed_: 2_,
-	set1_: assign_: tmp_res
-	], , lb_finish, lb_error)
 
-//# iterate founded nodes and get just node that included into authors relation set
-label(search_relation)
-searchElStr3([
-	1_: fixed_: tmp_res,
-	2_: assign_: arc_: pos_: const_: a1,
-	3_: assign_: node_: const_: n1
-	], , lb_finish, lb_error)
-	
-eraseEl([1_: fixed_: a1])
+sys_search([
+	1_: fixed_: pattern,
+	3_: fixed_: {
+		{1_: _relation, 2_: relation},
+		{1_: _elem, 2_: element}
+	},
+	4_: fixed_: result
+], , finish)
 
-//# check including into authors relation set
-searchElStr3([
-	1_: fixed_: relation,
-	2_: assign_: arc_: pos_: const_: a3,
-	3_: fixed_: n1
-	], , search_relation, lb_error)
-	
-//# trying to find end element
-searchElStr5([
-	1_: fixed_: n1,
-	2_: assign_: arc_: const_: pos_: a1,
-	3_: assign_: n2,
-	4_: assign_: arc_: const_: pos_: a2,
-	5_: fixed_: 1_
-	], , search_relation, lb_error)
-
-//# getting begin element (need, because we can't store arc with attribute 1_)
-searchElStr5([
-	1_: fixed_: n1,
-	2_: assign_: arc_: const_: pos_: a5,
-	3_: assign_: n3,
-	4_: assign_: arc_: const_: pos_: a6,
-	5_: fixed_: 2_
-	], , lb_error, lb_error)
-	
-//# make result starting with end element
-
-//# include: 2_ --->
 genElStr3([
 	1_: fixed_: result,
-	2_: assign_: arc_: const_: pos_: a4,
-	3_: fixed_: a6])
-	
-//# include: e1 <------ O
-genElStr3([
-	1_: fixed_: result,
-	2_: assign_: arc_: const_: pos_: a4,
-	3_: fixed_: a5])
+	2_: assign_: const_: pos_: arc_: _a,
+	3_: fixed_: relation
+])
 
-//# include: author
 genElStr3([
 	1_: fixed_: result,
-	2_: assign_: arc_: const_: pos_: a4,
-	3_: fixed_: relation])
-	
-//# include: 1_
-genElStr3([
-	1_: fixed_: result,
-	2_: assign_: arc_: const_: pos_: a4,
-	3_: fixed_: 1_])
-	
-//# include: 2_
-genElStr3([
-	1_: fixed_: result,
-	2_: assign_: arc_: const_: pos_: a4,
-	3_: fixed_: 2_])
-	
-//# include: e2
-genElStr3([
-	1_: fixed_: result,
-	2_: assign_: arc_: const_: pos_: a4,
-	3_: fixed_: n2])
+	2_: assign_: const_: pos_: arc_: _a,
+	3_: fixed_: 1_
+])
 
-//# include: O ---> e2
 genElStr3([
 	1_: fixed_: result,
-	2_: assign_: arc_: const_: pos_: a4,
-	3_: fixed_: a1])
+	2_: assign_: const_: pos_: arc_: _a,
+	3_: fixed_: 2_
+])
 
-//# include: 1_ ----> 	
-genElStr3([
-	1_: fixed_: result,
-	2_: assign_: arc_: const_: pos_: a4,
-	3_: fixed_: a2])
-	
-//# include: O 	
-genElStr3([
-	1_: fixed_: result,
-	2_: assign_: arc_: const_: pos_: a4,
-	3_: fixed_: n1])
-	
-//# include: relation ----> O
-genElStr3([
-	1_: fixed_: result,
-	2_: assign_: arc_: const_: pos_: a4,
-	3_: fixed_: a3])
-	
-// get authors and append them into result set
-searchSetStr3([
-	1_: fixed_: n2,
-	2_: assign_: arc_: pos_: const_: a4,
-	3_: assign_: node_: const_: n1,
-	set2_: set3_: fixed_: result
-	], , lb_finish, lb_error)
-	
-//! FIXME: close segment and erase t_seg
-
-label(lb_error)
-
-label(lb_finish)
-
-//# check if tmp_res exist and erase it
-ifVarAssign([
-	1_: fixed_: tmp_res
-	], , lb_exit, lb_exit)
-	
-eraseEl([1_: fixed_: tmp_res])
-	
-label(lb_exit)
+label(finish)
 
 return()
-end()
+
+end

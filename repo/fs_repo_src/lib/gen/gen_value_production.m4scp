@@ -1,8 +1,39 @@
-// 
+/*
+-----------------------------------------------------------------------------
+This source file is part of OSTIS (Open Semantic Technology for Intelligent Systems)
+For the latest info, see http://www.ostis.net
+
+Copyright (c) 2011 OSTIS
+
+OSTIS is free software: you can redistribute it and/or modfirst_ely
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+OSTIS is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with OSTIS.  If not, see <http://www.gnu.org/licenses/>.
+-----------------------------------------------------------------------------
+*/
+
+/////////////////////////////////////////////////////
+//        File: gen_value_production.m4scp
+// Description: Файл содержит операцию
+//				генерации продукции
+/////////////////////////////////////////////////////
+// 		Author: Startsev Sergei
+//        Date: 23.01.2011 
+// 		Modified: Daniil Shunkevich
+//        Date: 09.06.2011 
 #include "scp_keynodes.scsy"
 #include "com_keynodes.scsy"
 #include "etc_questions.scsy"
 #include "meta_info.scsy"
+#include "lib_erase.scsy"
 
 procedure(gen_value_production,
 [[
@@ -24,11 +55,11 @@ procedure(gen_value_production,
 	fixed_attr=fixed_;
 	
 	//#отладочная информация, закомментировать или убрать
-	l_find_t=/"\n\nI find t!!!\n\n"/;
-	bla=/"\n\nBLA!\n\n"/;	
-	bla2=/"\n\nBLA-BLA!\n\n"/;	
-	here=/"\n\nI have entered sys_search_and_sys_gen!!!\n\n"/;
-	exited=/"\n\nI have exited sys_search_and_sys_gen!!!\n\n"/;
+	l_find_t=/""/;//#/"\n\nI find t!!!\n\n"/;
+	bla=/""/;//#/"\n\nBLA!\n\n"/;	
+	bla2=/""/;//#/"\n\nBLA-BLA!\n\n"/;	
+	here=/""/;//#/"\n\nI have entered sys_search_and_sys_gen!!!\n\n"/;
+	exited=/""/;//#/"\n\nI have exited sys_search_and_sys_gen!!!\n\n"/;
 ]],
 [{	
 	if,else,objects,copy_objects,temp_objects,temp_obj,link_search_param,search_params,linked,current_linked,val,value,values,result,abc,t,template,arc,arc1,node,handler,element,el,seg,segments,temp,set,set1,set2,set3,set4,theory,object,section,attr
@@ -53,7 +84,7 @@ sys_search([
 ])
 
 //#genEl([1_: node_: set1])
-//#printEl([1_: set1])
+//#//#printEl([1_: set1])
 searchSetStr3([
 	1_: fixed_: template,
 	2_: assign_: const_: pos_: arc,
@@ -123,7 +154,7 @@ searchElStr5([
 ],,exit)
 
 //#printNl([1_: /"OBJECT"/])
-//#printEl([1_:object])
+//#//#printEl([1_:object])
 
 //#когда-то здесь была проверка одного объекта, сейчас здесь имеется проверка текущего объекта с множеством объектов
 
@@ -145,7 +176,7 @@ eraseElStr3([
 label(search_obj_noerase)
 
 //#printNl([1_: /"TEMP OBJECTS"/])
-//#printEl([1_: temp_objects])
+//#//#printEl([1_: temp_objects])
 
 searchElStr3([
 	1_: fixed_: temp_objects,
@@ -154,8 +185,8 @@ searchElStr3([
 ],,next2)
 
 printNl([1_:bla])
-printEl([1_:object])
-printEl([1_:temp_obj])
+//#printEl([1_:object])
+//#printEl([1_:temp_obj])
 
 ifCoin([
 	1_: fixed_: object,
@@ -163,7 +194,6 @@ ifCoin([
 ],find,search_obj)
 
 /////////////////////////////////////////
-
 
 label(find)
 
@@ -174,7 +204,7 @@ searchElStr5([
 	4_: assign_: arc1,
 	5_: fixed_: first
 ],,exit)
-//#printEl([1_: t])
+//#//#printEl([1_: t])
 printNl([1_: l_find_t])
 
 /////////////////////////////////////////
@@ -217,6 +247,12 @@ genElStr3([
 	//#}
 //#],,exit)
 printNl([1_:bla])
+callReturn([1_: fixed_: erase_sys_search_result,
+	    2_: fixed_:
+		{[
+			1_: fixed_: template
+		]}
+])
 sys_search([
 	1_: fixed_: if,
 	2_: assign_: template,
@@ -258,7 +294,7 @@ searchElStr3([
 	3_: assign_: node
 ])
 
-printEl([1_:node])
+//#printEl([1_:node])
 
 searchSetStr3([
 	1_: fixed_: node,
@@ -293,8 +329,8 @@ searchElStr5([
 ],,exit)
 
 printNl([1_: bla2])
-printEl([1_: temp])
-//#printEl([1_: element])
+//#printEl([1_: temp])
+//#//#printEl([1_: element])
 
 searchSetStr3([
 	1_: fixed_: linked,
@@ -321,8 +357,8 @@ searchElStr3([
 ],,next3)
 
 //#printNl([1_: /"CURR"/])
-//#printEl([1_: current_linked])
-//#printEl([1_: temp])
+//#//#printEl([1_: current_linked])
+//#//#printEl([1_: temp])
 
 ifCoin([
 	1_: fixed_: current_linked,
@@ -339,7 +375,7 @@ searchElStr5([
 	4_: assign_: arc1,
 	5_: fixed_: second
 ],,exit)
-printEl([1_: value])
+//#printEl([1_: value])
 genElStr3([
 	1_: fixed_: values,
 	2_: assign_: const_: pos_: arc,
@@ -365,8 +401,14 @@ genElStr5([
 ///////////////////////////////////////
 label(exit)
 
-printEl([1_: linked])
+//#printEl([1_: linked])
 
 printNl([1_: exited])
+callReturn([1_: fixed_: erase_sys_search_result,
+	    2_: fixed_:
+		{[
+			1_: fixed_: template
+		]}
+])
 return()
 end

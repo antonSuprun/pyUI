@@ -26,15 +26,30 @@ search_authors = "/lib/search/authors/authors";
 search_identifiers = "/lib/search/identifiers/identifiers";
 search_decomposition = "/lib/search/decomposition/decomposition";
 search_illustration = "/lib/search/illustration/illustration";
+search_antipode = "/lib/search/antipode/antipode";
+search_definition = "/lib/search/definition/definition";
+search_rel_connect_same_concepts = "/lib/search/rel_connect_same_concepts/rel_connect_same_concepts";
+search_rel_connect_diff_concepts = "/lib/search/rel_connect_diff_concepts/rel_connect_diff_concepts";
+search_rel_intersect_with_concept = "/lib/search/rel_intersect_with_concept/rel_intersect_with_concept";
+search_rel_schema = "/lib/search/rel_schema/rel_schema";
+search_rel_domain = "/lib/search/rel_domain/rel_domain";
+search_partition = "/lib/search/partition/partition";
+search_explanation = "/lib/search/explanation/explanation";
+search_prototype = "/lib/search/prototype/prototype";
+search_bibliography = "/lib/search/bibliography/bibliography";
+search_proof = "/lib/search/proof/proof";
+search_translation = "/lib/search/translation/translation";
 
 
 search_base_cycle = "/lib/search/base_cycle/base_cycle";
 search_base_rel_in_with_sheaf = "/lib/search/base_rel_in_with_sheaf/base_rel_in_with_sheaf";
 search_base_rel = "/lib/search/base_rel_search/base_rel_search";
-search_bin_pair_begin_proc = "/lib/search/bin_pair_begin1/bin_pair_begin1";
+search_bin_pair_begin_proc = "/lib/search/bin_pair_begin/bin_pair_begin";
 search_bin_pair_begin_except_rel = "/lib/search/bin_pair_begin_except_rel/bin_pair_begin_except_rel";
 search_bin_pair_end_except_rel = "/lib/search/bin_pair_end_except_rel/bin_pair_end_except_rel";
-search_bin_pair_end_proc = "/lib/search/bin_pair_end1/bin_pair_end1";
+search_bin_pair_end_proc = "/lib/search/bin_pair_end/bin_pair_end";
+search_all_bin_rel = "/lib/search/search_all_bin_rel/search_all_bin_rel";
+search_rel_with_elems = "/lib/search/search_rel_with_elems/search_rel_with_elems";
 
 //find_value_production
 
@@ -45,6 +60,12 @@ search_first_and_second = "/lib/search/search_first_and_second/search_first_and_
 search_linked_nodes = "/lib/search/search_linked_nodes/search_linked_nodes";
 search_direct_mapping = "/lib/search/search_direct_mapping/search_direct_mapping";
 search_inverse_mapping = "/lib/search/search_inverse_mapping/search_inverse_mapping";
-
+search_relations = "/lib/search/search_relations/search_relations";
+search_sheafs = "/lib/search/search_sheafs/search_sheafs";
+search_attributes = "/lib/search/search_attributes/search_attributes";
+search_statement = "/lib/search/statement/statement";
 
 search_quantity_value = "/lib/search/search_quantity_value/search";
+
+search_direct_mapping_all = "/lib/search/search_direct_mapping_all/search_direct_mapping_all";
+search_full_mapping = "/lib/search/search_full_mapping/search_full_mapping";

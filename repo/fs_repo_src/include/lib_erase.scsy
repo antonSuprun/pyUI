@@ -22,3 +22,8 @@ along with OSTIS.  If not, see <http://www.gnu.org/licenses/>.
 
 
 erase_sys_gen_unpresented_params = "/lib/erase/erase_sys_gen_unpresented_params/erase_sys_gen_unpresented_params";
+erase_sys_search_result = "/lib/erase/erase_sys_search_result/erase_sys_search_result";
+erase_from_contour = "/lib/erase/erase_from_contour/erase";
+erase_single_nodes_from_contour = "/lib/erase/erase_single_nodes_from_contour/erase";
+erase_multiple_arcs = "/lib/erase/erase_multiple_arcs/erase_multiple_arcs";
+erase_sys_gen_result = "/lib/erase/erase_sys_gen_result/erase_sys_gen_result";

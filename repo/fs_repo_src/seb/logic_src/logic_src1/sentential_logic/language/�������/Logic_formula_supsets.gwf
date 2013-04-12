@@ -1,0 +1,27 @@
+<?xml version="1.0"  encoding="windows-1251"?>
+
+<GWF version="1.6">
+<staticSector>
+<bus id="57553096" type="bus" shapeColor="16711680" owner="57600296" parent="57555292" idtf="" text_angle="0" text_font="Times New Roman" font_size="9" b_x="185" b_y="133" e_x="185" e_y="469">
+<points/>
+</bus>
+<node type="node/const/general_node" x="185" y="134.5" idtf="формула (исч. выск.)" id="57600296" shapeColor="16728128" left="192" top="125.141" right="347.943" bottom="144.859" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="57555292" haveBus="true">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<node type="node/const/general_node" x="302" y="245" idtf="Исчисление высказываний" id="57616200" shapeColor="16728128" left="309" top="242.141" right="509.638" bottom="261.859" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="57555292" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<arc type="arc/const/pos" idtf="" id_b="57616200" id_e="57553096" id="57635640" parent="57555292" shapeColor="16744576" b_x="295" b_y="245" e_x="185" e_y="245.004" dotBBalance="0" dotEBalance="0.331845">
+<points/>
+</arc>
+<node type="node/const/general_node" x="306" y="301" idtf="множество" id="57642344" shapeColor="16728128" left="313" top="288.281" right="405.747" bottom="327.719" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="57555292" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<arc type="arc/const/pos" idtf="" id_b="57642344" id_e="57553096" id="57658304" parent="57555292" shapeColor="16744576" b_x="299" b_y="301" e_x="185" e_y="301.003" dotBBalance="0" dotEBalance="0.500009">
+<points/>
+</arc>
+</staticSector>
+</GWF>

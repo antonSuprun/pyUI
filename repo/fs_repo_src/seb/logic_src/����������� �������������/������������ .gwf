@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/group" idtf="индуктивное умозаключение" shapeColor="0" id="45763672" parent="0" left="0" top="0" right="177" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="241.54" y="137.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/asymmetry" idtf="" shapeColor="0" id="46081536" parent="0" x="243.54" y="244.5" haveBus="true">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/relation" idtf="надмножество понятия*" shapeColor="0" id="46068944" parent="0" left="0" top="0" right="160" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="335.54" y="198.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="логика предикатов" shapeColor="0" id="46042256" parent="0" left="0" top="0" right="121" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="368" y="399" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="форма мышления" shapeColor="0" id="46026168" parent="0" left="0" top="0" right="112" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="369" y="354" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="умозаключение" shapeColor="0" id="45791360" parent="0" left="0" top="0" right="98" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="372.5" y="298.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <pair type="pair/const/orient" idtf="" shapeColor="0" id="12536096" parent="0" id_b="46081536" id_e="45763672" b_x="243.54" b_y="244.5" e_x="241.54" e_y="137.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="12177704" parent="0" id_b="46068944" id_e="12536096" b_x="335.54" b_y="198.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.429245">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="12416824" parent="0" id_b="46088424" id_e="45791360" b_x="0" b_y="0" e_x="372.5" e_y="298.5" dotBBalance="0.258824" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="12370824" parent="0" id_b="46088424" id_e="46026168" b_x="0" b_y="0" e_x="369" e_y="354" dotBBalance="0.623362" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="12330080" parent="0" id_b="46088424" id_e="46042256" b_x="0" b_y="0" e_x="368" e_y="399" dotBBalance="0.922114" dotEBalance="0">
+            <points/>
+        </arc>
+        <bus type="" idtf="" shapeColor="0" id="46088424" parent="0" owner="46081536" b_x="243.58" b_y="259" e_x="243.54" e_y="414.5">
+            <points>
+                <point x="244" y="413"/>
+            </points>
+        </bus>
+    </staticSector>
+</GWF>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<GWF version="1.6">
+    <staticSector>
+        <node type="node/const/asymmetry" idtf="разбиение по количественно-качественному составу посылки" shapeColor="0" id="30217120" parent="0" left="0" top="0" right="375" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="190.5" y="199.5" haveBus="false">
+            <content type="0" mime_type="content/base" file_name=""/>
+        </node>
+        <node type="node/const/general_node" idtf="модус Dimaris" shapeColor="0" id="30217408" parent="0" left="0" top="0" right="89" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="579.5" y="171.5" haveBus="false">
+            <content type="0" mime_type="content/base" file_name=""/>
+        </node>
+        <node type="node/const/general_node" idtf="модус Fresison" shapeColor="0" id="30217984" parent="0" left="0" top="0" right="93" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="584" y="264.5" haveBus="false">
+            <content type="0" mime_type="content/base" file_name=""/>
+        </node>
+        <node type="node/const/general_node" idtf="модус Fesapo" shapeColor="0" id="30217840" parent="0" left="0" top="0" right="86" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="583.5" y="219.5" haveBus="false">
+            <content type="0" mime_type="content/base" file_name=""/>
+        </node>
+        <node type="node/const/general_node" idtf="модус Camenes" shapeColor="0" id="30217552" parent="0" left="0" top="0" right="95" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="579.5" y="124.5" haveBus="false">
+            <content type="0" mime_type="content/base" file_name=""/>
+        </node>
+        <node type="node/const/general_node" idtf="модус Bramantip" shapeColor="0" id="30217696" parent="0" left="0" top="0" right="105" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="578.5" y="78.5" haveBus="false">
+            <content type="0" mime_type="content/base" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="четвёртая фигура силлогизма" shapeColor="0" id="30216976" parent="0" left="0" top="0" right="188" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="71.541" y="64.4886" haveBus="true">
+            <content type="0" mime_type="content/base" file_name=""/>
+        </node>
+        <node type="node/const/relation" idtf="разбиение*" shapeColor="0" id="30214528" parent="0" left="0" top="0" right="73" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="133.5" y="118.5" haveBus="false">
+            <content type="0" mime_type="content/base" file_name=""/>
+        </node>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="63224136" parent="0" id_b="30217120" id_e="30217984" b_x="190.5" b_y="199.5" e_x="584" e_y="264.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="63223976" parent="0" id_b="30217120" id_e="30217840" b_x="190.5" b_y="199.5" e_x="583.5" e_y="219.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="63223816" parent="0" id_b="30217120" id_e="30217552" b_x="190.5" b_y="199.5" e_x="579.5" e_y="124.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="63223656" parent="0" id_b="30217120" id_e="30217696" b_x="190.5" b_y="199.5" e_x="578.5" e_y="78.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <pair type="pair/const/orient" idtf="" shapeColor="0" id="63146864" parent="0" id_b="30217120" id_e="62833224" b_x="190.5" b_y="199.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.435793">
+            <points/>
+        </pair>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="62887688" parent="0" id_b="30214528" id_e="63146864" b_x="133.5" b_y="118.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.46336">
+            <points/>
+        </arc>
+        <bus type="" idtf="" shapeColor="0" id="62833224" parent="0" owner="30216976" b_x="71.8399" b_y="78.9855" e_x="77.5" e_y="353.5">
+            <points/>
+        </bus>
+    </staticSector>
+</GWF>

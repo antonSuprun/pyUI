@@ -1,4 +1,3 @@
-# coding=utf-8
 """
 -----------------------------------------------------------------------------
 This source file is part of OSTIS (Open Semantic Technology for Intelligent Systems)

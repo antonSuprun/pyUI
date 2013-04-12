@@ -22,4 +22,3 @@ along with OSTIS.  If not, see <http://www.gnu.org/licenses/>.
 
 ui_add_child_command_proc = "/lib/ui/add_child_command/add_child_command";
 ui_remove_child_command_proc = "/lib/ui/remove_child_command/remove_child_command";
-ui_change_localization_proc = "/lib/ui/change_localization/change_localization";

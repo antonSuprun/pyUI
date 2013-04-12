@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<GWF version="1.6">
+    <staticSector>
+        <node type="node/const/general_node" idtf="модус Ferio" shapeColor="193" id="8455256" parent="0" left="0" top="0" right="76" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="543" y="323.5" haveBus="false">
+            <content type="0" mime_type="content/base" file_name=""/>
+        </node>
+        <node type="node/const/general_node" idtf="модус Darii" shapeColor="0" id="8454824" parent="0" left="0" top="0" right="74" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="540" y="233.5" haveBus="false">
+            <content type="0" mime_type="content/base" file_name=""/>
+        </node>
+        <node type="node/const/general_node" idtf="модус Celarent" shapeColor="0" id="8454968" parent="0" left="0" top="0" right="94" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="536" y="181.5" haveBus="false">
+            <content type="0" mime_type="content/base" file_name=""/>
+        </node>
+        <node type="node/const/general_node" idtf="модус Barbara" shapeColor="0" id="8455112" parent="0" left="0" top="0" right="92" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="537" y="129.5" haveBus="false">
+            <content type="0" mime_type="content/base" file_name=""/>
+        </node>
+        <node type="node/const/asymmetry" idtf="разбиение по количественно-качественному составу посылки" shapeColor="0" id="8454392" parent="0" left="0" top="0" right="375" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="209" y="245.5" haveBus="false">
+            <content type="0" mime_type="content/base" file_name=""/>
+        </node>
+        <node type="node/const/relation" idtf="разбиение*" shapeColor="0" id="8454680" parent="0" left="0" top="0" right="73" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="155" y="159.5" haveBus="false">
+            <content type="0" mime_type="content/base" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="первая фигура силлогизма" shapeColor="0" id="8451944" parent="0" left="0" top="0" right="162" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="93.2934" y="115.731" haveBus="true">
+            <content type="0" mime_type="content/base" file_name=""/>
+        </node>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="64649072" parent="0" id_b="8454392" id_e="8455256" b_x="209" b_y="245.5" e_x="543" e_y="323.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="8897928" parent="0" id_b="8454392" id_e="8454824" b_x="209" b_y="245.5" e_x="540" e_y="233.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="8309184" parent="0" id_b="8454392" id_e="8454968" b_x="209" b_y="245.5" e_x="536" e_y="181.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="8309904" parent="0" id_b="8454392" id_e="8455112" b_x="209" b_y="245.5" e_x="537" e_y="129.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </arc>
+        <pair type="pair/const/orient" idtf="" shapeColor="0" id="63251192" parent="0" id_b="8454392" id_e="63550944" b_x="209" b_y="245.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.435793">
+            <points/>
+        </pair>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="63967040" parent="0" id_b="8454680" id_e="63251192" b_x="155" b_y="159.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.46336">
+            <points/>
+        </arc>
+        <bus type="" idtf="" shapeColor="0" id="63550944" parent="0" owner="8451944" b_x="93.5902" b_y="130.228" e_x="99" e_y="394.5">
+            <points/>
+        </bus>
+    </staticSector>
+</GWF>

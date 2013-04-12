@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/group" idtf="научная индукция" shapeColor="0" id="46329528" parent="0" left="0" top="0" right="113" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="210.124" y="131.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="индукция методом исключения" shapeColor="0" id="47503480" parent="0" left="0" top="0" right="191" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="419.084" y="378.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="индукция методом отбора" shapeColor="0" id="46331048" parent="0" left="0" top="0" right="165" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="420.084" y="314.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/asymmetry" idtf="" shapeColor="0" id="47331944" parent="0" x="211.124" y="266.5" haveBus="true">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/relation" idtf="разбиение *" shapeColor="0" id="12200248" parent="0" left="0" top="0" right="76" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="303.124" y="206.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <pair type="pair/const/orient" idtf="" shapeColor="0" id="46756272" parent="0" id_b="47331944" id_e="46329528" b_x="211.124" b_y="266.5" e_x="210.124" e_y="131.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="47578184" parent="0" id_b="46684080" id_e="47503480" b_x="0" b_y="0" e_x="419.084" e_y="378.5" dotBBalance="0.409412" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="46295792" parent="0" id_b="46684080" id_e="46331048" b_x="0" b_y="0" e_x="420.084" e_y="314.5" dotBBalance="0.155294" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="47478440" parent="0" id_b="12200248" id_e="46756272" b_x="303.124" b_y="206.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.429245">
+            <points/>
+        </arc>
+        <bus type="" idtf="" shapeColor="0" id="46684080" parent="0" owner="47331944" b_x="211.124" b_y="281" e_x="211.124" e_y="518.5">
+            <points/>
+        </bus>
+    </staticSector>
+</GWF>

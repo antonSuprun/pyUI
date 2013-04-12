@@ -43,7 +43,6 @@ sys_spin_segment([
 	1_: fixed_: location,
 	2_: assign_: segments
 ])
-
 // Генерируем связку отношения "значение*"
 genElStr5([
 	1_: assign_: const_: node_: valueRelationLink,

@@ -35,9 +35,7 @@ along with OSTIS.  If not, see <http://www.gnu.org/licenses/>.
 
 program(init_op,
 [[	
-	//#req = "/seb/planimetry/запрос истинности высказыания";
 	q_gen_all_trans_relation_links;
-//#	oper="/operation/gen_transitive_links/reflexive/reflexive";
 	catch_output_arc;
 	here1=/"Refl handler setted"/;
 ]],
@@ -342,6 +340,17 @@ genElStr5([
 
 //вывод выходного множества элементов
 //#ui_output([1_:fixed_: sheet, 2_:fixed_:u])
-
+ifVarAssign([1_: elsels],,no_erase_set1)
+eraseEl([1_: fixed_: elsels])
+label(no_erase_set1)
+ifVarAssign([1_: n],,no_erase_set2)
+eraseEl([1_: fixed_: n])
+label(no_erase_set2)
+ifVarAssign([1_: vse_ontoshenia],,no_erase_set3)
+eraseEl([1_: fixed_: vse_ontoshenia])
+label(no_erase_set3)
+ifVarAssign([1_: second_n],,no_erase_set4)
+eraseEl([1_: fixed_: second_n])
+label(no_erase_set4)
 return()
 end

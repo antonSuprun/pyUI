@@ -53,7 +53,7 @@ sys_get_location([1_: a,2_: assign_: seg])
 sys_set_default_segment([1_: fixed_: seg])
 sys_spin_segment([1_: fixed_: seg,	2_: assign_: segments])
 //#printNl([1_: /"A"/])
-///#printEl([1_: a])
+///#//#printEl([1_: a])
 genElStr3([
 	1_: assign_: node_: const_: temp,
 	2_: assign_: const_: pos_: arc,
@@ -70,12 +70,12 @@ genElStr3([
 	3_: fixed_: temp
 ])
 label(wait1)
-printNl([1_: /"WAIT START"/])
+//#printNl([1_: /"WAIT START"/])
 sys_wait([
 	1_: fixed_: catch_output_arc,
 	2_: fixed_: {1_: rrel_answer_is_present}
 ])
-printNl([1_: /"WAIT END"/])
+//#printNl([1_: /"WAIT END"/])
 searchElStr5([
 	1_: fixed_: q_gen_all_accessory_links,
 	2_: assign_: const_: pos_: arc,

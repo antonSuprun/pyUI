@@ -33,6 +33,7 @@ along with OSTIS.  first_el not, see <http://www.gnu.org/licenses/>.
 #include "com_keynodes.scsy"
 #include "etc_questions.scsy"
 #include "meta_info.scsy"
+#include "lib_erase.scsy"
 
 /*!
 	Генерация успешного условия выполнения операции поиска значения продукции
@@ -56,19 +57,21 @@ procedure(gen_good_result_of_find_value_production,
 	
 	stype_sheaf;
 	
-	here=/"\n\nI have entered gen_good_result_of_find_value_production!!!\n\n"/;
-	exited=/"\n\nI have exited gen_good_result_of_find_value_production!!!\n\n"/;
+	here=/""/;//#/"\n\nI have entered gen_good_result_of_find_value_production!!!\n\n"/;
+	exited=/""/;//#/"\n\nI have exited gen_good_result_of_find_value_production!!!\n\n"/;
 	
 	first=1_;
 	second=2_;
 ]],
 [{	
-	req_arc,req_node,el,answer_set,const_then,objects,arc,arc1,value,handler,element,seg,segments,attr
+	req_arc,req_node,el,answer_set,const_then,objects,arc,arc1,value,handler,element,seg,segments,attr,waitarc,params,then
 }],
 {[
 	1_: in_: req_arc,
 	2_: in_: const_then,	
-	3_: in_: objects	
+	3_: in_: objects,
+	4_: in_: then,
+	5_: in_: params
 ]}
 )
 sys_get_location([1_: const_then,2_: assign_: seg])
@@ -78,6 +81,7 @@ sys_spin_segment([1_: fixed_: seg,	2_: assign_: segments])
 printNl([1_: here])
 
 ///////////////////////////////
+
 genElStr5([
 	1_: assign_: value,
 	2_: assign_: const_: pos_: arc,
@@ -94,7 +98,7 @@ genElStr3([
 
 genElStr3([
 	1_: fixed_: q_calculation,
-	2_: assign_: const_: pos_: arc1,
+	2_: assign_: const_: pos_: waitarc,
 	3_: fixed_: value
 ])
 
@@ -111,8 +115,30 @@ genElStr3([
 ])
 ///////////////////////////////
 
+label(wait)
+sys_wait([
+	1_: fixed_: catch_input_arc,
+	2_: fixed_: {1_: waitarc}
+])
+searchElStr5([
+	1_: fixed_: q_calculation,
+	2_: fixed_: waitarc,
+	3_: fixed_: value,
+	4_: assign_: const_: pos_: arc1,
+	5_: fixed_: rrel_answer_is_absent
+],gen_bad_result)
+searchElStr5([
+	1_: fixed_: q_calculation,
+	2_: fixed_: waitarc,
+	3_: fixed_: value,
+	4_: assign_: const_: pos_: arc1,
+	5_: fixed_: rrel_answer_is_present
+],gen_good_result,wait)
+
 ///////////////////////////////
 //#ответ
+label(gen_good_result)
+
 genElStr3([
 	1_: assign_: answer_set,
 	2_: assign_: const_: pos_: arc,
@@ -126,9 +152,8 @@ genElStr3([
 genElStr3([
 	1_: fixed_: answer_set,
 	2_: assign_: const_: pos_: arc,
-	3_: fixed_: arc1
+	3_: fixed_: waitarc
 ])
-
 searchElStr3([
 	1_: fixed_: q_production,
 	2_: fixed_: req_arc,
@@ -158,13 +183,70 @@ genElStr3([
 	2_: assign_: const_: pos_: arc,
 	3_: fixed_: el
 ])
-
 genElStr3([
 	1_: fixed_: rrel_answer_is_present,
 	2_: assign_: const_: pos_: arc,
 	3_: fixed_: req_arc
-])
+],exit,exit)
 ///////////////////////////////
+label(gen_bad_result)
+callReturn([
+	1_: fixed_: erase_sys_gen_result,
+	2_: fixed_: {[ 
+		1_: fixed_: then,
+		2_: fixed_: params,
+		3_: fixed_: const_then
+	]}
+])
+genElStr3([
+	1_: assign_: answer_set,
+	2_: assign_: const_: pos_: arc,
+	3_: fixed_: q_calculation
+])
+genElStr3([
+	1_: fixed_: answer_set,
+	2_: assign_: const_: pos_: arc,
+	3_: fixed_: value
+])
+genElStr3([
+	1_: fixed_: answer_set,
+	2_: assign_: const_: pos_: arc,
+	3_: fixed_: arc1
+])
+searchElStr3([
+	1_: fixed_: q_production,
+	2_: fixed_: req_arc,
+	3_: assign_: req_node
+],,exit)
+genElStr5([
+	1_: assign_: el,
+	2_: assign_: const_: pos_: arc,
+	3_: fixed_: answer_set,
+	4_: assign_: const_: pos_: arc1,
+	5_: fixed_: first
+])
+genElStr5([
+	1_: fixed_: el,
+	2_: assign_: const_: pos_: arc,
+	3_: fixed_: req_node,
+	4_: assign_: const_: pos_: arc1,
+	5_: fixed_: second
+])
+genElStr3([
+	1_: fixed_: stype_sheaf,
+	2_: assign_: const_: pos_: arc,
+	3_: fixed_: el
+])
+genElStr3([
+	1_: fixed_: nrel_answer,
+	2_: assign_: const_: pos_: arc,
+	3_: fixed_: el
+])
+genElStr3([
+	1_: fixed_: rrel_answer_is_absent,
+	2_: assign_: const_: pos_: arc,
+	3_: fixed_: req_arc
+],exit,exit)
 
 label(exit)
 

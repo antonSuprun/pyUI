@@ -1,7 +1,6 @@
 
 
-/*
------------------------------------------------------------------------------
+/*-----------------------------------------------------------------------------
 This source file is part of OSTIS (Open Semantic Technology for Intelligent Systems)
 For the latest info, see http://www.ostis.net
 
@@ -28,6 +27,7 @@ along with OSTIS.  first_el not, see <http://www.gnu.org/licenses/>.
 /////////////////////////////////////////////////////
 // 		Author: Sergei Zalivako
 //        Date: 24.01.2011 
+//       Modified: 28.03.2011
 
 #include "scp_keynodes.scsy"
 #include "etc_questions.scsy"
@@ -47,8 +47,10 @@ program(init_op,
 	q_initiated;
 	// Событие, на которое реагирует обработчик(проведение выходящей дуги из узла)
 	catch_output_arc;
+	group_arifmetic_descr;
 ]],
 [{
+	descr,arc
 }],
 {[
 ]}
@@ -57,7 +59,14 @@ program(init_op,
 sys_set_event_handler([
 	1_: fixed_: catch_output_arc,
 	2_: fixed_: addition,
-	3_: fixed_: {1_: q_initiated}
+	3_: fixed_: {1_: q_initiated},
+	4_: assign_: descr
+])
+
+genElStr3([
+	1_: fixed_: group_arifmetic_descr,
+	2_: assign_: const_: pos_: arc,
+	3_: fixed_: descr
 ])
 
 return()
@@ -67,7 +76,7 @@ end
 procedure(addition,
 [[
 	// Ключевой узел, обозначающий запрос
-	q_addition;
+	q_arifmetic_routine;
 
 	// Атрибут присутствия ответа
 	rrel_answer_is_present;
@@ -107,7 +116,7 @@ procedure(addition,
 	handler, element,
 	arcFromRequest, arcFromQuestion, 
 	location, segments,
-	additionLink,
+	additionLink, questionNode, 
 	arcForChecking, arcVar, attributeArc, nodeVar, checkingNode,
 	sumResult, summandsLink, summandsLinkCopy, sumValue,
 	sumAccumulationNode, currentSummand, currentValue,
@@ -119,12 +128,12 @@ procedure(addition,
 	1_: in_: handler, 
 	2_: in_: element, 
 	3_: in_: arcFromQuestion, 
-	4_: in_: additionLink
+	4_: in_: questionNode
 ]}
 )
 // Получение сегмента, в котором находится узел связки запроса сложения
 sys_get_location([
-	1_: fixed_: additionLink,
+	1_: fixed_: questionNode,
 	2_: assign_: location
 ])
 
@@ -133,17 +142,24 @@ sys_set_default_segment([
 	1_: fixed_: location
 ])
 
-//Разворачивание установленного сегмента
+// Разворачивание установленного сегмента
 sys_spin_segment([
 	1_: fixed_: location,
 	2_: assign_: segments
 ])
 
-// Проверяем, что в узел запроса проведена дуга из узла "запрос сложения величин"
+// Проверяем, что в узел запроса проведена дуга из узла "запрос арифметического действия"
 searchElStr3([
-	1_: fixed_: q_addition,
+	1_: fixed_: q_arifmetic_routine,
 	2_: assign_: const_: pos_: arc_: arcFromRequest,
-	3_: fixed_: additionLink
+	3_: fixed_: questionNode
+], , finishOperation)
+
+// Находим связку отношения сложения из вопроса
+searchElStr3([
+	1_: fixed_: questionNode,
+	2_: assign_: const_: pos_: arc_: arcForChecking,
+	3_: assign_: const_: node_: additionLink
 ], , finishOperation)
 
 // Проверяем, что связка, в которую была проведена дуга из запроса явлется именно связкой отношения сложения
@@ -151,14 +167,14 @@ searchElStr3([
 	1_: fixed_: nrel_addition,
 	2_: assign_: const_: pos_: actual_: arc_: arcForChecking,
 	3_: fixed_: additionLink
-])
+], , finishOperation)
 
-// Поиск связки отношения "сложение*" с атрибутом "присутствует ответ_"
+// Поиск связки запроса сложения с атрибутом "присутствует ответ_"
 // Если такой атрибут есть, то работа программы прекращается
 searchElStr5([
-	1_: fixed_: q_addition,
+	1_: fixed_: q_arifmetic_routine,
 	2_: fixed_: arcFromRequest,
-	3_: fixed_: additionLink,
+	3_: fixed_: questionNode,
 	4_: assign_: arc_: const_: pos_: actual_: arcVar,
 	5_: fixed_: rrel_answer_is_present
 ], exit)
@@ -256,6 +272,9 @@ label(additionOperation)
 	// Просматриваем узлы, являющиеся слагаемыми
 	label(summandsView)
 
+		printNl([1_: /"LINKCOPY"/])
+		printEl([1_: summandsLinkCopy])
+	
 		// Находим очередное слагаемое из суммы
 		searchElStr3([
 			1_: fixed_: summandsLinkCopy,
@@ -300,6 +319,10 @@ label(additionOperation)
 			1_: fixed_: currentSummand
 		], , cleanCopiesAfterAddition)
 
+		printNl([1_: /"SUMMNODE"/])
+		printNl([1_: sumAccumulationNode])
+		printNl([1_: currentSummand])
+		
 		// Добавляем текущее слагаемое в сумму
 		add([
 			1_: fixed_: sumAccumulationNode,
@@ -309,7 +332,15 @@ label(additionOperation)
 
 		// Операция сложения завершилась успешно
 		label(additionOperationSuccess)
+		
+			printNl([
+				1_: fixed_: /"Addition result is"/
+			])
 
+			printNl([
+				1_: fixed_: sumAccumulationNode
+			])
+			
 			// Добавляем содержимое, накопленной суммы в узел, где хранится сумма
 			add([
 				1_: fixed_: sumResult,
@@ -319,9 +350,9 @@ label(additionOperation)
 		
 			// Генерируем факт присутствия ответа
 			genElStr5([
-				1_: fixed_: q_addition,
+				1_: fixed_: q_arifmetic_routine,
 				2_: fixed_: arcFromRequest,
-				3_: fixed_: additionLink,
+				3_: fixed_: questionNode,
 				4_: assign_: arc_: const_: pos_: actual_: attributeArc,
 				5_: fixed_: rrel_answer_is_present
 			])
@@ -536,16 +567,20 @@ label(differenceOperation)
 			], subtractsView)
 
 			label(differenceOperationSuccess)
-				
-				//#printNl([
-				//	1_: fixed_: difAccumulationNode
-				//])
+			
+				printNl([
+					1_: fixed_: /"Addition result is"/
+				])
+
+				printNl([
+					1_: fixed_: difAccumulationNode
+				])
 				
 				// Генерируем факт присутствия ответа
 				genElStr5([
-					1_: fixed_: q_addition,
+					1_: fixed_: q_arifmetic_routine,
 					2_: fixed_: arcFromRequest,
-					3_: fixed_: additionLink,
+					3_: fixed_: questionNode,
 					4_: assign_: arc_: const_: pos_: actual_: attributeArc,
 					5_: fixed_: rrel_answer_is_present
 				])
@@ -576,7 +611,7 @@ label(makingAnswer)
 	genElStr3([
 		1_: fixed_: answer,
 		2_: assign_: const_: pos_: arc_: arcVar,
-		3_: fixed_: q_addition
+		3_: fixed_: q_arifmetic_routine
 	])
 	
 	// Добавляем в ответ дугу из узла запроса сложения
@@ -590,7 +625,7 @@ label(makingAnswer)
 	genElStr3([
 		1_: fixed_: answer,
 		2_: assign_: const_: pos_: arc_: arcVar,
-		3_: fixed_: additionLink
+		3_: fixed_: questionNode
 	])
 	
 	// Если дуга из узла "присутствует ответ_" не проводилась
@@ -619,24 +654,16 @@ label(withoutAnswerIsPresent)
 	callReturn([
 		1_:	fixed_: answer_make,
 		2_:	fixed_: {[
-			1_: additionLink,
+			1_: 	questionNode,
 			2_: answer
 		]}
 	])
 	
-	printNl([
-		1_: fixed_: /"Addition answer is"/
-	])
-	
-	//#printEl([
-		//#1_: answer
-	//#])
-
 	// Генерируем факт выполнения операции
 	genElStr5([
-		1_: fixed_: q_addition,
+		1_: fixed_: q_arifmetic_routine,
 		2_: fixed_: arcFromRequest,
-		3_: fixed_: additionLink,
+		3_: fixed_: questionNode,
 		4_: assign_: arc_: const_: pos_: actual_: arcVar,
 		5_: fixed_: rrel_operation_is_over
 	])

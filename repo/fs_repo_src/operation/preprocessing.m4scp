@@ -1,0 +1,69 @@
+
+#include "scp_keynodes.scsy"
+#include "com_keynodes.scsy"
+#include "etc_questions.scsy"
+#include "lib_gen.scsy"
+#include "meta_info.scsy"
+#include "lib_set.scsy"
+#include "lib_preprocessing.scsy"
+#include "lib_check.scsy"
+#include "lib_other.scsy"
+#include "lib_system.scsy"
+
+program(preprocessing,
+[[
+]],
+[{
+	arc,descr,temp,arc1,impl_set,impl_arc,curr_impl,
+	seg,segments,temp,values,left,res, res_set
+}],
+{[
+]}
+)
+sys_open_segment_uri([1_: /"/seb/logic"/, 2_: assign_: seg])
+sys_set_default_segment([1_: fixed_: seg])
+sys_spin_segment([1_: fixed_: seg,	2_: assign_: segments])
+
+//#callReturn([1_: fixed_: gen_all_transitive_accessories,
+//#	    2_: fixed_:
+//#		{[
+//#		]}
+//#])
+
+//#callReturn([1_: fixed_: enable_arifmetic_processor,
+//#		2_: fixed_:
+//#		{[
+//#		]}
+//#])
+
+callReturn([1_: fixed_: merge_statements_about_class,
+	    2_: fixed_:
+		{[
+		]}
+])
+
+callReturn([1_: fixed_: fragment_all_impl_conclusions,
+	    2_: fixed_:
+		{[
+		]}
+])
+
+//#callReturn([1_: fixed_: "/operation/temp3/temp3",
+//#	    2_: fixed_:
+//#		{[
+//#		]}
+//#])
+genElStr3([
+	1_: fixed_: stype_bin_orient_role_rel,
+	2_: assign_: const_: pos_: arc,
+	3_: fixed_: 1_
+])
+genElStr3([
+	1_: fixed_: stype_bin_orient_role_rel,
+	2_: assign_: const_: pos_: arc,
+	3_: fixed_: 2_
+])
+
+label(exit)
+return()
+end

@@ -1,0 +1,64 @@
+<?xml version="1.0"  encoding="windows-1251"?>
+
+<GWF version="1.6">
+<staticSector>
+<node type="node/const/general_node" x="438" y="176" idtf="правила логического вывода" id="51674640" shapeColor="16728128" left="448" top="154.281" right="657.404" bottom="193.719" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="53974684" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<node type="node/const/general_node" x="439" y="83" idtf="Логика" id="54034440" shapeColor="16728128" left="446" top="80.1406" right="502.724" bottom="99.8594" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="53974684" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<arc type="arc/const/pos" idtf="" id_b="54034440" id_e="51674640" id="54054696" parent="53974684" shapeColor="16744576" b_x="438.925" b_y="89.9996" e_x="438.075" e_y="169" dotBBalance="0" dotEBalance="0">
+<points/>
+</arc>
+<contour type="contour" idtf="" id="54200520" shapeColor="16711680" parent="53974684" haveBus="false">
+<points>
+<point x="308" y="289"/>
+<point x="308" y="584"/>
+<point x="915" y="580"/>
+<point x="913" y="286"/>
+<point x="308" y="289"/>
+</points>
+</contour>
+<node type="node/const/general_node" x="378" y="311" idtf="Гетманова - Учебник по логике" id="54059592" shapeColor="16728128" left="386" top="302.141" right="623.24" bottom="321.859" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="54200520" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<node type="node/const/general_node" x="377" y="349" idtf="Гладкий - Математическая логика" id="54079496" shapeColor="16728128" left="384" top="330.281" right="650.13" bottom="369.719" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="54200520" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<node type="node/const/general_node" x="377" y="388" idtf="Гусев - Краткий курс логики.Искусство правильного мышления" id="54101512" shapeColor="16728128" left="385" top="379.141" right="859.497" bottom="398.859" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="54200520" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<node type="node/const/general_node" x="378" y="427" idtf="Колмогоров - Математическая логика" id="54099976" shapeColor="16728128" left="386" top="407.281" right="676.208" bottom="446.719" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="54200520" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<node type="node/const/general_node" x="379" y="462" idtf="Кондаков - Введение в логику" id="54139792" shapeColor="16728128" left="389" top="454.141" right="606.974" bottom="473.859" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="54200520" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<node type="node/const/general_node" x="379" y="501" idtf="Кондаков - Логический словарь-справочник" id="54160024" shapeColor="16728128" left="387" top="491.141" right="708.607" bottom="510.859" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="54200520" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<node type="node/const/general_node" x="379" y="540" idtf="Гильберт - Основы теоретической логики" id="54180288" shapeColor="16728128" left="388" top="530.141" right="706.81" bottom="549.859" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="54200520" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<pair type="pair/const/orient" idtf="" id_b="51674640" id_e="54200520" id="54206648" parent="53974684" shapeColor="16744576" b_x="441.896" b_y="181.816" e_x="513.016" e_y="287.983" dotBBalance="0" dotEBalance="0">
+<points/>
+</pair>
+<node type="node/const/general_node" x="323" y="234" idtf="публикации*" id="54213960" shapeColor="16728128" left="330" top="221.281" right="429.99" bottom="260.719" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="53974684" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<arc type="arc/const/pos" idtf="" id_b="54213960" id_e="54206648" id="54227128" parent="53974684" shapeColor="16744576" b_x="329.983" b_y="233.513" e_x="469.98" e_y="223.739" dotBBalance="0" dotEBalance="0.394882">
+<points/>
+</arc>
+</staticSector>
+</GWF>

@@ -1,0 +1,80 @@
+<?xml version="1.0"  encoding="windows-1251"?>
+
+<GWF version="1.6">
+<staticSector>
+<node type="node/const/group" x="76.9271" y="225.114" idtf="логическая формула" id="183373832" shapeColor="16728128" left="51.5" top="198.641" right="204.849" bottom="218.359" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="183418788" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<node type="node/const/general_node" x="286.5" y="400.5" idtf="атомарная логическая формула" id="183348624" shapeColor="16728128" left="293.5" top="397.641" right="533.927" bottom="417.359" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="183418788" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<node type="node/const/general_node" x="281.5" y="268.5" idtf="кванторная логическая формула" id="183459520" shapeColor="16728128" left="298.5" top="257.641" right="544.255" bottom="277.359" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="183418788" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<node type="node/const/general_node" x="414.5" y="288.5" idtf="конъюнктивная логическая формула" id="183387144" shapeColor="16728128" left="421.5" top="275.781" right="698.146" bottom="315.219" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="183418788" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<node type="node/const/general_node" x="413.5" y="389.5" idtf="негативная логическая формула" id="183370224" shapeColor="16728128" left="420.5" top="376.781" right="663.982" bottom="416.219" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="183418788" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<node type="node/const/general_node" x="413.5" y="354.5" idtf="альтернативная логическая формула" id="183333104" shapeColor="16728128" left="420.5" top="341.781" right="703.193" bottom="381.219" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="183418788" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<node type="node/const/general_node" x="414.5" y="318.5" idtf="дизъюнктивная логическая формула" id="183214088" shapeColor="16728128" left="421.5" top="315.641" right="696.169" bottom="335.359" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="183418788" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<arc type="arc/const/pos" idtf="" id_b="183348624" id_e="183214088" id="183256280" parent="183418788" shapeColor="16744576" b_x="292.394" b_y="396.724" e_x="408.606" e_y="322.276" dotBBalance="0" dotEBalance="0">
+<points/>
+</arc>
+<arc type="arc/const/pos" idtf="" id_b="183348624" id_e="183333104" id="183277664" parent="183418788" shapeColor="16744576" b_x="293.082" b_y="398.116" e_x="406.918" e_y="356.884" dotBBalance="0" dotEBalance="0">
+<points/>
+</arc>
+<arc type="arc/const/pos" idtf="" id_b="183348624" id_e="183370224" id="183328776" parent="183418788" shapeColor="16744576" b_x="293.474" b_y="399.896" e_x="406.526" e_y="390.104" dotBBalance="0" dotEBalance="0">
+<points/>
+</arc>
+<arc type="arc/const/pos" idtf="" id_b="183348624" id_e="183387144" id="183330392" parent="183418788" shapeColor="16744576" b_x="291.768" b_y="395.89" e_x="409.232" e_y="293.11" dotBBalance="0" dotEBalance="0">
+<points/>
+</arc>
+<node type="node/const/general_node" x="416.5" y="178.5" idtf="логическая формула о существовании" id="183332200" shapeColor="16728128" left="423.5" top="165.781" right="707.802" bottom="205.219" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="183418788" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<node type="node/const/general_node" x="416.5" y="217.5" idtf="логическая формула о всеобщости" id="183271056" shapeColor="16728128" left="423.5" top="214.641" right="683.044" bottom="234.359" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="183418788" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<arc type="arc/const/pos" idtf="" id_b="183459520" id_e="183332200" id="183226344" parent="183418788" shapeColor="16744576" b_x="287.324" b_y="264.617" e_x="410.676" e_y="182.383" dotBBalance="0" dotEBalance="0">
+<points/>
+</arc>
+<arc type="arc/const/pos" idtf="" id_b="183459520" id_e="183271056" id="183232464" parent="183418788" shapeColor="16744576" b_x="288.048" b_y="266.026" e_x="409.952" e_y="219.974" dotBBalance="0" dotEBalance="0">
+<points/>
+</arc>
+<node type="node/const/general_node" x="416" y="444" idtf="импликативная логическая формула" id="183280008" shapeColor="16728128" left="423" top="441.141" right="699.529" bottom="460.859" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="183418788" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<arc type="arc/const/pos" idtf="" id_b="183348624" id_e="183280008" id="183315760" parent="183418788" shapeColor="16744576" b_x="293.136" b_y="402.729" e_x="409.364" e_y="441.771" dotBBalance="0" dotEBalance="0">
+<points/>
+</arc>
+<node type="node/const/general_node" x="410" y="477" idtf="логическая формула об эквивалентности" id="183317720" shapeColor="16728128" left="417" top="474.141" right="726.794" bottom="493.859" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="183418788" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<arc type="arc/const/pos" idtf="" id_b="183348624" id_e="183317720" id="183341432" parent="183418788" shapeColor="16744576" b_x="292.451" b_y="404.186" e_x="404.049" e_y="473.314" dotBBalance="0" dotEBalance="0">
+<points/>
+</arc>
+<arc type="arc/const/pos" idtf="" id_b="183373832" id_e="183459520" id="183355208" parent="183418788" shapeColor="16744576" b_x="83.7748" b_y="226.566" e_x="274.652" e_y="267.048" dotBBalance="0" dotEBalance="0">
+<points/>
+</arc>
+<arc type="arc/const/pos" idtf="" id_b="183373832" id_e="183348624" id="183358304" parent="183418788" shapeColor="16744576" b_x="82.2953" b_y="229.606" e_x="281.132" e_y="396.008" dotBBalance="0" dotEBalance="0">
+<points/>
+</arc>
+</staticSector>
+</GWF>

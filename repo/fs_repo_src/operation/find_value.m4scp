@@ -32,6 +32,7 @@ along with OSTIS.  If not, see <http://www.gnu.org/licenses/>.
 #include "scp_keynodes.scsy"
 #include "com_keynodes.scsy"
 #include "etc_questions.scsy"
+#include "ui_keynodes.scsy"
 #include "meta_info.scsy"
 #include "lib_search.scsy"
 #include "lib_answer.scsy"
@@ -72,7 +73,7 @@ procedure(find_value,
 	exited=/"\n\nI have exited FIND VALUE\n\n"/;
 ]],
 [{	
-	inputarc,arc,arc1,value,handler,element,seg,segments,temp,attr,v_v_arc,answer
+	inputarc,arc,arc1,value,handler,element,seg,segments,temp,attr,v_v_arc,answer,values_set,vset_arc
 }],
 {[
 	1_: in_: handler,
@@ -100,11 +101,23 @@ printNl([1_: here])
 
 eraseEl([1_: fixed_: inputarc])
 
-searchElStr3([
+searchSetStr3([
 	1_: fixed_: value,
 	2_: assign_: const_: pos_: arc,
-	3_: assign_: attr
+	3_: assign_: const_: node_: temp,
+	set3_: assign_: values_set
 ])
+label(next_attr)
+//#ifVarAssign([1_: vset_arc],,noerase_vset_arc)
+//#eraseEl([1_: fixed_: vset_arc])
+//#label(noerase_vset_arc)
+searchElStr3([
+	1_: fixed_: values_set,
+	2_: assign_: const_: pos_: vset_arc,
+	3_: assign_: attr
+],,gen)
+
+eraseEl([1_: fixed_: vset_arc])
 
 callReturn([
 	1_: fixed_: search_quantity_value,
@@ -114,14 +127,50 @@ callReturn([
 	]}
 ])
 ifVarAssign([1_: temp],,nogen)
-ifFormCont([1_: temp],gen,nogen)
+ifFormCont([1_: temp],next_attr,nogen)
 
 label(gen)
+genEl([1_: node_: const_: assign_: answer])
+searchSetStr3([
+	1_: fixed_: value,
+	2_: assign_: const_: pos_: arc,
+	3_: assign_: const_: node_: temp,
+	set3_: assign_: values_set
+])
+
+label(next_attr1)
+//#ifVarAssign([1_: vset_arc],,noerase_vset_arc1)
+//#eraseEl([1_: fixed_: vset_arc])
+//#label(noerase_vset_arc1)
+searchElStr3([
+	1_: fixed_: values_set,
+	2_: assign_: const_: pos_: vset_arc,
+	3_: assign_: attr
+],,make_answer)
+eraseEl([1_: fixed_: vset_arc])
+callReturn([
+	1_: fixed_: search_quantity_value,
+	2_: fixed_: {[
+		1_: fixed_: attr,
+		2_: assign_: temp
+	]}
+])
+ifVarAssign([1_: temp],,exit)
 genElStr3([
-	1_: assign_: node_: const_: answer,
+	1_: fixed_: answer,
 	2_: assign_: pos_: const_: arc,
 	3_: fixed_: temp
 ])
+genElStr3([
+	1_: fixed_: ui_format_real,
+	2_: assign_: pos_: const_: arc,
+	3_: fixed_: temp
+])
+
+printNl([1_: /"REQUESTED VALUE IS:\n"/])
+printNl([1_: temp],next_attr1,next_attr1)
+
+label(make_answer)
 
 /////////////////////////////////////////////////////
 // Call of the answer making procedure
@@ -134,17 +183,24 @@ callReturn([
 	]
 )
 
-printNl([1_: /"REQUESTED VALUE IS:\n"/])
-printNl([1_: temp])
+eraseSetStr3([
+	1_: fixed_: group_looked_throught,
+	2_: assign_: const_: pos_: f_: arc,
+	3_: assign_: node_: const_: temp
+])
 
 genElStr3([
 	1_: fixed_: rrel_answer_is_present,
 	2_: assign_: const_: pos_: arc,
 	3_: fixed_: v_v_arc
-],next,next)
+],exit,exit)
 
 label(nogen)
-
+eraseSetStr3([
+	1_: fixed_: group_looked_throught,
+	2_: assign_: const_: pos_: f_: arc,
+	3_: assign_: node_: const_: temp
+])
 genElStr3([
 	1_: fixed_: rrel_answer_is_absent,
 	2_: assign_: const_: pos_: arc,
@@ -162,5 +218,8 @@ genElStr3([
 label(exit)
 //#//#printEl([1_: req])
 printNl([1_: exited])
+ifVarAssign([1_: values_set],,noerase_values_set)
+eraseEl([1_: fixed_: values_set])
+label(noerase_values_set)
 return()
 end

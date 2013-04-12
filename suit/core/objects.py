@@ -2228,7 +2228,7 @@ class ObjectText(Object):
         self.tooltip = None
         
         #visible length of identifier  
-        self.idtfVisibleLen = 10
+        self.idtfVisibleLen = 100
         
         # widgets
         self.__panel = None

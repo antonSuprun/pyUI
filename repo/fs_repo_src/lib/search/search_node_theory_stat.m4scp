@@ -46,10 +46,10 @@ procedure(search_node_theory_stat,
 	th=group_theory;		
 	
 	//#отладочная информация, закомментировать или убрать
-	find_th=/"\n\nI find theory!\n\n"/;
-	not_find_th=/"\n\nI don't find theory!\n\n"/;	
-	here=/"\n\nI have entered search_node_theory!!!\n\n"/;
-	exited=/"\n\nI have exited search_node_theory!!!\n\n"/;	
+	find_th=/""/;//#/"\n\nI find theory!\n\n"/;
+	not_find_th=/""/;//#/"\n\nI don't find theory!\n\n"/;	
+	here=/""/;//#/"\n\nI have entered search_node_theory!!!\n\n"/;
+	exited=/""/;//#/"\n\nI have exited search_node_theory!!!\n\n"/;	
 ]],
 [{	
 	arc,arc1,value,handler,element,seg,segments,temp,set,set2,theory,section,attr

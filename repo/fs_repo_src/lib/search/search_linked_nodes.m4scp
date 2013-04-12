@@ -46,10 +46,10 @@ procedure(search_linked_nodes,
 	second=2_;
 	
 	//#отладочная информация, закомментировать или убрать
-	linked_node=/"\n\nI find linked!\n\n"/;
-	not_linked_node=/"\n\nI find unlinked!\n\n"/;	
-	here=/"\n\nI have entered search_linked_nodes!!!\n\n"/;
-	exited=/"\n\nI have exited search_linked_nodes!!!\n\n"/;
+	linked_node=/""/;//#/"\n\nI find linked!\n\n"/;
+	not_linked_node=/""/;//#/"\n\nI find unlinked!\n\n"/;	
+	here=/""/;//#/"\n\nI have entered search_linked_nodes!!!\n\n"/;
+	exited=/""/;//#/"\n\nI have exited search_linked_nodes!!!\n\n"/;
 	
 ]],
 [{	
@@ -67,7 +67,7 @@ sys_get_location([1_: if,2_: assign_: seg])
 sys_set_default_segment([1_: fixed_: seg])
 sys_spin_segment([1_: fixed_: seg,	2_: assign_: segments])
 
-printNl([1_: here])
+//#printNl([1_: here])
 
 ///////////////////////////////
 genEl([1_: const_: node_: assign_: linked])
@@ -126,6 +126,6 @@ genElStr3([
 
 label(exit)
 
-printNl([1_: exited])
+//#printNl([1_: exited])
 return()
 end

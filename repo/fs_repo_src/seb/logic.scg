@@ -1,0 +1,930 @@
+#include "ordinal.scsy"
+#include "meta_info.scsy"
+#include "ui_keynodes.scsy"
+logic_src\course1.gwf
+logic_src\course2.gwf
+logic_src\course3.gwf
+logic_src\sub.gwf
+logic_src\Ассоциативное исчисление или система Туэ.gwf
+logic_src\атомарное высказывание.gwf
+logic_src\ВтораяТеоремаГеделя.gwf
+logic_src\дизъюнкт.gwf
+logic_src\единичное суждение.gwf
+logic_src\идентификации понятия(Конъюнкт).gwf
+logic_src\Конъюнкт.gwf
+logic_src\логическая функция.gwf
+logic_src\неопределённое частное суждение.gwf
+logic_src\общее суждение.gwf
+logic_src\Опр.(Ассоциативное исчисление или система Туэ).gwf
+logic_src\Опр.(Дизъюнкт).gwf
+logic_src\Опр.(единичное суждение).gwf
+logic_src\Опр.(неопределённое частное суждение).gwf
+logic_src\Опр.(область значения).gwf
+logic_src\Опр.(Общее суждение).gwf
+logic_src\Опр.(определённое частное суждение).gwf
+logic_src\Опр.(отрицательный литерал).gwf
+logic_src\Опр.(положительный литерал).gwf
+logic_src\Опр.(равносильные формулы).gwf
+logic_src\Опр.(Система подстановок или полусистема Туэ).gwf
+logic_src\Опр.(составное высказывание).gwf
+logic_src\Опр.(стрелка Пирса).gwf
+logic_src\Опр.(Суперпозиция формулы).gwf
+logic_src\Опр.(Суперпозиция функции).gwf
+logic_src\Опр.(Теорема Геделя(Вторая)).gwf
+logic_src\Опр.(Теорема Геделя(Первая)).gwf
+logic_src\Опр.(Теормема Поста о нормальной форме).gwf
+logic_src\Опр.(Условное суждение).gwf
+logic_src\Опр.(Формально непротиворечивая теория).gwf
+logic_src\Опр.(Хорновский дизъюнкт).gwf
+logic_src\Опр.(частное суждение).gwf
+logic_src\Опр.(штрих Шеффера).gwf
+logic_src\Опр.(Элементарная формула).gwf
+logic_src\определённое частное суждение.gwf
+logic_src\Отношение нестрогого порядка.gwf
+logic_src\Отношение строгого порядка.gwf
+logic_src\ПерваяТеоремаГеделя.gwf
+logic_src\равенство множеств.gwf
+logic_src\разделительное суждение.gwf
+logic_src\Семантика исчисления.gwf
+logic_src\синтаксис исчисления.gwf
+logic_src\система подстановок или полусистема Туэ.gwf
+logic_src\стрелка пирса.gwf
+logic_src\Субъект.gwf
+logic_src\Суперпозиция формулы.gwf
+logic_src\Суперпозиция функции.gwf
+logic_src\Теорема Поста о нормальной форме.gwf
+logic_src\тождественно-истинное высказывание.gwf
+logic_src\транзитивность.gwf
+logic_src\условное суждение.gwf
+logic_src\Утв.(дизъюнкция; стрелка Пирса).gwf
+logic_src\Утв.(дизъюнкция; штрих Шеффера).gwf
+logic_src\Утв.(импликация; стрелка Пирса).gwf
+logic_src\Утв.(импликация; штрих Шеффера).gwf
+logic_src\Утв.(конъюнкция; стрелка Пирса).gwf
+logic_src\Утв.(конъюнкция; штрих Шеффера).gwf
+logic_src\Утв.(отрицание; стрелка Пирса).gwf
+logic_src\Утв.(отрицание; штрих Шеффера).gwf
+logic_src\Утв.(стрелка Пирса).gwf
+logic_src\Утв.(стрелка Пирса; отрицание; дизъюнкция).gwf
+logic_src\Утв.(штрих Шеффера).gwf
+logic_src\Утв.(штрих Шеффера; отрицание; конъюнкция).gwf
+logic_src\Формализация(Опр.)_1-ый закон поглoщения.gwf
+logic_src\формализация(Опр.)_2-ой закон поглощения.gwf
+logic_src\формализация(Опр.)_Большая посылка.gwf
+logic_src\формализация(Опр.)_дизъюнктивная нормальная форма..gwf
+logic_src\формализация(Опр.)_дилемма.gwf
+logic_src\формализация(Опр.)_закон двойного отрицания.gwf
+logic_src\формализация(Опр.)_закон исключения третьего.gwf
+logic_src\формализация(Опр.)_закон противоречия.gwf
+logic_src\формализация(Опр.)_закон склеивания.gwf
+logic_src\формализация(Опр.)_конъюнктивная нормальная форма.gwf
+logic_src\формализация(Опр.)_Меньшая посылка.gwf
+logic_src\формализация(Опр.)_Силлогизм.gwf
+logic_src\формализация(Опр.)_Средний термин.gwf
+logic_src\формализация(Опр.)_условно-категорической умозаключение.gwf
+logic_src\формально непротиворечивая теория.gwf
+logic_src\Хорновский дизъюнкт.gwf
+logic_src\частное суждение.gwf
+logic_src\Чистое исчисление предикатов.gwf
+logic_src\штрих Шеффера.gwf
+logic_src\эквивалентное соотношение.gwf
+logic_src\1 правило деления константы\1 правило деления константы.gwf
+logic_src\1 правило деления константы\1 правило деления надмножества.gwf
+logic_src\1 правило деления константы\1 правило деления определние.gwf
+logic_src\1 правило деления константы\1 правило деления синонимы.gwf
+logic_src\1-ый закон поглoщения\константы_1-ый закон поглощения.gwf
+logic_src\1-ый закон поглoщения\надмножества_1-ый закон поглощения.gwf
+logic_src\1-ый закон поглoщения\определение_1-ый закон поглoщения.gwf
+logic_src\1-ый закон поглoщения\синонимы_1-ый закон поглoщения.gwf
+logic_src\2 правило деления константы\2 правило деления константы.gwf
+logic_src\2 правило деления константы\2 правило деления надмножества.gwf
+logic_src\2 правило деления константы\2 правило деления определние.gwf
+logic_src\2 правило деления константы\2 правило деления синонимы.gwf
+logic_src\2-ой закон поглощения\константы_2-ой закон поглощения.gwf
+logic_src\2-ой закон поглощения\надмножества_2-ой закон поглощения.gwf
+logic_src\2-ой закон поглощения\определение_2-ой закон поглощения.gwf
+logic_src\2-ой закон поглощения\синонимы_2-ой закон поглощения.gwf
+#include "logic_src\logic_scn\0.scsy"
+#include "logic_src\logic_scn\1.scsy"
+#include "logic_src\logic_scn\10.scsy"
+#include "logic_src\logic_scn\11.scsy"
+#include "logic_src\logic_scn\12.scsy"
+#include "logic_src\logic_scn\13.scsy"
+#include "logic_src\logic_scn\14.scsy"
+#include "logic_src\logic_scn\15.scsy"
+#include "logic_src\logic_scn\18.scsy"
+#include "logic_src\logic_scn\19.scsy"
+#include "logic_src\logic_scn\2.scsy"
+#include "logic_src\logic_scn\20.scsy"
+#include "logic_src\logic_scn\21.scsy"
+#include "logic_src\logic_scn\22.scsy"
+#include "logic_src\logic_scn\23.scsy"
+#include "logic_src\logic_scn\24.scsy"
+#include "logic_src\logic_scn\25.scsy"
+#include "logic_src\logic_scn\26.scsy"
+#include "logic_src\logic_scn\27.scsy"
+#include "logic_src\logic_scn\28.scsy"
+#include "logic_src\logic_scn\29.scsy"
+#include "logic_src\logic_scn\3.scsy"
+#include "logic_src\logic_scn\30.scsy"
+#include "logic_src\logic_scn\31.scsy"
+#include "logic_src\logic_scn\32.scsy"
+#include "logic_src\logic_scn\33.scsy"
+#include "logic_src\logic_scn\34.scsy"
+#include "logic_src\logic_scn\35.scsy"
+#include "logic_src\logic_scn\36.scsy"
+#include "logic_src\logic_scn\37.scsy"
+#include "logic_src\logic_scn\38.scsy"
+#include "logic_src\logic_scn\39.scsy"
+#include "logic_src\logic_scn\4.scsy"
+#include "logic_src\logic_scn\40.scsy"
+#include "logic_src\logic_scn\41.scsy"
+#include "logic_src\logic_scn\42.scsy"
+#include "logic_src\logic_scn\43.scsy"
+#include "logic_src\logic_scn\44.scsy"
+#include "logic_src\logic_scn\45.scsy"
+#include "logic_src\logic_scn\46.scsy"
+#include "logic_src\logic_scn\47.scsy"
+#include "logic_src\logic_scn\48.scsy"
+#include "logic_src\logic_scn\49.scsy"
+#include "logic_src\logic_scn\50.scsy"
+#include "logic_src\logic_scn\51.scsy"
+#include "logic_src\logic_scn\52.scsy"
+#include "logic_src\logic_scn\53.scsy"
+#include "logic_src\logic_scn\54.scsy"
+#include "logic_src\logic_scn\55.scsy"
+#include "logic_src\logic_scn\56.scsy"
+#include "logic_src\logic_scn\57.scsy"
+#include "logic_src\logic_scn\58.scsy"
+#include "logic_src\logic_scn\59.scsy"
+#include "logic_src\logic_scn\6.scsy"
+#include "logic_src\logic_scn\61.scsy"
+#include "logic_src\logic_scn\62.scsy"
+#include "logic_src\logic_scn\63.scsy"
+#include "logic_src\logic_scn\65.scsy"
+#include "logic_src\logic_scn\66.scsy"
+#include "logic_src\logic_scn\67.scsy"
+#include "logic_src\logic_scn\7.scsy"
+#include "logic_src\logic_scn\71.scsy"
+#include "logic_src\logic_scn\72.scsy"
+#include "logic_src\logic_scn\73.scsy"
+#include "logic_src\logic_scn\74.scsy"
+#include "logic_src\logic_scn\75.scsy"
+#include "logic_src\logic_scn\76.scsy"
+#include "logic_src\logic_scn\77.scsy"
+#include "logic_src\logic_scn\78.scsy"
+#include "logic_src\logic_scn\79.scsy"
+#include "logic_src\logic_scn\8.scsy"
+#include "logic_src\logic_scn\80.scsy"
+#include "logic_src\logic_scn\82.scsy"
+#include "logic_src\logic_scn\83.scsy"
+#include "logic_src\logic_scn\84.scsy"
+#include "logic_src\logic_scn\9.scsy"
+#include "logic_src\logic_scn\keywords.scsy"
+#include "logic_src\logic_scn\keywords_types.scsy"
+logic_src\logic_src1\logic_keynodes.gwf
+logic_src\logic_src1\mega.gwf
+logic_src\logic_src1\megatest.gwf
+logic_src\logic_src1\resolution2.gwf
+logic_src\logic_src1\resolutionNO.gwf
+logic_src\logic_src1\test2DCOD.gwf
+logic_src\logic_src1\test3DCOD.gwf
+logic_src\logic_src1\testc1.gwf
+logic_src\logic_src1\testDCOD.gwf
+logic_src\logic_src1\testRelation.gwf
+logic_src\logic_src1\test_5.gwf
+logic_src\logic_src1\test_eq.gwf
+logic_src\logic_src1\test_eqal.gwf
+logic_src\logic_src1\test_implic.gwf
+logic_src\logic_src1\test_morgan_law.gwf
+logic_src\logic_src1\test_neg.gwf
+logic_src\logic_src1\logic_lang\атомарная_логическая_формула.gwf
+logic_src\logic_src1\logic_lang\конъюнкция.gwf
+logic_src\logic_src1\logic_lang\логическая_переменная_идентификация.gwf
+logic_src\logic_src1\logic_lang\логическая_переменная_определение.gwf
+logic_src\logic_src1\logic_lang\логическая_формула_разбиение.gwf
+logic_src\logic_src1\logic_lang\ответ(модификации).gwf
+logic_src\logic_src1\logic_lang\ответ_иллюстрация.gwf
+logic_src\logic_src1\logic_lang\теория_разбиение.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\большая посылка константы.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\большая посылка описание.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\большая посылка определение текстовая форма.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\большая посылка синонимы.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\вторая фигура константы.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\вторая фигура определение текстовая форма.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\вторая фигура синонимы.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\высказывание определение текстовая форма.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\высказывание пояснение.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\высказывание синонимы.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\высказыванте пример.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\истина пояснение.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\истина синонимы.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\ложь пояснение.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\ложь синонимы.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\меньшая посылка константы.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\меньшая посылка описание.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\меньшая посылка определение текстовая форма.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\меньшая посылка синонимы.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\определение большая посылка.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\определение второй фигуры силлогизма.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\определение высказывания.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\определение меньшая посылка.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\определение первой фигуры силлогизма.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\определение свободная переменная.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\определение связанная переменная.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\определение силлогизма.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\определение третьей фигуры силлогизма.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\определение умозаключения.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\определение четвёртой фигуры силлогизма.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\первая фигура константы.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\первая фигура определение текстовая форма.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\первая фигура синонимы.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\пример большая посылка.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\пример меньшая посылка.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\пример субъект.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\публикации.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\разбиение второй фигуры.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\разбиение силлогизм.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\разбиение третьей фигуры.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\разбиение фигуры.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\разбиение четвёртой фигуры.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\силлогизм константы.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\силлогизм определение текстовая форма.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\силлогизм пояснение.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\силлогизм пример.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\силлогизм синонимы.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\субъект описание.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\субъект пояснение.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\субъект синонимы.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\третья фигура костанты.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\третья фигура определение текстовая форма.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\третья фигура синонимы.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\умозаключение константы.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\умозаключение пояснение.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\умозаключение синонимы.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\умозаключение текстовая форма.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\утввфс1.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\утввфс2.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\утверждения о второй фигуре.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\утверждения о первой фигуре.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\утверждения о силлогизме.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\утверждения о третьей фигуре.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\утверждения о четвёртой фигуре.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\утвпфс1.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\утвпфс2.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\утвсил1.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\утвсил2.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\утвсил3.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\утвсил4.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\утвтфс1.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\утвтфс2.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\утвчфс1.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\утвчфс2.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\утвчфс3.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\четвёртая фигура константы.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\четвёртая фигура определение текстовая форма.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\четвёртая фигура синонимы.gwf
+logic_src\logic_src1\rules_of_inference\syllogism\число модусов.gwf
+logic_src\logic_src1\sentential_logic\language\атомарная формула\Logic_atom_formula_consts.gwf
+logic_src\logic_src1\sentential_logic\language\атомарная формула\Logic_atom_formula_definition.gwf
+logic_src\logic_src1\sentential_logic\language\атомарная формула\Logic_atom_formula_ID.gwf
+logic_src\logic_src1\sentential_logic\language\атомарная формула\Logic_atom_formula_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\атомарное высказывание\Logic_atom_prop_consts.gwf
+logic_src\logic_src1\sentential_logic\language\атомарное высказывание\Logic_atom_prop_definition.gwf
+logic_src\logic_src1\sentential_logic\language\атомарное высказывание\Logic_atom_prop_ID.gwf
+logic_src\logic_src1\sentential_logic\language\атомарное высказывание\Logic_atom_prop_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\выполнимая формула\Logic_satisfiable_formula_consts.gwf
+logic_src\logic_src1\sentential_logic\language\выполнимая формула\Logic_satisfiable_formula_definition.gwf
+logic_src\logic_src1\sentential_logic\language\выполнимая формула\Logic_satisfiable_formula_ID.gwf
+logic_src\logic_src1\sentential_logic\language\выполнимая формула\Logic_satisfiable_formula_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\выполнимое множество формул\Logic_satisfiable_set_consts.gwf
+logic_src\logic_src1\sentential_logic\language\выполнимое множество формул\Logic_satisfiable_set_definition.gwf
+logic_src\logic_src1\sentential_logic\language\выполнимое множество формул\Logic_satisfiable_set_ID.gwf
+logic_src\logic_src1\sentential_logic\language\выполнимое множество формул\Logic_satisfiable_set_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\высказывание\Logic_prop_consts.gwf
+logic_src\logic_src1\sentential_logic\language\высказывание\Logic_prop_decomposition.gwf
+logic_src\logic_src1\sentential_logic\language\высказывание\Logic_prop_definition.gwf
+logic_src\logic_src1\sentential_logic\language\высказывание\Logic_prop_ID.gwf
+logic_src\logic_src1\sentential_logic\language\высказывание\Logic_prop_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\дизъюнкт\Logic_clause_consts.gwf
+logic_src\logic_src1\sentential_logic\language\дизъюнкт\Logic_clause_definition.gwf
+logic_src\logic_src1\sentential_logic\language\дизъюнкт\Logic_clause_ID.gwf
+logic_src\logic_src1\sentential_logic\language\дизъюнкт\Logic_clause_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\дизъюнкция\Logic_diz_definition.gwf
+logic_src\logic_src1\sentential_logic\language\дизъюнкция\Logic_diz_ID.gwf
+logic_src\logic_src1\sentential_logic\language\дизъюнкция\Logic_diz_relation.gwf
+logic_src\logic_src1\sentential_logic\language\дизъюнкция\Logic_diz_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\ДНФ\Logic_dnf_consts.gwf
+logic_src\logic_src1\sentential_logic\language\ДНФ\Logic_dnf_definition.gwf
+logic_src\logic_src1\sentential_logic\language\ДНФ\Logic_dnf_ID.gwf
+logic_src\logic_src1\sentential_logic\language\ДНФ\Logic_dnf_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\интерпретация\Logic_interpret_definition.gwf
+logic_src\logic_src1\sentential_logic\language\интерпретация\Logic_interpret_ID.gwf
+logic_src\logic_src1\sentential_logic\language\интерпретация\Logic_interpret_relation.gwf
+logic_src\logic_src1\sentential_logic\language\интерпретация\Logic_interpret_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\истина\Logic_truth_definition.gwf
+logic_src\logic_src1\sentential_logic\language\истина\Logic_truth_ID.gwf
+logic_src\logic_src1\sentential_logic\language\истина\Logic_truth_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\истинностное значение\Logic_truth_value_definition.gwf
+logic_src\logic_src1\sentential_logic\language\истинностное значение\Logic_truth_value_ID.gwf
+logic_src\logic_src1\sentential_logic\language\истинностное значение\Logic_truth_value_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\КНФ\Logic_cnf_consts.gwf
+logic_src\logic_src1\sentential_logic\language\КНФ\Logic_cnf_definition.gwf
+logic_src\logic_src1\sentential_logic\language\КНФ\Logic_cnf_prop_ID.gwf
+logic_src\logic_src1\sentential_logic\language\КНФ\Logic_cnf_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\конъюнкт\Logic_lit_conjunction_consts.gwf
+logic_src\logic_src1\sentential_logic\language\конъюнкт\Logic_lit_conjunction_definition.gwf
+logic_src\logic_src1\sentential_logic\language\конъюнкт\Logic_lit_conjunction_ID.gwf
+logic_src\logic_src1\sentential_logic\language\конъюнкт\Logic_lit_conjunction_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\конъюнкция\Logic_con_definition.gwf
+logic_src\logic_src1\sentential_logic\language\конъюнкция\Logic_con_ID.gwf
+logic_src\logic_src1\sentential_logic\language\конъюнкция\Logic_con_relation.gwf
+logic_src\logic_src1\sentential_logic\language\конъюнкция\Logic_con_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\литера\Logic_litera_consts.gwf
+logic_src\logic_src1\sentential_logic\language\литера\Logic_litera_definition.gwf
+logic_src\logic_src1\sentential_logic\language\литера\Logic_litera_prop_ID.gwf
+logic_src\logic_src1\sentential_logic\language\литера\Logic_litera_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\логическая связка\Logic_connective_definition.gwf
+logic_src\logic_src1\sentential_logic\language\логическая связка\Logic_connective_ID.gwf
+logic_src\logic_src1\sentential_logic\language\логическая связка\Logic_connective_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\логическая эквивалентонсть\Logic_equivalence_consts.gwf
+logic_src\logic_src1\sentential_logic\language\логическая эквивалентонсть\Logic_equivalence_definition.gwf
+logic_src\logic_src1\sentential_logic\language\логическая эквивалентонсть\Logic_equivalence_ID.gwf
+logic_src\logic_src1\sentential_logic\language\логическая эквивалентонсть\Logic_equivalence_relation.gwf
+logic_src\logic_src1\sentential_logic\language\логическая эквивалентонсть\Logic_equivalence_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\логическое следствие\Logic_sequence_consts.gwf
+logic_src\logic_src1\sentential_logic\language\логическое следствие\Logic_sequence_definition.gwf
+logic_src\logic_src1\sentential_logic\language\логическое следствие\Logic_sequence_ID.gwf
+logic_src\logic_src1\sentential_logic\language\логическое следствие\Logic_sequence_relation.gwf
+logic_src\logic_src1\sentential_logic\language\логическое следствие\Logic_sequence_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\ложь\Logic_false_definition.gwf
+logic_src\logic_src1\sentential_logic\language\ложь\Logic_false_ID.gwf
+logic_src\logic_src1\sentential_logic\language\ложь\Logic_false_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\множество дизъюнктов\Logic_clause_set_consts.gwf
+logic_src\logic_src1\sentential_logic\language\множество дизъюнктов\Logic_clause_set_definition.gwf
+logic_src\logic_src1\sentential_logic\language\множество дизъюнктов\Logic_clause_set_ID.gwf
+logic_src\logic_src1\sentential_logic\language\множество дизъюнктов\Logic_clause_set_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\множество значений переменных\Logic_values_consts.gwf
+logic_src\logic_src1\sentential_logic\language\множество значений переменных\Logic_values_definition.gwf
+logic_src\logic_src1\sentential_logic\language\множество значений переменных\Logic_values_ID.gwf
+logic_src\logic_src1\sentential_logic\language\множество значений переменных\Logic_values_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\множество конъюнктов\Logic_conjunction_set_consts.gwf
+logic_src\logic_src1\sentential_logic\language\множество конъюнктов\Logic_conjunction_set_definition.gwf
+logic_src\logic_src1\sentential_logic\language\множество конъюнктов\Logic_conjunction_set_ID.gwf
+logic_src\logic_src1\sentential_logic\language\множество конъюнктов\Logic_conjunction_set_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\множество литер\Logic_liter_set_consts.gwf
+logic_src\logic_src1\sentential_logic\language\множество литер\Logic_liter_set_definition.gwf
+logic_src\logic_src1\sentential_logic\language\множество литер\Logic_liter_set_ID.gwf
+logic_src\logic_src1\sentential_logic\language\множество литер\Logic_liter_set_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\множество формул\Logic_formula_set_consts.gwf
+logic_src\logic_src1\sentential_logic\language\множество формул\Logic_formula_set_definition.gwf
+logic_src\logic_src1\sentential_logic\language\множество формул\Logic_formula_set_ID.gwf
+logic_src\logic_src1\sentential_logic\language\множество формул\Logic_formula_set_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\неатомарная формула\Logic_natom_formula_consts.gwf
+logic_src\logic_src1\sentential_logic\language\неатомарная формула\Logic_natom_formula_definition.gwf
+logic_src\logic_src1\sentential_logic\language\неатомарная формула\Logic_natom_formula_ID.gwf
+logic_src\logic_src1\sentential_logic\language\неатомарная формула\Logic_natom_formula_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\неатомарное высказывание\Logic_natom_prop_consts.gwf
+logic_src\logic_src1\sentential_logic\language\неатомарное высказывание\Logic_natom_prop_definition.gwf
+logic_src\logic_src1\sentential_logic\language\неатомарное высказывание\Logic_natom_prop_ID.gwf
+logic_src\logic_src1\sentential_logic\language\неатомарное высказывание\Logic_natom_prop_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\невыполнимая формула\Logic_unsatisfiable_formula_consts.gwf
+logic_src\logic_src1\sentential_logic\language\невыполнимая формула\Logic_unsatisfiable_formula_definition.gwf
+logic_src\logic_src1\sentential_logic\language\невыполнимая формула\Logic_unsatisfiable_formula_ID.gwf
+logic_src\logic_src1\sentential_logic\language\невыполнимая формула\Logic_unsatisfiable_formula_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\нейтральная формула\Logic_neutral_formula_consts.gwf
+logic_src\logic_src1\sentential_logic\language\нейтральная формула\Logic_neutral_formula_definition.gwf
+logic_src\logic_src1\sentential_logic\language\нейтральная формула\Logic_neutral_formula_ID.gwf
+logic_src\logic_src1\sentential_logic\language\нейтральная формула\Logic_neutral_formula_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\необщезначимая формула\Logic_invalid_formula_consts.gwf
+logic_src\logic_src1\sentential_logic\language\необщезначимая формула\Logic_invalid_formula_definition.gwf
+logic_src\logic_src1\sentential_logic\language\необщезначимая формула\Logic_invalid_formula_ID.gwf
+logic_src\logic_src1\sentential_logic\language\необщезначимая формула\Logic_invalid_formula_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\общезначимая формула\Logic_valid_formula_consts.gwf
+logic_src\logic_src1\sentential_logic\language\общезначимая формула\Logic_valid_formula_definition.gwf
+logic_src\logic_src1\sentential_logic\language\общезначимая формула\Logic_valid_formula_ID.gwf
+logic_src\logic_src1\sentential_logic\language\общезначимая формула\Logic_valid_formula_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\отрицание\Logic_neg_definition.gwf
+logic_src\logic_src1\sentential_logic\language\отрицание\Logic_neg_ID.gwf
+logic_src\logic_src1\sentential_logic\language\отрицание\Logic_neg_relation.gwf
+logic_src\logic_src1\sentential_logic\language\отрицание\Logic_neg_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\пропозиционная переменная\Logic_prop_var_consts.gwf
+logic_src\logic_src1\sentential_logic\language\пропозиционная переменная\Logic_prop_var_definition.gwf
+logic_src\logic_src1\sentential_logic\language\пропозиционная переменная\Logic_prop_var_ID.gwf
+logic_src\logic_src1\sentential_logic\language\пропозиционная переменная\Logic_prop_var_supsets.gwf
+logic_src\logic_src1\sentential_logic\language\Утверждения\Logic_axiom_1.gwf
+logic_src\logic_src1\sentential_logic\language\Утверждения\Logic_axiom_10.gwf
+logic_src\logic_src1\sentential_logic\language\Утверждения\Logic_axiom_11.gwf
+logic_src\logic_src1\sentential_logic\language\Утверждения\Logic_axiom_2.gwf
+logic_src\logic_src1\sentential_logic\language\Утверждения\Logic_axiom_3.gwf
+logic_src\logic_src1\sentential_logic\language\Утверждения\Logic_axiom_4.gwf
+logic_src\logic_src1\sentential_logic\language\Утверждения\Logic_axiom_5.gwf
+logic_src\logic_src1\sentential_logic\language\Утверждения\Logic_axiom_6.gwf
+logic_src\logic_src1\sentential_logic\language\Утверждения\Logic_axiom_7.gwf
+logic_src\logic_src1\sentential_logic\language\Утверждения\Logic_axiom_8.gwf
+logic_src\logic_src1\sentential_logic\language\Утверждения\Logic_axiom_9.gwf
+logic_src\logic_src1\sentential_logic\language\Утверждения\Logic_judgment_1.gwf
+logic_src\logic_src1\sentential_logic\language\Утверждения\Logic_judgment_2.gwf
+logic_src\logic_src1\sentential_logic\language\формула\Logic_formula_consts.gwf
+logic_src\logic_src1\sentential_logic\language\формула\Logic_formula_decomposition.gwf
+logic_src\logic_src1\sentential_logic\language\формула\Logic_formula_definition.gwf
+logic_src\logic_src1\sentential_logic\language\формула\Logic_formula_ID.gwf
+logic_src\logic_src1\sentential_logic\language\формула\Logic_formula_supsets.gwf
+logic_src\logic_src1\sentential_logic\resolution\Определение - дизъюнкт.gwf
+logic_src\logic_src1\sentential_logic\resolution\Определение - литера.gwf
+logic_src\logic_src1\sentential_logic\resolution\Определение - логическое следствие по правилу резолюций.gwf
+logic_src\logic_src1\sentential_logic\resolution\Определение - негативный хорновский дизъюнкт.gwf
+logic_src\logic_src1\sentential_logic\resolution\Определение - последовательность формул.gwf
+logic_src\logic_src1\sentential_logic\resolution\Определение - правило резолюций.gwf
+logic_src\logic_src1\sentential_logic\resolution\Определение - резольвента.gwf
+logic_src\logic_src1\sentential_logic\resolution\Определение - резолюционный вывод.gwf
+logic_src\logic_src1\sentential_logic\resolution\Определение - точный хорновский дизъюнкт.gwf
+logic_src\logic_src1\sentential_logic\resolution\Определение - хорновский дизъюнкт.gwf
+logic_src\logic_src1\sentential_logic\resolution\Теорема - Если 2 дизъюнкта имеют резольвенту, то она единственная.gwf
+logic_src\logic_src1\sentential_logic\resolution\Теорема - Если 2 единичных дизъюнкта имеют резольвенту, то она невыполнима.gwf
+logic_src\logic_src1\sentential_logic\resolution\Теорема - Из любого невыполнимого множества можно выделить невыполнимое подмножество.gwf
+logic_src\logic_src1\sentential_logic\resolution\Теорема - Множество, содержащее резольвенты своих элементов, содержит пустой дизъюнкт.gwf
+logic_src\logic_src1\sentential_logic\resolution\Теорема - Наличие общезначимого дизъюнкта в множестве формул не делают это множество общезначимым.gwf
+logic_src\logic_src1\sentential_logic\resolution\Теорема - Необходимое и достаточное условие невыполнимости множества дизъюнктов.gwf
+logic_src\logic_src1\sentential_logic\resolution\Теорема - Резольвента является логическим следствием дизъюнктов, из которых получена.gwf
+logic_src\logic_src1\sentential_logic\resolution\Теорема - Теорема дедукции.gwf
+logic_src\logic_src1\sentential_logic\resolution\Теорема - Теорема компактности.gwf
+logic_src\logic_src1\sentential_logic\resolution\Теорема - Формулировка правила резолюций.gwf
+logic_src\logic_src1\sentential_logic\resolution\Фактографические данные - формулы.gwf
+logic_src\logic_src1\sentential_logic\resolution\Фактографические данные.gwf
+logic_src\абстрактное понятие\абстрактное понятие константы.gwf
+logic_src\абстрактное понятие\абстрактное понятие надмножества.gwf
+logic_src\абстрактное понятие\абстрактное понятие определение.gwf
+logic_src\абстрактное понятие\абстрактное понятие синоним.gwf
+logic_src\аксиома\аксиома константы.gwf
+logic_src\аксиома\аксиома надмножества.gwf
+logic_src\аксиома\аксиома определение.gwf
+logic_src\аксиома\аксиома синонимы.gwf
+logic_src\аподиктическое  суждение\константы.gwf
+logic_src\аподиктическое  суждение\надмножества апод сужд.gwf
+logic_src\аподиктическое  суждение\определение апод сужд.gwf
+logic_src\аподиктическое  суждение\отношения.gwf
+logic_src\аподиктическое  суждение\синонимы.gwf
+logic_src\арность предиката\арность предиката константы.gwf
+logic_src\арность предиката\арность предиката надмножества.gwf
+logic_src\арность предиката\арность предиката определение.gwf
+logic_src\арность предиката\арность предиката синонимы.gwf
+logic_src\ассерторическое суждение\константы.gwf
+logic_src\ассерторическое суждение\надмножества асс сужд.gwf
+logic_src\ассерторическое суждение\определение ассе сужд.gwf
+logic_src\ассерторическое суждение\отношения.gwf
+logic_src\ассерторическое суждение\синонимы.gwf
+logic_src\атом\атом константы.gwf
+logic_src\атом\атом надмножества.gwf
+logic_src\атом\атом определение.gwf
+logic_src\атом\атом синонимы.gwf
+logic_src\атрибутивное суждение\константы.gwf
+logic_src\атрибутивное суждение\надмножества .gwf
+logic_src\атрибутивное суждение\определение.gwf
+logic_src\атрибутивное суждение\отношения.gwf
+logic_src\атрибутивное суждение\синонимы.gwf
+logic_src\бинарный предикат\бинарный предикат константы.gwf
+logic_src\бинарный предикат\бинарный предикат надмножества.gwf
+logic_src\бинарный предикат\бинарный предикат определение.gwf
+logic_src\бинарный предикат\бинарный предикат синонимы.gwf
+logic_src\булевая алгебра\булевая алгебра константы.gwf
+logic_src\булевая алгебра\булевая алгебра надмножества.gwf
+logic_src\булевая алгебра\булевая алгебра определение.gwf
+logic_src\булевая алгебра\булевая алгебра синонимы.gwf
+logic_src\булевая операция SCl\булевые операции.gwf
+logic_src\булевая формула\булевая формула константы.gwf
+logic_src\булевая формула\булевая формула надмножества.gwf
+logic_src\булевая формула\булевая формула определние.gwf
+logic_src\булевая формула\булевая формула синонимы.gwf
+logic_src\второстепенный вопрос\константы.gwf
+logic_src\второстепенный вопрос\надмножества .gwf
+logic_src\второстепенный вопрос\определение.gwf
+logic_src\второстепенный вопрос\отношения.gwf
+logic_src\второстепенный вопрос\синонимы.gwf
+logic_src\выделяющее суждение\константы.gwf
+logic_src\выделяющее суждение\надмножества .gwf
+logic_src\выделяющее суждение\определение.gwf
+logic_src\выделяющее суждение\отношения.gwf
+logic_src\выделяющее суждение\синонимы.gwf
+logic_src\главный вопрос\константы.gwf
+logic_src\главный вопрос\надмножества .gwf
+logic_src\главный вопрос\определение.gwf
+logic_src\главный вопрос\отношения.gwf
+logic_src\главный вопрос\синонимы.gwf
+logic_src\двусмысленное определение\двусмысленное определение коснтанты.gwf
+logic_src\двусмысленное определение\двусмысленное определение надмножества.gwf
+logic_src\двусмысленное определение\двусмысленное определение определение.gwf
+logic_src\двусмысленное определение\двусмысленное определение синонимы.gwf
+logic_src\деление понятия\надмножества.gwf
+logic_src\делимое понятие\делимое понятие константы.gwf
+logic_src\делимое понятие\делимое понятие надмножества.gwf
+logic_src\делимое понятие\делимое понятие определние.gwf
+logic_src\делимое понятие\делимое понятие синонимы.gwf
+logic_src\дескрипционная логика\дескрипционная логика константы.gwf
+logic_src\дескрипционная логика\дескрипционная логика надмножества.gwf
+logic_src\дескрипционная логика\дескрипционная логика определение.gwf
+logic_src\дескрипционная логика\дескрипционная логика синонимы.gwf
+logic_src\дизъюнктивная нормальная форма\константы_дизъюнктивная нормальная форма.gwf
+logic_src\дизъюнктивная нормальная форма\надмножества_дизъюнктивная нормальная форма.gwf
+logic_src\дизъюнктивная нормальная форма\определение_дизъюнктивная нормальная форма..gwf
+logic_src\дизъюнктивная нормальная форма\синонимы_дизъюнктивная нормальная форма.gwf
+logic_src\дизъюнктивный одночлен\дизъюнктивный одночлен константы.gwf
+logic_src\дизъюнктивный одночлен\дизъюнктивный одночлен надмножество.gwf
+logic_src\дизъюнктивный одночлен\дизъюнктивный одночлен определение.gwf
+logic_src\дизъюнктивный одночлен\дизъюнктивный одночлен синонимы.gwf
+logic_src\дилемма\константы_дилемма.gwf
+logic_src\дилемма\определение_дилемма.gwf
+logic_src\дилемма\разбиение_дилемма.gwf
+logic_src\дилемма\синонимы_дилемма.gwf
+logic_src\дихотомия\дихотомия константы.gwf
+logic_src\дихотомия\дихотомия надмножества.gwf
+logic_src\дихотомия\дихотомия определние.gwf
+logic_src\дихотомия\дихотомия синонимы.gwf
+logic_src\доказательство\доказательство  синонимы.gwf
+logic_src\доказательство\доказательство коснтанты.gwf
+logic_src\доказательство\доказательство надмножество.gwf
+logic_src\доказательство\доказательство определение.gwf
+logic_src\доказательство формулы\доказательство формулы константы.gwf
+logic_src\доказательство формулы\доказательство формулы надмножество.gwf
+logic_src\доказательство формулы\доказательство формулы определение.gwf
+logic_src\доказательство формулы\доказательство формулы синонимы.gwf
+logic_src\достаточное условие\достаточное условие константы.gwf
+logic_src\достаточное условие\достаточное условие надмножество.gwf
+logic_src\достаточное условие\достаточное условие определение.gwf
+logic_src\достаточное условие\достаточное условие синонимы.gwf
+logic_src\единичное понятие\единичное понятие константы.gwf
+logic_src\единичное понятие\единичное понятие надмножества.gwf
+logic_src\единичное понятие\единичное понятие определение.gwf
+logic_src\единичное понятие\единичное понятие синонимы.gwf
+logic_src\ЗАДАЧИ\1.gwf
+logic_src\ЗАДАЧИ\logic_keynodes.gwf
+logic_src\ЗАДАЧИ\zada4ra.gwf
+logic_src\закон двойного отрицания\константы_закон двойного отрицания.gwf
+logic_src\закон двойного отрицания\надмножества_закон двойного отрицания.gwf
+logic_src\закон двойного отрицания\определение_закон двойного отрицания.gwf
+logic_src\закон двойного отрицания\синонимы_закон двойного отрицания.gwf
+logic_src\закон исключения третьего\константы_закон исключения третьего.gwf
+logic_src\закон исключения третьего\надмножества_закон исключения третьего.gwf
+logic_src\закон исключения третьего\определение_закон исключения третьего.gwf
+logic_src\закон исключения третьего\синонимы_закон исключения третьего.gwf
+logic_src\закон противоречия\константы_закон противоречия.gwf
+logic_src\закон противоречия\надмножества_закон противоречия.gwf
+logic_src\закон противоречия\определение_закон противоречия.gwf
+logic_src\закон противоречия\синонимы_закон противоречия.gwf
+logic_src\закон склеивания\константы_закон склеивания.gwf
+logic_src\закон склеивания\надмножества_закон склеивания.gwf
+logic_src\закон склеивания\определение_закон склеивания.gwf
+logic_src\закон склеивания\синонимы_закон склеивания.gwf
+logic_src\закон тождества\константы_закон тождества.gwf
+logic_src\закон тождества\надмножества_закон тождества.gwf
+logic_src\закон тождества\определение_закон тождества.gwf
+logic_src\закон тождества\синонимы_закон тождества.gwf
+logic_src\индуктивное умозаключение\константы.gwf
+logic_src\индуктивное умозаключение\надмножества .gwf
+logic_src\индуктивное умозаключение\определение.gwf
+logic_src\индуктивное умозаключение\отношения.gwf
+logic_src\индуктивное умозаключение\разбиение.gwf
+logic_src\индуктивное умозаключение\синонимы.gwf
+logic_src\исключающее суждение\константы.gwf
+logic_src\исключающее суждение\надмножества .gwf
+logic_src\исключающее суждение\определение.gwf
+logic_src\исключающее суждение\отношения.gwf
+logic_src\исключающее суждение\синонимы.gwf
+logic_src\кватерный предикат\кватерный предикат констнты.gwf
+logic_src\кватерный предикат\кватерный предикат надмножества.gwf
+logic_src\кватерный предикат\кватерный предикат определение.gwf
+logic_src\кватерный предикат\кватерный предикат синонимы.gwf
+logic_src\конкретное понятие\конкретное понятие константы.gwf
+logic_src\конкретное понятие\конкретное понятие надмножества.gwf
+logic_src\конкретное понятие\конкретное понятие определение.gwf
+logic_src\конкретное понятие\конкретное понятие синонимы.gwf
+logic_src\конъюктивный одночлен\конъюктивный одночлен константы.gwf
+logic_src\конъюктивный одночлен\конъюктивный одночлен надмножество.gwf
+logic_src\конъюктивный одночлен\конъюктивный одночлен определение.gwf
+logic_src\конъюктивный одночлен\конъюктивный одночлен синонимы.gwf
+logic_src\конъюнктивная нормальная форма\константы_конъюнктивная нормальная форма.gwf
+logic_src\конъюнктивная нормальная форма\надмножество_конъюнктивная нормальная форма.gwf
+logic_src\конъюнктивная нормальная форма\определение_конъюнктивная нормальная форма.gwf
+logic_src\конъюнктивная нормальная форма\синонимы_конъюнктивная нормальная форма.gwf
+logic_src\лемма SCl\лемма.gwf
+logic_src\мнимый парадокс\мнимый парадокс константы.gwf
+logic_src\мнимый парадокс\мнимый парадокс определение.gwf
+logic_src\мнимый парадокс\мнимый парадокс синонимы.gwf
+logic_src\мнимый парадокс\мнимый парадокс.gwf
+logic_src\многознаяная логика\многозначная логика константы.gwf
+logic_src\многознаяная логика\многозначная логика надмножества.gwf
+logic_src\многознаяная логика\многозначная логика определение.gwf
+logic_src\многознаяная логика\многозначная логика синонимы.gwf
+logic_src\модальная логика\модальная логика констынты.gwf
+logic_src\модальная логика\модальная логика надмножества.gwf
+logic_src\модальная логика\модальная логика определение.gwf
+logic_src\модальная логика\модальная логика синонимы.gwf
+logic_src\модальное суждение\константы.gwf
+logic_src\модальное суждение\надмножества .gwf
+logic_src\модальное суждение\определение.gwf
+logic_src\модальное суждение\отношения.gwf
+logic_src\модальное суждение\разбиение.gwf
+logic_src\модальное суждение\синонимы.gwf
+logic_src\модус  Толлендо Поненс\константы_модус  Толлендо Поненс.gwf
+logic_src\модус  Толлендо Поненс\надмножества_модус  Толлендо Поненс.gwf
+logic_src\модус  Толлендо Поненс\определение_модус  Толлендо Поненс.gwf
+logic_src\модус  Толлендо Поненс\синонимы_модус  Толлендо Поненс.gwf
+logic_src\модус  Толленс\константы_модус  Толленс.gwf
+logic_src\модус  Толленс\надмножества_модус  Толленс.gwf
+logic_src\модус  Толленс\определение_модус  Толленс.gwf
+logic_src\модус  Толленс\синонимы_модус  Толленс.gwf
+logic_src\модус Понендо Толленс\константы_модус Понендо Толленс.gwf
+logic_src\модус Понендо Толленс\надмножества_модус Понендо Толленс.gwf
+logic_src\модус Понендо Толленс\определение_модус Понендо Толленс.gwf
+logic_src\модус Понендо Толленс\синонимы_модус Понендо Толленс.gwf
+logic_src\наводящий вопрос\константы.gwf
+logic_src\наводящий вопрос\надмножества .gwf
+logic_src\наводящий вопрос\определение.gwf
+logic_src\наводящий вопрос\отношения.gwf
+logic_src\наводящий вопрос\синонимы.gwf
+logic_src\научная индукция\константы.gwf
+logic_src\научная индукция\надмножества .gwf
+logic_src\научная индукция\определение.gwf
+logic_src\научная индукция\отношения.gwf
+logic_src\научная индукция\разбиение.gwf
+logic_src\научная индукция\синонимы.gwf
+logic_src\недоказуемыу утверждения\недокозуемые утверждения константы.gwf
+logic_src\недоказуемыу утверждения\недокозуемые утверждения надмножества.gwf
+logic_src\недоказуемыу утверждения\недокозуемые утверждения определение.gwf
+logic_src\недоказуемыу утверждения\недокозуемые утверждения синонимы.gwf
+logic_src\необходимое условие\необходимое условие константы.gwf
+logic_src\необходимое условие\необходимое условие надмножества.gwf
+logic_src\необходимое условие\необходимое условие определение.gwf
+logic_src\необходимое условие\необходимое условие синонимы.gwf
+logic_src\неполная индукция\константы.gwf
+logic_src\неполная индукция\надмножества .gwf
+logic_src\неполная индукция\определение.gwf
+logic_src\неполная индукция\отношения.gwf
+logic_src\неполная индукция\синонимы.gwf
+logic_src\непосредственное умозаключение\непосредственное умозаключение константы.gwf
+logic_src\непосредственное умозаключение\непосредственное умозаключение надмножества.gwf
+logic_src\непосредственное умозаключение\непосредственное умозаключение определение.gwf
+logic_src\непосредственное умозаключение\непосредственное умозаключение синонимы.gwf
+logic_src\нераспределенный термин\надмножества .gwf
+logic_src\нераспределенный термин\определение.gwf
+logic_src\нераспределенный термин\синонимы.gwf
+logic_src\нераспределенный термин\эпихейрема.gwf
+logic_src\несовместимые по объёмам понятия\несовместимые по объёмам понятия константы.gwf
+logic_src\несовместимые по объёмам понятия\несовместимые по объёмам понятия надмножества.gwf
+logic_src\несовместимые по объёмам понятия\несовместимые по объёмам понятия определение.gwf
+logic_src\несовместимые по объёмам понятия\несовместимые по объёмам понятия синонимы.gwf
+logic_src\нулевое понятие\нулевое понятие константы.gwf
+logic_src\нулевое понятие\нулевое понятие надмножество.gwf
+logic_src\нулевое понятие\нулевое понятие определение.gwf
+logic_src\нулевое понятие\нулевое понятие синонимы.gwf
+logic_src\нулевое понятие\нулевое понятие.gwf
+logic_src\обращение\константы.gwf
+logic_src\обращение\надмножества .gwf
+logic_src\обращение\определение.gwf
+logic_src\обращение\отношения.gwf
+logic_src\обращение\разбиение.gwf
+logic_src\обращение\синонимы.gwf
+logic_src\общее понятие\общее понятие константы.gwf
+logic_src\общее понятие\общее понятие надмножества.gwf
+logic_src\общее понятие\общее понятие определение.gwf
+logic_src\общее понятие\общее понятие синонимы.gwf
+logic_src\объём понятия\объём понятия константы.gwf
+logic_src\объём понятия\объём понятия надмножества.gwf
+logic_src\объём понятия\объём понятия определение.gwf
+logic_src\объём понятия\объём понятия синонимы.gwf
+logic_src\опосредственное умозаключение\опосредственное умозаключение константы.gwf
+logic_src\опосредственное умозаключение\опосредственное умозаключение надмножества.gwf
+logic_src\опосредственное умозаключение\опосредственное умозаключение определение.gwf
+logic_src\опосредственное умозаключение\опосредственное умозаключение синонимы.gwf
+logic_src\определение понятия\надмножества.gwf
+logic_src\определение понятия\определение.gwf
+logic_src\определение понятия\пример.gwf
+logic_src\определение понятия\синонимы.gwf
+logic_src\определение понятия\схема.gwf
+logic_src\определенно-частное суждение\константы.gwf
+logic_src\определенно-частное суждение\надмножества .gwf
+logic_src\определенно-частное суждение\определение.gwf
+logic_src\определенно-частное суждение\отношения.gwf
+logic_src\определенно-частное суждение\синонимы.gwf
+logic_src\основание деления\основание деления константы.gwf
+logic_src\основание деления\основание деления надмножества.gwf
+logic_src\основание деления\основание деления определение.gwf
+logic_src\основание деления\основание деления синонимы.gwf
+logic_src\полисиллог\константы.gwf
+logic_src\полисиллог\надмножества .gwf
+logic_src\полисиллог\определение.gwf
+logic_src\полисиллог\отношения.gwf
+logic_src\полисиллог\разбиение.gwf
+logic_src\полисиллог\синонимы.gwf
+logic_src\полная индукция\константы.gwf
+logic_src\полная индукция\надмножества .gwf
+logic_src\полная индукция\определение.gwf
+logic_src\полная индукция\отношения.gwf
+logic_src\полная индукция\синонимы.gwf
+logic_src\понятие\константы.gwf
+logic_src\понятие\надмножества .gwf
+logic_src\понятие\определение.gwf
+logic_src\понятие\отношения.gwf
+logic_src\понятие\разбиение.gwf
+logic_src\понятие\синонимы.gwf
+logic_src\популярная индукция\константы.gwf
+logic_src\популярная индукция\надмножества .gwf
+logic_src\популярная индукция\определение.gwf
+logic_src\популярная индукция\отношения.gwf
+logic_src\популярная индукция\синонимы.gwf
+logic_src\правило всех терминов\константы.gwf
+logic_src\правило всех терминов\надмножества.gwf
+logic_src\правило всех терминов\определение.gwf
+logic_src\правило всех терминов\пояснение.gwf
+logic_src\правило всех терминов\синонимы.gwf
+logic_src\Правило крайнего термина\константы.gwf
+logic_src\Правило крайнего термина\надмножества.gwf
+logic_src\Правило крайнего термина\определение.gwf
+logic_src\Правило крайнего термина\синонимы.gwf
+logic_src\правило посылок №2\константы.gwf
+logic_src\правило посылок №2\надмножества.gwf
+logic_src\правило посылок №2\определение.gwf
+logic_src\правило посылок №2\синонимы.gwf
+logic_src\правило посылок №3\константы.gwf
+logic_src\правило посылок №3\надмножества.gwf
+logic_src\правило посылок №3\определение.gwf
+logic_src\правило посылок №3\синонимы.gwf
+logic_src\правило посылок №4\константы.gwf
+logic_src\правило посылок №4\надмножества.gwf
+logic_src\правило посылок №4\определение.gwf
+logic_src\правило посылок №4\синонимы.gwf
+logic_src\правило посылок№1\константы.gwf
+logic_src\правило посылок№1\надмножества.gwf
+logic_src\правило посылок№1\определение.gwf
+logic_src\правило посылок№1\синонимы.gwf
+logic_src\правило среднего термина\константы.gwf
+logic_src\правило среднего термина\надмножества.gwf
+logic_src\правило среднего термина\определение.gwf
+logic_src\правило среднего термина\синонимы.gwf
+logic_src\проблема суждение\константы.gwf
+logic_src\проблема суждение\надмножества .gwf
+logic_src\проблема суждение\определение.gwf
+logic_src\проблема суждение\отношения.gwf
+logic_src\проблема суждение\синонимы.gwf
+logic_src\прорессивный полисиллогизм\прогрессивный полисиллогизм константы.gwf
+logic_src\прорессивный полисиллогизм\прогрессивный полисиллогизм надмножества.gwf
+logic_src\прорессивный полисиллогизм\прогрессивный полисиллогизм определение.gwf
+logic_src\прорессивный полисиллогизм\прогрессивный полисиллогизм синонимы.gwf
+logic_src\просиллогизм\просиллогизм константы.gwf
+logic_src\просиллогизм\просиллогизм надмножества.gwf
+logic_src\просиллогизм\просиллогизм определение.gwf
+logic_src\просиллогизм\просиллогизм синонимы.gwf
+logic_src\простой вопрос\простой вопрос\константы.gwf
+logic_src\простой вопрос\простой вопрос\надмножества .gwf
+logic_src\простой вопрос\простой вопрос\определение.gwf
+logic_src\простой вопрос\простой вопрос\отношения.gwf
+logic_src\простой вопрос\простой вопрос\синонимы.gwf
+logic_src\простой вопрос по интеллектуальному уровню\константы.gwf
+logic_src\простой вопрос по интеллектуальному уровню\надмножества .gwf
+logic_src\простой вопрос по интеллектуальному уровню\определение.gwf
+logic_src\простой вопрос по интеллектуальному уровню\отношения.gwf
+logic_src\простой вопрос по интеллектуальному уровню\синонимы.gwf
+logic_src\простой силлогизм\простой силлогизм константы.gwf
+logic_src\простой силлогизм\простой силлогизм надмножества.gwf
+logic_src\простой силлогизм\простой силлогизм определение.gwf
+logic_src\простой силлогизм\простой силлогизм синонимы.gwf
+logic_src\простой силлогизм\простой силлогизм.gwf
+logic_src\противопост\константы.gwf
+logic_src\противопост\надмножества .gwf
+logic_src\противопост\определение.gwf
+logic_src\противопост\отношения.gwf
+logic_src\противопост\разбиение.gwf
+logic_src\противопост\синонимы.gwf
+logic_src\разделительно-категорическое умозаключение\разделительно-категорическое умозаключение константы.gwf
+logic_src\разделительно-категорическое умозаключение\разделительно-категорическое умозаключение надмножества.gwf
+logic_src\разделительно-категорическое умозаключение\разделительно-категорическое умозаключение определение.gwf
+logic_src\разделительно-категорическое умозаключение\разделительно-категорическое умозаключение синонимы.gwf
+logic_src\разделительный силлогизм\константы.gwf
+logic_src\разделительный силлогизм\надмножества .gwf
+logic_src\разделительный силлогизм\определение.gwf
+logic_src\разделительный силлогизм\отношения.gwf
+logic_src\разделительный силлогизм\синонимы.gwf
+logic_src\распределенный термин\константы.gwf
+logic_src\распределенный термин\надмножества .gwf
+logic_src\распределенный термин\определение.gwf
+logic_src\распределенный термин\синонимы.gwf
+logic_src\регрессивный полисиллогизм\регрессивный полисиллогизм константы.gwf
+logic_src\регрессивный полисиллогизм\регрессивный полисиллогизм надмножества.gwf
+logic_src\регрессивный полисиллогизм\регрессивный полисиллогизм определение.gwf
+logic_src\регрессивный полисиллогизм\регрессивный полисиллогизм синонимы.gwf
+logic_src\реляционное суждение\константы.gwf
+logic_src\реляционное суждение\надмножества .gwf
+logic_src\реляционное суждение\определение.gwf
+logic_src\реляционное суждение\отношения.gwf
+logic_src\реляционное суждение\синонимы.gwf
+logic_src\синтаксис\синтаксис константы.gwf
+logic_src\синтаксис\синтаксис надмножества.gwf
+logic_src\синтаксис\синтаксис определение.gwf
+logic_src\синтаксис\синтаксис синонимы.gwf
+logic_src\сложение понятий\сложение понятий константы.gwf
+logic_src\сложение понятий\сложение понятий надмножества.gwf
+logic_src\сложение понятий\сложение понятий определение.gwf
+logic_src\сложение понятий\сложение понятий синонимы.gwf
+logic_src\сложный вопрос по интеллектуальному уровню\константы.gwf
+logic_src\сложный вопрос по интеллектуальному уровню\надмножества .gwf
+logic_src\сложный вопрос по интеллектуальному уровню\определение.gwf
+logic_src\сложный вопрос по интеллектуальному уровню\отношения.gwf
+logic_src\сложный вопрос по интеллектуальному уровню\синонимы.gwf
+logic_src\совершенная дизъюнктивная нормальная форма\константы_совершенная дизъюнктивная нормальная форма.gwf
+logic_src\совершенная дизъюнктивная нормальная форма\надмножества_совершенная дизъюнктивная нормальная форма.gwf
+logic_src\совершенная дизъюнктивная нормальная форма\определение_совершенная дизъюнктивная нормальная форма.gwf
+logic_src\совершенная дизъюнктивная нормальная форма\синонимы_совершенная дизъюнктивная нормальная форма.gwf
+logic_src\совершенная конъюнктивная нормальная форма\константы_совершенная конъюнктивная нормальная форма.gwf
+logic_src\совершенная конъюнктивная нормальная форма\надмножества_совершенная конъюнктивная нормальная форма.gwf
+logic_src\совершенная конъюнктивная нормальная форма\определение_совершенная конъюнктивная нормальная форма.gwf
+logic_src\совершенная конъюнктивная нормальная форма\синонимы_совершенная конъюнктивная нормальная форма.gwf
+logic_src\совместимые по объёму понятия\совместимые по объёму понятия константы.gwf
+logic_src\совместимые по объёму понятия\совместимые по объёму понятия надмножества.gwf
+logic_src\совместимые по объёму понятия\совместимые по объёму понятия определение.gwf
+logic_src\совместимые по объёму понятия\совместимые по объёму понятия синонимы.gwf
+logic_src\сорит\константы.gwf
+logic_src\сорит\надмножества .gwf
+logic_src\сорит\определение.gwf
+logic_src\сорит\отношения.gwf
+logic_src\сорит\синонимы.gwf
+logic_src\теорема\терма константы.gwf
+logic_src\теорема\терма надмножества.gwf
+logic_src\теорема\терма определение.gwf
+logic_src\теорема\терма синнимы.gwf
+logic_src\термин суждения\константы.gwf
+logic_src\термин суждения\надмножества .gwf
+logic_src\термин суждения\определение.gwf
+logic_src\термин суждения\отношения.gwf
+logic_src\термин суждения\разбиение.gwf
+logic_src\термин суждения\синонимы.gwf
+logic_src\тернарный предикат\тернарный предикат констнаты.gwf
+logic_src\тернарный предикат\тернарный предикат надмножества.gwf
+logic_src\тернарный предикат\тернарный предикат опредедление.gwf
+logic_src\тернарный предикат\тернарный предикат синонимы.gwf
+logic_src\узкое определение\узкое определение констнты.gwf
+logic_src\узкое определение\узкое определение надмножества.gwf
+logic_src\узкое определение\узкое определение определение.gwf
+logic_src\узкое определение\узкое определение синонимы.gwf
+logic_src\узловой вопрос\константы.gwf
+logic_src\узловой вопрос\надмножества .gwf
+logic_src\узловой вопрос\определение.gwf
+logic_src\узловой вопрос\отношения.gwf
+logic_src\узловой вопрос\синонимы.gwf
+logic_src\умножение понятий\умножение понятий контсатнты.gwf
+logic_src\умножение понятий\умножение понятий определение.gwf
+logic_src\умножение понятий\умножение понятий синонимы.gwf
+logic_src\умножение понятий\умножение понятий.gwf
+logic_src\умозаключение по аналогии\надмножества .gwf
+logic_src\умозаключение по аналогии\определение.gwf
+logic_src\умозаключение по аналогии\отношения.gwf
+logic_src\умозаключение по аналогии\разбиение.gwf
+logic_src\умозаключение по аналогии\синонимы.gwf
+logic_src\умозаключение по аналогии\эпихейрема.gwf
+logic_src\унарный предикат\унарный предикат константы.gwf
+logic_src\унарный предикат\унарный предикат надмножества.gwf
+logic_src\унарный предикат\унарный предикат определение.gwf
+logic_src\унарный предикат\унарный предикат синонимы.gwf
+logic_src\условно - категорическое суждение\константы.gwf
+logic_src\условно - категорическое суждение\надмножества .gwf
+logic_src\условно - категорическое суждение\определение.gwf
+logic_src\условно - категорическое суждение\отношения.gwf
+logic_src\условно - категорическое суждение\синонимы.gwf
+logic_src\условно - разделительный силлогизм\константы.gwf
+logic_src\условно - разделительный силлогизм\надмножества .gwf
+logic_src\условно - разделительный силлогизм\определение.gwf
+logic_src\условно - разделительный силлогизм\отношения.gwf
+logic_src\условно - разделительный силлогизм\синонимы.gwf
+logic_src\условно-категорическо умозаключение\условно-категорическое умозаключение.gwf
+logic_src\условно-категорическо умозаключение\условно-категорической умозаключение константы.gwf
+logic_src\условно-категорическо умозаключение\условно-категорической умозаключение надмножества.gwf
+logic_src\условно-категорическо умозаключение\условно-категорической умозаключение определение.gwf
+logic_src\условно-категорическо умозаключение\условно-категорической умозаключение синонимы.gwf
+logic_src\условное умозаключение SCl\условное умозаключение.gwf
+logic_src\члены деления\члены деления константы.gwf
+logic_src\члены деления\члены деления надмножества.gwf
+logic_src\члены деления\члены деления определние.gwf
+logic_src\члены деления\члены деления синоним.gwf
+logic_src\широкое определение\широкое определение константы.gwf
+logic_src\широкое определение\широкое определение определение.gwf
+logic_src\широкое определение\широкое определение синонимы.gwf
+logic_src\широкое определение\широкое суждение надмножества.gwf
+logic_src\эквивалентные формулы\константы.gwf
+logic_src\эквивалентные формулы\надмножества .gwf
+logic_src\эквивалентные формулы\определение.gwf
+logic_src\эквивалентные формулы\отношения.gwf
+logic_src\эквивалентные формулы\синонимы.gwf
+logic_src\экзистенциональное суждение\константы.gwf
+logic_src\экзистенциональное суждение\надмножества .gwf
+logic_src\экзистенциональное суждение\определение.gwf
+logic_src\экзистенциональное суждение\отношения.gwf
+logic_src\экзистенциональное суждение\синонимы.gwf
+logic_src\эписиллогизм\эписиллогизм константы.gwf
+logic_src\эписиллогизм\эписиллогизм надмножества.gwf
+logic_src\эписиллогизм\эписиллогизм определение.gwf
+logic_src\эписиллогизм\эписиллогизм синонимы.gwf
+logic_src\эпихейрема\константы.gwf
+logic_src\эпихейрема\надмножества .gwf
+logic_src\эпихейрема\определение.gwf
+logic_src\эпихейрема\отношения.gwf
+logic_src\эпихейрема\синонимы.gwf
+

@@ -22,18 +22,18 @@ along with OSTIS.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 /////////////////////////////////////////////////////
-//        File: remove_menu_element.m4scp
-// Description: File contains procedure to search end element
+//        File: bin_pair_begin.m4scp
+// Description: File contains procedure to search begin element
 //				for a binary pair
 /////////////////////////////////////////////////////
 // 		Author: Daniil Shunkevich
 //        Date: 05.12.11
 
 ///////////////////////////////////////////////////////////////////////////////
-// ѕроцедура поиска конечного элемента св€зки отношени€
-// 1-й аргумент - узел, вход€щий в св€зку отношени€ под атрибутом 1_
+// ѕроцедура поиска начального элемента св€зки отношени€
+// 1-й аргумент - узел, вход€щий в св€зку отношени€ под атрибутом 2_
 // 2-й аргумент - знак отношени€
-// 3-й аргумент - узел, вход€щий в св€зку отношени€ под атрибутом 2_
+// 3-й аргумент - узел, вход€щий в св€зку отношени€ под атрибутом 1_
 #include "scp_keynodes.scsy"
 #include "ordinal.scsy"
 
@@ -53,10 +53,9 @@ procedure(bin_pair_end,
 ]}
 )
 sys_get_location([1_: rel,2_: assign_: seg])
-sys_set_default_segment([1_: fixed_: seg])
 sys_spin_segment([1_: fixed_: seg,	2_: assign_: segments])
-
-
+sys_set_default_segment([1_: fixed_: seg])
+//#printNl([1_: /"BPE!"/])
 searchSetStr5([
 	1_: assign_: node,
 	2_: assign_: const_: pos_: arc,
@@ -100,6 +99,8 @@ searchElStr5([
 ],,next_node)
 
 label(exit)
-
+ifVarAssign([1_: set],,no_erase_set)
+eraseEl([1_: fixed_: set])
+label(no_erase_set)
 return()
 end()

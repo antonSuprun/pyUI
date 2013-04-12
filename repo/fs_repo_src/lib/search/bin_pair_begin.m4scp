@@ -22,7 +22,7 @@ along with OSTIS.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 /////////////////////////////////////////////////////
-//        File: remove_menu_element.m4scp
+//        File: bin_pair_begin.m4scp
 // Description: File contains procedure to search begin element
 //				for a binary pair
 /////////////////////////////////////////////////////
@@ -98,6 +98,8 @@ searchElStr5([
 ],,next_node)
 
 label(exit)
-
+ifVarAssign([1_: set],,no_erase_set)
+eraseEl([1_: fixed_: set])
+label(no_erase_set)
 return()
 end()

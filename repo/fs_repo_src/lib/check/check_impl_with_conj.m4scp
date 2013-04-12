@@ -102,9 +102,9 @@ callReturn([1_: fixed_: search_linked_nodes,
 			3_: assign_: linked 
 		]}
 ])
-printNl([1_: /"LINKED"/])
-printEl([1_: linked])
-printEl([1_: set1])
+//#printNl([1_: /"LINKED"/])
+//#printEl([1_: linked])
+//#printEl([1_: set1])
 callReturn([1_: fixed_: search_direct_mapping,
 	    2_: fixed_:
 		{[
@@ -168,5 +168,8 @@ label(erase_right)
 eraseEl([1_: new_right])
 label(exit)
 eraseEl([1_: set1])
+ifVarAssign([1_: conj_set],,no_erase_conj_set)
+eraseEl([1_: fixed_: conj_set])
+label(no_erase_conj_set)
 return()
 end

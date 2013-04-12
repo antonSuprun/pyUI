@@ -1,0 +1,54 @@
+<?xml version="1.0"  encoding="windows-1251"?>
+
+<GWF version="1.6">
+<staticSector>
+<node type="node/const/group" x="97.0855" y="140.75" idtf="умозаключение" id="25475712" shapeColor="16728128" left="20.0745" top="103.391" right="137.353" bottom="123.109" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="25414316" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<node type="node/const/relation" x="168.914" y="56.25" idtf="константы, входящие в определение*" id="25495976" shapeColor="16728128" left="175.914" top="53.3911" right="461.396" bottom="73.1099" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="25414316" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<node type="node/const/attribute" x="321.914" y="154.25" idtf="посылка_" id="25516632" shapeColor="16728128" left="329.914" top="135.531" right="404.701" bottom="174.969" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="25414316" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<node type="node/const/asymmetry" x="246.914" y="140.25" idtf="" id="25536840" shapeColor="16728128" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="25414316" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<node type="node/const/general_node" x="320.914" y="123.25" idtf="высказывание" id="25557064" shapeColor="16728128" left="327.914" top="113.391" right="435.045" bottom="133.109" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="25414316" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<node type="node/const/general_node" x="322.914" y="92.25" idtf="множество" id="25577264" shapeColor="16728128" left="331.914" top="72.5313" right="424.662" bottom="111.969" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="25414316" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<node type="node/const/attribute" x="322.914" y="185.25" idtf="заключение_" id="25597472" shapeColor="16728128" left="331.914" top="165.531" right="430.592" bottom="204.969" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="25414316" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<pair type="pair/const/orient" idtf="" id_b="25536840" id_e="25475712" id="25617304" parent="25414316" shapeColor="16744576" b_x="239.915" b_y="140.273" e_x="104.085" e_y="140.727" dotBBalance="0" dotEBalance="0">
+<points/>
+</pair>
+<arc type="arc/const/pos" idtf="" id_b="25495976" id_e="25617304" id="25597096" parent="25414316" shapeColor="16744576" b_x="168.921" b_y="63.25" e_x="168.997" e_y="140.51" dotBBalance="0" dotEBalance="0.522111">
+<points/>
+</arc>
+<arc type="arc/const/pos" idtf="" id_b="25536840" id_e="25516632" id="25410360" parent="25414316" shapeColor="16744576" b_x="253.796" b_y="141.534" e_x="315.033" e_y="152.966" dotBBalance="0" dotEBalance="0">
+<points/>
+</arc>
+<arc type="arc/const/pos" idtf="" id_b="25536840" id_e="25557064" id="25461024" parent="25414316" shapeColor="16744576" b_x="253.737" b_y="138.683" e_x="314.092" e_y="124.817" dotBBalance="0" dotEBalance="0">
+<points/>
+</arc>
+<arc type="arc/const/pos" idtf="" id_b="25536840" id_e="25577264" id="25465904" parent="25414316" shapeColor="16744576" b_x="252.833" b_y="136.512" e_x="316.996" e_y="95.988" dotBBalance="0" dotEBalance="0">
+<points/>
+</arc>
+<arc type="arc/const/pos" idtf="" id_b="25536840" id_e="25597472" id="25470832" parent="25414316" shapeColor="16744576" b_x="252.806" b_y="144.031" e_x="316.081" e_y="183.731" dotBBalance="0" dotEBalance="0">
+<points>
+<point x="313.914" y="183.25"/>
+</points>
+</arc>
+</staticSector>
+</GWF>

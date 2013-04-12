@@ -19,17 +19,15 @@
 # example 
 
 # core KB
-#scn:> "/seb/planimetry" "/etc/com_keynodes" "seb/planimetry_src" "http://ostisgeometry.sourceforge.net" "Служебная категория"
-scg:> "seb/planimetry_src" -> "seb/planimetry"
+#scn:> "/seb/planimetry" "/etc/com_keynodes" "seb/planimetry_src" "http://ostisgeometry.sourceforge.net" "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ"
 scg:> "seb/logic_src" -> "seb/logic"
-scs:> "seb/lingv_src" -> "seb/lingv"
 
-#scn:> "/seb/sets" "/etc/com_keynodes" "seb/sets_src" "http://ostissets.sourceforge.net/wiki" "Общие понятия теории множеств"
+#scn:> "/seb/sets" "/etc/com_keynodes" "seb/sets_src" "http://ostissets.sourceforge.net/wiki" "пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ"
 #scs:> "seb/sets_src" -> "seb/sets"
-#scn:> "/seb/conferences" "/etc/com_keynodes" "seb/conf_src" "http://conf.ostis.net" "Фотографии"
+#scn:> "/seb/conferences" "/etc/com_keynodes" "seb/conf_src" "http://conf.ostis.net" "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ"
 #scs:> "seb/conf_src" -> "seb/conferences"
 
-#scn:> "/seb/rus" "/etc/com_keynodes" "seb/rus_src" "http://ostisrussianlan.sourceforge.net" "БЗ"
+#scn:> "/seb/rus" "/etc/com_keynodes" "seb/rus_src" "http://ostisrussianlan.sourceforge.net" "пїЅпїЅ"
 #scs:> "seb/rus_src" -> "seb/rus"
 
 scg:> "etc/com_keynodes_src" -> "etc/com_keynodes"
@@ -39,11 +37,8 @@ scg:> "ui/core_src" -> "ui/core"
 
 scg:> "etc/questions_src" -> "etc/questions"
 scg:> "etc/operations_src" -> "etc/operations"
-scg:> "seb/space_src" -> "seb/space"
-scg:> "seb/chemistry_src" -> "seb/chemistry"
 
 scg:> "ui/menu" -> "ui/menu"
-scg:> "seb/graph_src" -> "seb/graph"
 
 # keynodes
 new:> "include/_keynodes.scsy"
@@ -51,12 +46,10 @@ inc:> beg "include/_keynodes.scsy" <- "ordinal.scsy"
 gwfkey:> "etc/com_keynodes_src/com_keynodes.gwf" -> "include/_keynodes.scsy" "/etc/com_keynodes"
 gwfkey:> "etc/questions_src/questions_keynodes.gwf" -> "include/_keynodes.scsy" "/etc/questions"
 gwfkey:> "ui/core_src/ui_keynodes.gwf" -> "include/_keynodes.scsy" "/ui/core"
-#gwfkey:> "seb/space_src/_keynodes.gwf" -> "include/_keynodes.scsy" "/seb/space"
-#gwfkey:> "seb/chemistry_src/_keynodes.gwf" -> "include/_keynodes.scsy" "/seb/chemistry"
 
 # test
-scg:> "seb/test" -> "seb/test"
+#scg:> "seb/test" -> "seb/test"
 
 #LUI
-scg:> "ui/lui" -> "ui/lui"
-inc:> beg "ui/lui.scg" <- "com_keynodes.scsy"
+#scg:> "ui/lui" -> "ui/lui"
+#inc:> beg "ui/lui.scg" <- "com_keynodes.scsy"

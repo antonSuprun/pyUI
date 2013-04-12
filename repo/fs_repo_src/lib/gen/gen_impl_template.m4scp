@@ -329,6 +329,12 @@ genElStr3([
 	
 /////////////////////////////////////////////////////
 label(exit)
+ifVarAssign([1_: set1],,no_erase_set1)
+eraseEl([1_: fixed_: set1])
+label(no_erase_set1)
+ifVarAssign([1_: set2],,no_erase_set2)
+eraseEl([1_: fixed_: set2])
+label(no_erase_set2)
 
 return()
 end	

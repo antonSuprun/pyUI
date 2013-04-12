@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/group" idtf="популярная индукция" shapeColor="0" id="56714240" parent="0" left="0" top="0" right="134" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="241.54" y="137.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="форма мышления" shapeColor="0" id="56752360" parent="0" left="0" top="0" right="112" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="369" y="354" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="логика предикатов" shapeColor="0" id="56318824" parent="0" left="0" top="0" right="121" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="368" y="399" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/relation" idtf="надмножество понятия*" shapeColor="0" id="76264728" parent="0" left="0" top="0" right="160" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="335.54" y="198.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/asymmetry" idtf="" shapeColor="0" id="56165232" parent="0" x="243.54" y="244.5" haveBus="true">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="умозаключение" shapeColor="0" id="12335784" parent="0" left="0" top="0" right="98" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="367.5" y="274.5" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <node type="node/const/group" idtf="индуктивное умозаключение" shapeColor="0" id="12556144" parent="0" left="0" top="0" right="177" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="368" y="316" haveBus="false">
+            <content type="0" mime_type="" file_name=""/>
+        </node>
+        <pair type="pair/const/orient" idtf="" shapeColor="0" id="12167192" parent="0" id_b="56165232" id_e="56714240" b_x="243.54" b_y="244.5" e_x="241.54" e_y="137.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="56279256" parent="0" id_b="56146016" id_e="56318824" b_x="0" b_y="0" e_x="368" e_y="399" dotBBalance="0.922114" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="76310848" parent="0" id_b="56146016" id_e="56752360" b_x="0" b_y="0" e_x="369" e_y="354" dotBBalance="0.623362" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="55687928" parent="0" id_b="76264728" id_e="12167192" b_x="335.54" b_y="198.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.429245">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="76308712" parent="0" id_b="56146016" id_e="12556144" b_x="0" b_y="0" e_x="368" e_y="316" dotBBalance="0.383157" dotEBalance="0">
+            <points/>
+        </arc>
+        <arc type="arc/const/pos" idtf="" shapeColor="0" id="76310136" parent="0" id_b="56146016" id_e="12335784" b_x="0" b_y="0" e_x="367.5" e_y="274.5" dotBBalance="0.0964875" dotEBalance="0">
+            <points/>
+        </arc>
+        <bus type="" idtf="" shapeColor="0" id="56146016" parent="0" owner="56165232" b_x="243.58" b_y="259" e_x="243.54" e_y="414.5">
+            <points>
+                <point x="244" y="413"/>
+            </points>
+        </bus>
+    </staticSector>
+</GWF>

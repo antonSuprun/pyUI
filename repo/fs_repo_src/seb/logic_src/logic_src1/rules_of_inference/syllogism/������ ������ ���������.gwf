@@ -1,0 +1,52 @@
+<?xml version="1.0"  encoding="windows-1251"?>
+
+<GWF version="1.6">
+<staticSector>
+<node type="node/const/group" x="124.508" y="175.25" idtf="вторая фигура силлогизма" id="26075144" shapeColor="16728128" left="14.492" top="136.891" right="215.153" bottom="156.609" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="25993228" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<node type="node/const/general_node" x="447.492" y="158.75" idtf="понятие" id="26091752" shapeColor="16728128" left="455.492" top="137.031" right="525.169" bottom="176.469" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="25993228" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<node type="node/const/asymmetry" x="339.492" y="175.75" idtf="" id="26111152" shapeColor="16728128" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="25993228" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<node type="node/const/general_node" x="447.492" y="118.75" idtf="силлогизм" id="26135808" shapeColor="16728128" left="455.492" top="94.0317" right="535.435" bottom="133.469" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="25993228" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<node type="node/const/relation" x="446.492" y="205.75" idtf="субъект*" id="26156008" shapeColor="16728128" left="453.492" top="193.031" right="527.083" bottom="232.469" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="25993228" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<node type="node/const/relation" x="440.492" y="255.75" idtf="предикат*" id="26176216" shapeColor="16728128" left="447.492" top="243.031" right="532.536" bottom="282.469" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="25993228" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<arc type="arc/const/pos" idtf="" id_b="26111152" id_e="26091752" id="25990432" parent="25993228" shapeColor="16744576" b_x="346.407" b_y="174.662" e_x="440.577" e_y="159.838" dotBBalance="0" dotEBalance="0">
+<points/>
+</arc>
+<arc type="arc/const/pos" idtf="" id_b="26111152" id_e="26135808" id="26040456" parent="25993228" shapeColor="16744576" b_x="345.683" b_y="172.483" e_x="441.301" e_y="122.017" dotBBalance="0" dotEBalance="0">
+<points/>
+</arc>
+<arc type="arc/const/pos" idtf="" id_b="26111152" id_e="26156008" id="26045336" parent="25993228" shapeColor="16744576" b_x="346.232" b_y="177.64" e_x="439.752" e_y="203.86" dotBBalance="0" dotEBalance="0">
+<points/>
+</arc>
+<arc type="arc/const/pos" idtf="" id_b="26111152" id_e="26176216" id="26050264" parent="25993228" shapeColor="16744576" b_x="344.979" b_y="180.096" e_x="435.005" e_y="251.404" dotBBalance="0" dotEBalance="0">
+<points/>
+</arc>
+<pair type="pair/const/orient" idtf="" id_b="26111152" id_e="26075144" id="26175840" parent="25993228" shapeColor="16744576" b_x="332.492" b_y="175.734" e_x="131.508" e_y="175.266" dotBBalance="0" dotEBalance="0">
+<points/>
+</pair>
+<node type="node/const/relation" x="228" y="50" idtf="константы, входящие  в определение*" id="26055144" shapeColor="16728128" left="164" top="8.28125" right="453.599" bottom="47.7188" textColor="8421631" text_angle="0" text_font="Times New Roman" font_size="12" show_content="false" parent="25993228" haveBus="false">
+<content type="0" mime_type="content/base" file_name="">
+</content>
+</node>
+<arc type="arc/const/pos" idtf="" id_b="26055144" id_e="26175840" id="25985256" parent="25993228" shapeColor="16744576" b_x="227.888" b_y="56.9991" e_x="226" e_y="175.486" dotBBalance="0" dotEBalance="0.529853">
+<points/>
+</arc>
+</staticSector>
+</GWF>

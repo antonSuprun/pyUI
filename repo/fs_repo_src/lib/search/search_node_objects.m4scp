@@ -47,10 +47,10 @@ procedure(search_node_objects,
 	second=2_;
 	
 	//#отладочная информация, закомментировать или убрать
-	find_obs=/"\n\nI find objects!\n\n"/;
-	not_find_obs=/"\n\nI don't find objects!\n\n"/;
-	here=/"\n\nI have entered search_node_objects!!!\n\n"/;
-	exited=/"\n\nI have exited search_node_objects!!!\n\n"/;		
+	find_obs=/""/;//#/"\n\nI find objects!\n\n"/;
+	not_find_obs=/""/;//#/"\n\nI don't find objects!\n\n"/;
+	here=/""/;//#/"\n\nI have entered search_node_objects!!!\n\n"/;
+	exited=/""/;//#/"\n\nI have exited search_node_objects!!!\n\n"/;		
 ]],
 [{	
 	objects,arc,arc1,req_arc,value,handler,element,seg,segments,temp,set,set2,theory,section,attr
